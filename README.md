@@ -1,8 +1,5 @@
-# WSRK
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Jason W Mayer x Tech Mahindra x Westrock
+Load Balance Optimization // Supply Chain Optimization
 ## Available Scripts
 
 In the project directory, you can run:
