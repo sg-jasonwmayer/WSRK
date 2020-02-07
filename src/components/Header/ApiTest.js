@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const ApiTest = () =>  {
@@ -15,15 +15,16 @@ const ApiTest = () =>  {
                     id: resData.data.mills[key].millId,
                 })
             }
+
             setMills(loadedMills);
             console.log(loadedMills[0]);
             console.log(useMills)
         })
-    }, []);
+    }, [loadedMills, useMills]);
    
     return (
         <div>
-            {useMills.length  <= 0 ? "loading" : "loaded" }
+            {useMills.length  <= 0 ? "loading..." : "" }
         </div>
     )
 }

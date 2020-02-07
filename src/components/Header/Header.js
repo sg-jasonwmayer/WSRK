@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { ClickAwayListener, AppBar, Toolbar, Grid, Divider, Drawer, List, ListItemIcon, ListItemText, ListItem, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import {  useTheme } from '@material-ui/core/styles';
+
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
@@ -13,9 +14,14 @@ import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
+import clsx from 'clsx';
+
 import logo from '../../assets/westRockLogo.png';
 import Location from './Location';
 import UserName from './UserName';
+
+import './Header.scss'
 
 const drawerWidth = 290;
 
@@ -27,16 +33,16 @@ const useStyles = makeStyles(theme => ({
     flex: {
         display: 'flex'
     },
-    logo:{
-        margin:'0', 
-        height: '30px', 
-        padding: '0',
-        marginLeft: '5vh'
-    },
+    // logo:{
+    //     margin:'0', 
+    //     height: '30px', 
+    //     padding: '0',
+    //     marginLeft: '5vh'
+    // },
     appBar:{
-        backgroundColor: "white",
-        position: "fixed",
-        borderBottom: "5px solid #ff8200",
+        backgroundColor: 'white',
+        position: 'fixed',
+        borderBottom: '5px solid #ff8200',
         height: '7vh',
         transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
@@ -44,7 +50,7 @@ const useStyles = makeStyles(theme => ({
         }),
     },
     button: {
-        color: "inherit"
+        color: 'inherit'
     },
     rightContainer: {
         alignItems: 'center',
@@ -127,15 +133,15 @@ const Header = () => {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
-    const handleDrawerOpen = () => {
+    const drawerOpenHandler = () => {
         setOpen(true);
     };
 
-    const handleDrawerClose = () => {
+    const drawerCloseHandler = () => {
         setOpen(false);
     };
 
-    const handleClickAway = () => {
+    const outsideClickHandler = () => {
         setOpen(false);
       };
  
@@ -143,33 +149,39 @@ const Header = () => {
         <div className={classes.root}>
             <AppBar className={classes.appBar}>
                 <Toolbar> 
-                    <Grid container>
-
-                        <Grid xs={4} container className={classes.laftContainer}>
-                            <div>
+                    <Grid 
+                     container
+                    >
+                        <Grid
+                         item 
+                         xs={4}
+                         className={classes.leftContainer}
+                        >
+                          <div>
                                 <ClickAwayListener
-                                    onClickAway={handleClickAway}
+                                 onClickAway={outsideClickHandler}
                                 >
                                     <IconButton
-                                        color="inherit"
-                                        aria-label="open drawer"
-                                        onClick={handleDrawerOpen}
-                                        edge="start"
-                                        className={clsx(classes.menuButton, open && classes.hide)}
+                                     color='inherit'
+                                     aria-label='open drawer'
+                                     onClick={drawerOpenHandler}
+                                     edge='start'
+                                     className={clsx(classes.menuButton, open && classes.hide)}
                                     >
-                                        <MenuIcon color="primary" />
-                                    </IconButton>
-                                </ClickAwayListener>
-                            
+                                      <MenuIcon 
+                                       color='primary' 
+                                      />
+                                    </ IconButton>
+                                </ ClickAwayListener>
                                 <Drawer
-                                    className={classes.drawer}
-                                    variant="persistent"
-                                    anchor="left"
-                                    open={open}
-                                    classes={{ paper: classes.drawerPaper }}
+                                  className={classes.drawer}
+                                  variant='persistent'
+                                  anchor='left'
+                                  open={open}
+                                  classes={{ paper: classes.drawerPaper }}
                                 >
                                     <div className={classes.drawerHeader}>
-                                        <IconButton onClick={handleDrawerClose}>
+                                        <IconButton onClick={drawerCloseHandler}>
                                             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                                         </IconButton>
                                     </div>
@@ -179,69 +191,82 @@ const Header = () => {
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <AccountTreeIcon />
-                                            </ListItemIcon>
+                                            </ ListItemIcon>
                                             <ListItemText primary={'Load Planner'} />
-                                        </ListItem>
+                                        </ ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <SettingsIcon />
-                                            </ListItemIcon>
+                                            </ ListItemIcon>
                                             <ListItemText primary={'Mill Preferences'} />
-                                        </ListItem>
+                                        </ ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <BarChartIcon />
-                                            </ListItemIcon>
+                                            </ ListItemIcon>
                                             <ListItemText primary={'Reports'} />
-                                        </ListItem>
+                                        </ ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <ExtensionIcon />
-                                            </ListItemIcon>
+                                            </ ListItemIcon>
                                             <ListItemText primary={'Scenario Builder'} />
-                                        </ListItem>
+                                        </ ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
-                                                <ShutterSpeedIcon />
+                                             <ShutterSpeedIcon />
                                             </ListItemIcon>
                                             <ListItemText primary={'Som Tester'} />
-                                        </ListItem>
-                                    </List>
-                                    <Divider/>
-                                </Drawer>
-                            </div>
-                            
-                            <img src={logo} alt="WestRockLogo" className={classes.logo}/>
+                                        </ ListItem>
+                                    </ List>
+                                    <Divider />
+                                </ Drawer>
+                            </div>  
+                            <img 
+                             src={logo} 
+                             alt='West Rock Logo' 
+                             className='logo'
+                           />
                         </Grid>
 
 {/* -------------------------------------------Center Container----------------------------------------*/}
-                        <Grid xs='4' className={classes.centerContainer}>
-                            <Location className={classes.location}/>
-                        </Grid>
+                        <Grid
+                          item 
+                          xs={4} 
+                          className={classes.centerContainer}
+                        >
+                            <Location 
+                             item
+                             className={classes.location}
+                            />
+                        </ Grid>
 {/* -------------------------------------------Right Container---------------------------------------- */}
-                        <Grid xs='4'  className={classes.rightContainer}>    
-
+                        <Grid 
+                          item
+                          xs={4}   
+                          className={classes.rightContainer}
+                        >    
                             <IconButton
-                                color="inherit"
-                                size="small"
+                             color='inherit'
+                             size='small'
                             >
                                 <UserName />
-                            </IconButton>
+                            </ IconButton>
 
                             <IconButton
-                                color="inherit"
-                                size='small'
-                                className={clsx(classes.menuButton )}
+                             color='inherit'
+                             size='small'
+                             className={clsx(classes.menuButton )}
                             > 
-                                <NotificationsIcon color="action"/> 
+                                <NotificationsIcon color='action'/> 
                             </IconButton>
                              
                             <IconButton
-                                color="inherit"
-                                size='small'
-                                className={clsx(classes.menuButton )}
+                             color='inherit'
+                             size='small'
+                             className={clsx(classes.menuButton )}
                             > 
-                                <EmailIcon color="action"    />
+                                <EmailIcon color='action'    />
                             </IconButton>
                         </Grid>
                     </Grid>
@@ -249,12 +274,17 @@ const Header = () => {
             </AppBar>
 
             {/* ------------------------Icons below header (left) ------------ */}
-            <Grid className={classes.quickAccessIconsContainer}  >
+            <Grid 
+             className={classes.quickAccessIconsContainer} 
+            >
 
-                <Grid spacing='3'>
+                <Grid 
+                 container
+                 spacing={3}
+                >
                     <IconButton
-                        size='small'
-                        className={clsx(classes.quickAccessIcons )}
+                     size='small'
+                     className={clsx(classes.quickAccessIcons )}
                     > 
                         <AccountTreeIcon />
                     </IconButton>
@@ -262,12 +292,12 @@ const Header = () => {
 
                 <Grid>
                     <IconButton
-                        size='small'
-                        className={clsx(classes.quickAccessIcons )}
+                     size='small'
+                     className={clsx(classes.quickAccessIcons )}
                     > 
-                        <SettingsIcon />
-                    </IconButton>
-                </Grid>
+                     <SettingsIcon />
+                    </ IconButton>
+                </ Grid>
 
                 <Grid>
                     <IconButton
@@ -275,8 +305,8 @@ const Header = () => {
                         className={clsx(classes.quickAccessIcons )}
                     > 
                         <BarChartIcon />
-                    </IconButton>
-                </Grid>
+                    </ IconButton>
+                </ Grid>
 
                 <Grid>
                     <IconButton
@@ -293,11 +323,11 @@ const Header = () => {
                         className={clsx(classes.quickAccessIcons )}
                     > 
                         <ShutterSpeedIcon />
-                    </IconButton>
-                </Grid>
-            </Grid>
+                    </ IconButton>
+                </ Grid>
+            </ Grid>
 
-        </div>
+        </ div>
     )
 }
 
