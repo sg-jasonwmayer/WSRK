@@ -1,8 +1,17 @@
 import React from 'react';
-import { IconButton, Menu, MenuItem, Fade } from '@material-ui/core';
+
+import { 
+  IconButton, 
+  Menu, 
+  MenuItem, 
+  Fade 
+} from '@material-ui/core';
+
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import { makeStyles } from '@material-ui/core/styles';
+
 import axios from 'axios';
+
+import './UserName.scss'
 
 const fhenao = 'http://ms00015080d:7050/api/userpreferences/fhenao';
 
@@ -16,23 +25,13 @@ axios.get(fhenao).then((res) => {
     language = res.data.language;
 })
     .catch((err) => {
-        // console.log(err);
+    console.log(err);
     })
     // console.log(userName);
     // console.log(units);
 
-const useStyles = makeStyles(theme => ({
-    root: {
-    },
-    userNameStyle: {
-        color: '#004B87',
-        margin:'0',
-        paddingRight: '3vh'
-    },
-}));
-
 export default function UserName() {
-    const classes = useStyles();
+    
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const opens = Boolean(anchorEl);
@@ -45,27 +44,41 @@ export default function UserName() {
       setAnchorEl(null);
     };
     return (
-        <div className='classes.root'>
+        <div 
+        className='root'
+        >
             <IconButton
-                color="inherit"
-                size="small"
-                aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}
+                color='inherit'
+                size='small'
+                aria-controls='fade-menu' 
+                aria-haspopup='true' 
+                onClick={handleClick}
             >
-                <ArrowDropDownIcon color='primary' />
-                <h5 className={classes.userNameStyle}>{userName}</h5> 
-            </IconButton>
+                <ArrowDropDownIcon 
+                  color='primary' />
+                <h5 
+                  className='user-name-style'>
+                    {userName}
+                </h5> 
+            </ IconButton>
             
             <Menu
-                id="fade-menu"
+                id='fade-menu'
                 anchorEl={anchorEl}
                 keepMounted
                 open={opens}
                 onClose={handleClose}
-                TransitionComponent={Fade}
+                transitionComponent={Fade}
             >
-                <MenuItem onClick={handleClose}>Language:{language}</MenuItem>
-                <MenuItem onClick={handleClose}>Units: {units}</MenuItem>
-            </Menu>
-        </div>
+                <MenuItem 
+                  onClick={handleClose}>
+                  language:{language}
+                </ MenuItem>
+                <MenuItem 
+                  onClick={handleClose}>
+                  units={units}
+                </ MenuItem>
+            </ Menu>
+        </ div>
     )
 }

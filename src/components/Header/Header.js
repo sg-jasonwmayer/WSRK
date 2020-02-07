@@ -1,8 +1,21 @@
 import React from 'react';
 
-import { ClickAwayListener, AppBar, Toolbar, Grid, Divider, Drawer, List, ListItemIcon, ListItemText, ListItem, IconButton } from '@material-ui/core';
+import { 
+    ClickAwayListener, 
+    AppBar, 
+    Toolbar, 
+    Grid, 
+    Divider, 
+    Drawer, 
+    List, 
+    ListItemIcon, 
+    ListItemText, 
+    ListItem, 
+    IconButton 
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import {  useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
+
 
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -236,7 +249,7 @@ const Header = () => {
                           className={classes.centerContainer}
                         >
                             <Location 
-                             item
+                             i
                              className={classes.location}
                             />
                         </ Grid>

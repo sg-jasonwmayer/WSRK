@@ -50,8 +50,14 @@ const Location = () => {
     }, [tempMill]);
 
     return(
-        <div classname={classes.root}>
-             <Grid xs={4} className={classes.centerContainer}>
+        <div
+          className={classes.root}
+        >
+             <Grid 
+               item 
+               xs={4} 
+               className={classes.centerContainer}
+             > 
                 <IconButton
                   color="inherit"
                   size='small'
