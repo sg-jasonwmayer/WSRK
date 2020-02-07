@@ -1,12 +1,14 @@
 import React from 'react';
 import Header from './components/Header/Header';
-// import ApiTest from './components/Header/ApiTest';
+
+import 'typeface-roboto';
+import ApiTest from './components/Header/ApiTest';
 
 const App = () => {
   return (
     <div> 
       <Header />
-      {/* <ApiTest /> */}
+      <ApiTest />
     </div>
   );
 }
