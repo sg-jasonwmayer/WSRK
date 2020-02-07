@@ -140,20 +140,12 @@ const Header = () => {
       };
  
     return (
-        <div 
-         className={classes.root}
-         >
-            <AppBar 
-             className={classes.appBar}>
+        <div className={classes.root}>
+            <AppBar className={classes.appBar}>
                 <Toolbar> 
-                    <Grid 
-                    container>
+                    <Grid container>
 
-                        <Grid
-                         item  
-                         xs={4} 
-                         className={classes.laftContainer}
-                         >
+                        <Grid xs={4} container className={classes.laftContainer}>
                             <div>
                                 <ClickAwayListener
                                     onClickAway={handleClickAway}
@@ -176,9 +168,7 @@ const Header = () => {
                                     open={open}
                                     classes={{ paper: classes.drawerPaper }}
                                 >
-                                    <div 
-                                     className={classes.drawerHeader}
-                                    >
+                                    <div className={classes.drawerHeader}>
                                         <IconButton onClick={handleDrawerClose}>
                                             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                                         </IconButton>
@@ -190,17 +180,13 @@ const Header = () => {
                                             <ListItemIcon>
                                                 <AccountTreeIcon />
                                             </ListItemIcon>
-                                            <ListItemText 
-                                             primary={'Load Planner'} 
-                                            />
+                                            <ListItemText primary={'Load Planner'} />
                                         </ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <SettingsIcon />
                                             </ListItemIcon>
-                                            <ListItemText 
-                                             primary={'Mill Preferences'} 
-                                            />
+                                            <ListItemText primary={'Mill Preferences'} />
                                         </ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
@@ -212,88 +198,67 @@ const Header = () => {
                                             <ListItemIcon>
                                                 <ExtensionIcon />
                                             </ListItemIcon>
-                                            <ListItemText 
-                                             primary={'Scenario Builder'} 
-                                            />
+                                            <ListItemText primary={'Scenario Builder'} />
                                         </ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <ShutterSpeedIcon />
                                             </ListItemIcon>
-                                            <ListItemText 
-                                             primary={'Som Tester'} 
-                                            />
+                                            <ListItemText primary={'Som Tester'} />
                                         </ListItem>
                                     </List>
                                     <Divider/>
                                 </Drawer>
                             </div>
                             
-                            <img src={logo} alt="WestRock logo" className={classes.logo}/>
+                            <img src={logo} alt="WestRockLogo" className={classes.logo}/>
                         </Grid>
 
 {/* -------------------------------------------Center Container----------------------------------------*/}
-                        <Grid 
-                         item
-                         xs={4} 
-                         className={classes.centerContainer}
-                        >
-                            <Location 
-                             className={classes.location}
-                            />
-                        </ Grid>
+                        <Grid xs='4' className={classes.centerContainer}>
+                            <Location className={classes.location}/>
+                        </Grid>
 {/* -------------------------------------------Right Container---------------------------------------- */}
-                        <Grid 
-                         item
-                         xs={4}  
-                         className={classes.rightContainer}
-                        >    
+                        <Grid xs='4'  className={classes.rightContainer}>    
 
                             <IconButton
-                             color='inherit'
-                             size='small'
+                                color="inherit"
+                                size="small"
                             >
                                 <UserName />
-                            </ IconButton>
+                            </IconButton>
 
                             <IconButton
-                              color='inherit'
-                              size='small'
-                              className={clsx(classes.menuButton)}
+                                color="inherit"
+                                size='small'
+                                className={clsx(classes.menuButton )}
                             > 
-                                <NotificationsIcon 
-                                 color="action"
-                                 /> 
+                                <NotificationsIcon color="action"/> 
                             </IconButton>
                              
                             <IconButton
                                 color="inherit"
                                 size='small'
-                                className={clsx(classes.menuButton)}
+                                className={clsx(classes.menuButton )}
                             > 
-                                <EmailIcon 
-                                 color="action"    
-                                />
-                            </ IconButton>
-                        </ Grid>
-                    </ Grid>
-                </ Toolbar>
-            </ AppBar>
+                                <EmailIcon color="action"    />
+                            </IconButton>
+                        </Grid>
+                    </Grid>
+                </Toolbar>
+            </AppBar>
 
             {/* ------------------------Icons below header (left) ------------ */}
             <Grid className={classes.quickAccessIconsContainer}  >
 
-                <Grid 
-                 item
-                 spacing={3}
-                 >
+                <Grid spacing='3'>
                     <IconButton
                         size='small'
                         className={clsx(classes.quickAccessIcons )}
                     > 
                         <AccountTreeIcon />
-                    </ IconButton>
-                </ Grid>
+                    </IconButton>
+                </Grid>
 
                 <Grid>
                     <IconButton
@@ -310,8 +275,8 @@ const Header = () => {
                         className={clsx(classes.quickAccessIcons )}
                     > 
                         <BarChartIcon />
-                    </ IconButton>
-                </ Grid>
+                    </IconButton>
+                </Grid>
 
                 <Grid>
                     <IconButton
@@ -319,8 +284,8 @@ const Header = () => {
                         className={clsx(classes.quickAccessIcons )}
                     > 
                         <ExtensionIcon />
-                    </ IconButton>
-                </ Grid>
+                    </IconButton>
+                </Grid>
 
                 <Grid>
                     <IconButton

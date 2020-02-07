@@ -27,7 +27,7 @@ const Location = () => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const opens = Boolean(anchorEl);
-  // eslint-disable-next-line no-unused-vars
+
     const [useMills, setMills] =useState([]);
     let tempMill = '';
     
@@ -49,7 +49,7 @@ const Location = () => {
     }, [tempMill]);
 
     return(
-        <div className={classes.root}>
+        <div classname={classes.root}>
              <Grid xs='4' className={classes.centerContainer}>
                 <IconButton
                             color="inherit"

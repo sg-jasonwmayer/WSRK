@@ -17,9 +17,9 @@ const ApiTest = () =>  {
             }
             setMills(loadedMills);
             console.log(loadedMills[0]);
-            console.log(useMills[1])
+            console.log(useMills)
         })
-    }, [loadedMills, useMills]);
+    }, []);
    
     return (
         <div>
