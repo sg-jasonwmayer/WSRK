@@ -5,6 +5,7 @@ import CriteriaDropDown from './CriteriaDropDown';
 import ValueInputBox from './ValueInputBox';
 import FilterByMode from './FilterByMode';
 import OptimizedFilter from './OptimizedFilter';
+import ColumnsToInclude from './ColumnsToInclude';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -21,6 +22,7 @@ const LoadPlanner = () => {
             <ValueInputBox />
             <FilterByMode />
             <OptimizedFilter />
+            <ColumnsToInclude />
         </div>   
     )
 }
