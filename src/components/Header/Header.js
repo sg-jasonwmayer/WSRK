@@ -31,8 +31,8 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import clsx from 'clsx';
 
 import logo from '../../assets/westRockLogo.png';
-import Location from './Location';
-import UserName from './UserName';
+import Location from '../Location/Location';
+import UserName from '../UserName/UserName';
 
 import './Header.scss'
 
@@ -160,7 +160,9 @@ const Header = () => {
  
     return (
         <div className={classes.root}>
-            <AppBar className={classes.appBar}>
+            <AppBar 
+              className={classes.appBar}
+             >
                 <Toolbar> 
                     <Grid 
                      container
@@ -194,8 +196,9 @@ const Header = () => {
                                   classes={{ paper: classes.drawerPaper }}
                                 >
                                     <div className={classes.drawerHeader}>
-                                        <IconButton onClick={drawerCloseHandler}>
-                                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                                        <IconButton 
+                                          onClick={drawerCloseHandler}>
+                                          {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                                         </IconButton>
                                     </div>
                                     <Divider />
@@ -205,31 +208,41 @@ const Header = () => {
                                             <ListItemIcon>
                                                 <AccountTreeIcon />
                                             </ ListItemIcon>
-                                            <ListItemText primary={'Load Planner'} />
+                                            <ListItemText 
+                                              primary={'Load Planner'} />
                                         </ ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <SettingsIcon />
                                             </ ListItemIcon>
-                                            <ListItemText primary={'Mill Preferences'} />
+                                            <ListItemText 
+                                              primary={'Mill Preferences'} />
                                         </ ListItem>
-                                        <ListItem button>
+                                        <ListItem 
+                                          button
+                                        >
                                             <ListItemIcon>
                                                 <BarChartIcon />
                                             </ ListItemIcon>
-                                            <ListItemText primary={'Reports'} />
+                                            <ListItemText 
+                                              primary={'Reports'} />
                                         </ ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <ExtensionIcon />
                                             </ ListItemIcon>
-                                            <ListItemText primary={'Scenario Builder'} />
+                                            <ListItemText 
+                                              primary={'Scenario Builder'} 
+                                            />
                                         </ ListItem>
-                                        <ListItem button>
+                                        <ListItem 
+                                          button>
                                             <ListItemIcon>
                                              <ShutterSpeedIcon />
                                             </ListItemIcon>
-                                            <ListItemText primary={'Som Tester'} />
+                                            <ListItemText 
+                                             primary={'Som Tester'} 
+                                            />
                                         </ ListItem>
                                     </ List>
                                     <Divider />
@@ -249,7 +262,6 @@ const Header = () => {
                           className={classes.centerContainer}
                         >
                             <Location 
-                             i
                              className={classes.location}
                             />
                         </ Grid>
@@ -262,9 +274,9 @@ const Header = () => {
                             <IconButton
                              color='inherit'
                              size='small'
-                            >
-                                <UserName />
-                            </ IconButton>
+                            />
+                             <UserName />
+                    
 
                             <IconButton
                              color='inherit'
@@ -279,7 +291,7 @@ const Header = () => {
                              size='small'
                              className={clsx(classes.menuButton )}
                             > 
-                                <EmailIcon color='action'    />
+                              <EmailIcon color='action' />
                             </IconButton>
                         </Grid>
                     </Grid>
@@ -299,7 +311,7 @@ const Header = () => {
                      size='small'
                      className={clsx(classes.quickAccessIcons )}
                     > 
-                        <AccountTreeIcon />
+                      <AccountTreeIcon />
                     </IconButton>
                 </Grid>
 
@@ -308,9 +320,9 @@ const Header = () => {
                      size='small'
                      className={clsx(classes.quickAccessIcons )}
                     > 
-                     <SettingsIcon />
-                    </ IconButton>
-                </ Grid>
+                      <SettingsIcon />
+                    </IconButton>
+                </Grid>
 
                 <Grid>
                     <IconButton
@@ -318,8 +330,8 @@ const Header = () => {
                         className={clsx(classes.quickAccessIcons )}
                     > 
                         <BarChartIcon />
-                    </ IconButton>
-                </ Grid>
+                    </IconButton>                           
+                </Grid>
 
                 <Grid>
                     <IconButton
@@ -336,11 +348,11 @@ const Header = () => {
                         className={clsx(classes.quickAccessIcons )}
                     > 
                         <ShutterSpeedIcon />
-                    </ IconButton>
-                </ Grid>
-            </ Grid>
+                    </IconButton>
+                </Grid>
+            </Grid>
 
-        </ div>
+        </div>
     )
 }
 
