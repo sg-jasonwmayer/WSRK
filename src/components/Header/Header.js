@@ -193,16 +193,16 @@ const Header = () => {
                                   variant="persistent"
                                   anchor="left"
                                   open={open}
-                                  classes={{ paper: classes.drawerPaper}}
+                                  classes={{paper: classes.drawerPaper}}
                                 >
                                     <div className={classes.drawerHeader}>
                                         <IconButton 
-                                          onClick={drawerCloseHandler}>
+                                          onClick={drawerCloseHandler}
+                                        >
                                           {theme.direction === "ltr" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                                         </IconButton>
                                     </div>
                                     <Divider />
-
                                     <List>
                                         <ListItem button>
                                             <ListItemIcon>
@@ -211,29 +211,29 @@ const Header = () => {
                                             <ListItemText 
                                               primary={"Load Planner"} 
                                             />
-                                        </ ListItem>
+                                        </ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <SettingsIcon />
-                                            </ ListItemIcon>
+                                            </ListItemIcon>
                                             <ListItemText 
                                               primary={"Mill Preferences"} 
                                             />
-                                        </ ListItem>
+                                        </ListItem>
                                         <ListItem 
                                           button
                                         >
                                             <ListItemIcon>
-                                                <BarChartIcon />
-                                            </ ListItemIcon>
+                                              <BarChartIcon />
+                                            </ListItemIcon>
                                             <ListItemText 
                                               primary={"Reports"} 
                                             />
-                                        </ ListItem>
+                                        </ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <ExtensionIcon />
-                                            </ ListItemIcon>
+                                            </ListItemIcon>
                                             <ListItemText 
                                               primary={"Scenario Builder"} 
                                             />
@@ -277,20 +277,18 @@ const Header = () => {
                             <IconButton
                              color="inherit"
                              size="small"
+                             className={clsx(classes.menuButton)}
                             />
                             <UserName />
-                    
-
                             <IconButton
                              color="inherit"
                              size="small"
                              className={clsx(classes.menuButton)}
                             > 
-                                <NotificationsIcon 
-                                  color="action" 
-                                /> 
-                            </IconButton>
-                             
+                            <NotificationsIcon 
+                             color="action" 
+                            /> 
+                            </IconButton>     
                             <IconButton
                              color="inherit"
                              size="small"
@@ -304,14 +302,13 @@ const Header = () => {
                     </Grid>
                 </Toolbar>
             </AppBar>
-
             {/* ------------------------Icons below header (left) ------------ */}
             <Grid 
              className={classes.quickAccessIconsContainer} 
             >
                 <Grid 
                  container
-                 spacing={3}
+                 spacing={1}
                 >
                     <IconButton
                      size="small"
@@ -320,7 +317,6 @@ const Header = () => {
                       <AccountTreeIcon />
                     </IconButton>
                 </Grid>
-
                 <Grid>
                     <IconButton
                      size="small"
@@ -329,7 +325,6 @@ const Header = () => {
                       <SettingsIcon />
                     </IconButton>
                 </Grid>
-
                 <Grid>
                     <IconButton
                         size="small"
