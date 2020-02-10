@@ -56,6 +56,8 @@ class Main extends Component {
       <section className={wrapperClass}>
         <div className="appBar">
        <Header />
+       </div>
+       <div>
           {isSelectorOverlayVisible && <div className="overlay" />}
           <LoadPlanSelector
             onRefresh={this.handleRefresh}

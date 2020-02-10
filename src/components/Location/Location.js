@@ -73,7 +73,8 @@ const Location = () => {
                       color={'primary'}
                     />
                     <h4 
-                      className={classes.centerContainer}>
+                      className={classes.centerContainer}
+                    >
                       {tempMill}
                     </h4> 
                 </IconButton>

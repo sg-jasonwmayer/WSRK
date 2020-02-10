@@ -17,8 +17,8 @@ const Api = () =>  {
             }
 
             setMills(loadedMills);
-            console.log(loadedMills[0]);
-            console.log(useMills)
+            // console.log(loadedMills[0]);
+            // console.log(useMills)
         })
     }, [loadedMills, useMills]);
    
