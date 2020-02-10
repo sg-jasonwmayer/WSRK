@@ -5,14 +5,12 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import classnames from 'classnames';
-import {
-  getAdminSectionAccess,
-} from 'Utils/permissionsUtils';
 
-import Admin from '../Admin';
-import Dashboard from '../Dashboard';
-import Documents from '../Documents';
+import classnames from 'classnames';
+
+import Main from '../../Containers/Main/Main';
+import Reports  from '../../Containers/Reports/Reports';
+import MillPlan from '../../Containers/Reports/MillPlan';
 
 import './main.scss';
 
@@ -51,14 +49,13 @@ class Main extends Component {
 
   render() {
     const { isSelectorOverlayVisible } = this.state;
-    const wrapperClass = classnames('center-section', this.props.overlayClass);
-    const hasAdminPermissions = getAdminSectionAccess(this.props.parsedPermissions);
+    const wrapperClass = classnames('root', this.props.overlayClass);
 
     return (
       <section className={wrapperClass}>
-        <div className="global-filter-bar">
+        <div className="appBar">
           {isSelectorOverlayVisible && <div className="overlay" />}
-          <HierarchySelector
+          <Header
             onRefresh={this.handleRefresh}
             onCollapse={this.handleCollapse}
             onExpand={this.handleExpand}
@@ -101,11 +98,11 @@ class Main extends Component {
                 )}
               />
               <Route
-                path="/mill-preferences"
+                path="/mill-loadplans"
                 render={(props) => (
-                  <MillPreferences 
+                  <MillPlan
                   {...props} 
-                  authRole={this.props.authRole} 
+                  millPlan={this.props.millPlan} 
                   />
                 )}
               />

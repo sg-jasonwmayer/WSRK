@@ -1,5 +1,5 @@
 import React from 'react';
-import AppView from './components/AppView/AppView';
+import AppView from './containers/AppView/AppView';
 
 import 'typeface-roboto';
 

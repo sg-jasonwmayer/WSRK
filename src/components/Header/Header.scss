@@ -16,12 +16,14 @@
   .flex {
     display: flex;
 
-  .appBar {
-    padding-top: 205px;
-    background-color: white;
-    position: fixed;
-    border-bottom: 5px solid #ff8200;
-    height: 7vh;  
+    .app-bar {
+      padding-top: 205px;
+      background-color: white;
+      position: fixed;
+      border-bottom: 5px solid #ff8200;
+      height: 7vh;
+    
+    
 
     .button {
       color: inherit;
@@ -48,6 +50,14 @@
 
 }
 
+.app-bar {
+  padding-top: 205px;
+  background-color: white;
+  position: fixed;
+  border-bottom: 5px solid #ff8200;
+  height: 7vh;
+}
+
 .rightContainer {
   align-items: center;
   display: flex;
@@ -59,12 +69,6 @@
   color: inherit;
 }
 
-.appBar {
-  background-color: white;
-  position: fixed;
-  border-bottom: 5px solid #ff8200;
-  height: 7vh;
-}
 
 
 
