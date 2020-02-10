@@ -1,104 +1,65 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
+import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-
-const options = ['Containing', 'Containing 2', 'Containing 3'];
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-    },
+  button: {
+    display: 'block',
+    marginTop: theme.spacing(2),
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
 }));
 
 const CriteriaDropDown = () => {
+    const classes = useStyles();
+    const [age, setAge] = React.useState('');
     const [open, setOpen] = React.useState(false);
-    const anchorRef = React.useRef(null);
-    const [selectedIndex, setSelectedIndex] = React.useState(1);
   
-    const handleClick = () => {
-      console.info(`You clicked ${options[selectedIndex]}`);
+    const handleChange = event => {
+      setAge(event.target.value);
     };
   
-    const handleMenuItemClick = (event, index) => {
-      setSelectedIndex(index);
+    const handleClose = () => {
       setOpen(false);
     };
   
-    const handleToggle = () => {
-      setOpen(prevOpen => !prevOpen);
+    const handleOpen = () => {
+      setOpen(true);
     };
   
-    const handleClose = event => {
-      if (anchorRef.current && anchorRef.current.contains(event.target)) {
-        return;
-      }
   
-      setOpen(false);
-    };
-
     return(
         <div className='classes.root'>
             Criteria
-
-            <Grid container direction="column" alignItems="center">
-                <Grid item xs={12}>
-                    <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
-                    <Button onClick={handleClick}>{options[selectedIndex]}</Button>
-                    <Button
-                        color="primary"
-                        size="small"
-                        aria-controls={open ? 'split-button-menu' : undefined}
-                        aria-expanded={open ? 'true' : undefined}
-                        aria-label="select merge strategy"
-                        aria-haspopup="menu"
-                        onClick={handleToggle}
-                    >
-                        <ArrowDropDownIcon />
-                    </Button>
-                    </ButtonGroup>
-                    <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-                    {({ TransitionProps, placement }) => (
-                        <Grow
-                        {...TransitionProps}
-                        style={{
-                            transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom',
-                        }}
-                        >
-                        <Paper>
-                            <ClickAwayListener onClickAway={handleClose}>
-                            <MenuList id="split-button-menu">
-                                {options.map((option, index) => (
-                                <MenuItem
-                                    key={option}
-                                    disabled={index === 2}
-                                    selected={index === selectedIndex}
-                                    onClick={event => handleMenuItemClick(event, index)}
-                                >
-                                    {option}
-                                </MenuItem>
-                                ))}
-                            </MenuList>
-                            </ClickAwayListener>
-                        </Paper>
-                        </Grow>
-                    )}
-                    </Popper>
-                </Grid>
-            </Grid>
+            <FormControl className={classes.formControl}>
+                <InputLabel id="demo-controlled-open-select-label">Select</InputLabel>
+                <Select
+                labelId="demo-controlled-open-select-label"
+                id="demo-controlled-open-select"
+                open={open}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                value={age}
+                onChange={handleChange}
+                >
+                <MenuItem value="">
+                    <em>None</em>
+                </MenuItem>
+                <MenuItem value={10}>Containing</MenuItem>
+                <MenuItem value={20}>Other</MenuItem>
+                <MenuItem value={30}>Another one</MenuItem>
+                </Select>
+            </FormControl>
+            
         </div>   
     )
 }
 
 export default CriteriaDropDown;
-
-
-// https://material-ui.com/components/button-group/
