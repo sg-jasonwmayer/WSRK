@@ -32,7 +32,6 @@ const OptimizedFilter = () => {
                     <FormControlLabel value="UnOptimizedOnly" control={<Radio />} label="UnOptimized Only" />
                 </RadioGroup>
             </FormControl>
-    
         </div>   
     )
 }

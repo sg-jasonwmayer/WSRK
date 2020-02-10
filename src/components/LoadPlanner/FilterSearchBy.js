@@ -1,45 +1,63 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
+import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-    },
+  button: {
+    display: 'block',
+    marginTop: theme.spacing(2),
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
 }));
 
 const FilterSearchBy = () => {
     const classes = useStyles();
-    
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handleClick = event => {
-        setAnchorEl(event.currentTarget);
+    const [age, setAge] = React.useState('');
+    const [open, setOpen] = React.useState(false);
+  
+    const handleChange = event => {
+      setAge(event.target.value);
     };
-
+  
     const handleClose = () => {
-        setAnchorEl(null);
+      setOpen(false);
     };
+  
+    const handleOpen = () => {
+      setOpen(true);
+    };
+  
+  
     return(
         <div className='classes.root'>
-            Filter Search by
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                Ship To
-                <ArrowDropDownIcon />
-            </Button>
-            <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
+            Filter Search By
+            <FormControl className={classes.formControl}>
+                <InputLabel id="demo-controlled-open-select-label">Ship to</InputLabel>
+                <Select
+                labelId="demo-controlled-open-select-label"
+                id="demo-controlled-open-select"
+                open={open}
                 onClose={handleClose}
-            >
-                <MenuItem onClick={handleClose}>Mill 2 - API</MenuItem>
-                <MenuItem onClick={handleClose}>Mill 2 - API</MenuItem>
-                <MenuItem onClick={handleClose}>Mill 3 - API</MenuItem>
-            </Menu>
+                onOpen={handleOpen}
+                value={age}
+                onChange={handleChange}
+                >
+                <MenuItem value="">
+                    <em>None</em>
+                </MenuItem>
+                <MenuItem value={10}>Mill 1</MenuItem>
+                <MenuItem value={20}>Mill 2</MenuItem>
+                <MenuItem value={30}>Mill 3</MenuItem>
+                </Select>
+            </FormControl>
+            
         </div>   
     )
 }
