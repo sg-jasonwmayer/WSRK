@@ -186,14 +186,14 @@ const Header = () => {
                                       <MenuIcon 
                                        color='primary' 
                                       />
-                                    </ IconButton>
-                                </ ClickAwayListener>
+                                    </IconButton>
+                                </ClickAwayListener>
                                 <Drawer
                                   className={classes.drawer}
                                   variant='persistent'
                                   anchor='left'
                                   open={open}
-                                  classes={{ paper: classes.drawerPaper }}
+                                  classes={{ paper: classes.drawerPaper}}
                                 >
                                     <div className={classes.drawerHeader}>
                                         <IconButton 
@@ -207,16 +207,18 @@ const Header = () => {
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <AccountTreeIcon />
-                                            </ ListItemIcon>
+                                            </ListItemIcon>
                                             <ListItemText 
-                                              primary={'Load Planner'} />
+                                              primary={'Load Planner'} 
+                                            />
                                         </ ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <SettingsIcon />
                                             </ ListItemIcon>
                                             <ListItemText 
-                                              primary={'Mill Preferences'} />
+                                              primary={'Mill Preferences'} 
+                                            />
                                         </ ListItem>
                                         <ListItem 
                                           button
@@ -225,7 +227,8 @@ const Header = () => {
                                                 <BarChartIcon />
                                             </ ListItemIcon>
                                             <ListItemText 
-                                              primary={'Reports'} />
+                                              primary={'Reports'} 
+                                            />
                                         </ ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
@@ -264,7 +267,7 @@ const Header = () => {
                             <Location 
                              className={classes.location}
                             />
-                        </ Grid>
+                        </Grid>
 {/* -------------------------------------------Right Container---------------------------------------- */}
                         <Grid 
                           item
@@ -275,23 +278,27 @@ const Header = () => {
                              color='inherit'
                              size='small'
                             />
-                             <UserName />
+                            <UserName />
                     
 
                             <IconButton
                              color='inherit'
                              size='small'
-                             className={clsx(classes.menuButton )}
+                             className={clsx(classes.menuButton)}
                             > 
-                                <NotificationsIcon color='action'/> 
+                                <NotificationsIcon 
+                                  color='action' 
+                                /> 
                             </IconButton>
                              
                             <IconButton
                              color='inherit'
                              size='small'
-                             className={clsx(classes.menuButton )}
+                             className={clsx(classes.menuButton)}
                             > 
-                              <EmailIcon color='action' />
+                              <EmailIcon 
+                                color='action' 
+                              />
                             </IconButton>
                         </Grid>
                     </Grid>
@@ -302,14 +309,13 @@ const Header = () => {
             <Grid 
              className={classes.quickAccessIconsContainer} 
             >
-
                 <Grid 
                  container
                  spacing={3}
                 >
                     <IconButton
                      size='small'
-                     className={clsx(classes.quickAccessIcons )}
+                     className={clsx(classes.quickAccessIcons)}
                     > 
                       <AccountTreeIcon />
                     </IconButton>
@@ -318,7 +324,7 @@ const Header = () => {
                 <Grid>
                     <IconButton
                      size='small'
-                     className={clsx(classes.quickAccessIcons )}
+                     className={clsx(classes.quickAccessIcons)}
                     > 
                       <SettingsIcon />
                     </IconButton>
@@ -327,7 +333,7 @@ const Header = () => {
                 <Grid>
                     <IconButton
                         size='small'
-                        className={clsx(classes.quickAccessIcons )}
+                        className={clsx(classes.quickAccessIcons)}
                     > 
                         <BarChartIcon />
                     </IconButton>                           
@@ -336,18 +342,18 @@ const Header = () => {
                 <Grid>
                     <IconButton
                         size='small'
-                        className={clsx(classes.quickAccessIcons )}
+                        className={clsx(classes.quickAccessIcons)}
                     > 
-                        <ExtensionIcon />
+                     <ExtensionIcon />
                     </IconButton>
                 </Grid>
 
                 <Grid>
                     <IconButton
-                        size='small'
-                        className={clsx(classes.quickAccessIcons )}
+                      size='small'
+                      className={clsx(classes.quickAccessIcons)}
                     > 
-                        <ShutterSpeedIcon />
+                      <ShutterSpeedIcon />
                     </IconButton>
                 </Grid>
             </Grid>

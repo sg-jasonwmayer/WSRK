@@ -12,24 +12,9 @@ import {
 
 import Admin from '../Admin';
 import Dashboard from '../Dashboard';
-// import ReportBuilder from '../ReportBuilder';
-// import GlobalSelector from '../GlobalSelector';
-// import LocationManagement from '../LocationManagement';
-// import Logout from '../Logout';
-// import Messages from '../Messages';
-// import OldReports from '../OldReports';
-// import Reports from '../Reports';
-// import ReportView from '../ReportView';
-// import Scheduler from '../Scheduler';
-// import Settings from '../Settings';
-// import OldSingleReport from '../OldSingleReport';
-// import Statements from '../Statements';
-// import Equipment from '../Equipment';
-// import TransactionFinder from '../TransactionFinder';
-// import HierarchySelector from '../HierarchySelector';
 import Documents from '../Documents';
 
-import './Main.scss';
+import './main.scss';
 
 class Main extends Component {
   constructor(props) {
@@ -54,25 +39,25 @@ class Main extends Component {
 
   handleCollapse() {
     this.setState({
-      isHierarchySelectorOverlayVisible: false,
+      isSelectorOverlayVisible: false,
     });
   }
 
   handleExpand() {
     this.setState({
-      isHierarchySelectorOverlayVisible: true,
+      isSelectorOverlayVisible: true,
     });
   }
 
   render() {
-    const { isHierarchySelectorOverlayVisible } = this.state;
+    const { isSelectorOverlayVisible } = this.state;
     const wrapperClass = classnames('center-section', this.props.overlayClass);
     const hasAdminPermissions = getAdminSectionAccess(this.props.parsedPermissions);
 
     return (
       <section className={wrapperClass}>
         <div className="global-filter-bar">
-          {isHierarchySelectorOverlayVisible && <div className="overlay" />}
+          {isSelectorOverlayVisible && <div className="overlay" />}
           <HierarchySelector
             onRefresh={this.handleRefresh}
             onCollapse={this.handleCollapse}
@@ -89,213 +74,48 @@ class Main extends Component {
         </div>
         <main role="main" className="main-content">
           <Switch>
-            {this.props.termsAccepted && <Route exact path="/" component={Dashboard} />}
-            {!this.props.termsAccepted && <Route exact path="/" component={DashboardLight} />}
-            <Route
-              path="/global-selector"
-              render={(props) => (
-                <GlobalSelector {...props} authRole={this.props.authRole} />
-              )}
-            />
-
-            {this.props.parsedPermissions.reports.canView &&
               <Route
-                path="/old-reports"
                 exact
+                path="/"
                 render={(props) => (
-                  <OldReports {...props} />
+                  <AppView 
+                    {...props} 
+                  />
                 )}
-              />}
-
-            {this.props.parsedPermissions.reports.canView &&
+              /> 
               <Route
                 path="/reports"
                 exact
                 render={(props) => (
-                  <Reports {...props} />
-                )}
-              />}
-            {this.props.parsedPermissions.reports.canView &&
-              <Route
-                path="/old-reports/:reportId(\d+)"
-                render={(props) => (
-                  <OldSingleReport {...props} authRole={this.props.authRole} />
-                )}
-              />}
-            {this.props.parsedPermissions.reports.canView &&
-              <Route
-                path="/reports/:reportId(\d+)"
-                render={(props) => (
-                  <ReportView {...props} authRole={this.props.authRole} />
-                )}
-              />}
-            {this.props.parsedPermissions.reports.canView &&
-              <Route
-                path="/report-view/:reportId(\d+)"
-                render={(props) => (
-                  <ReportView {...props} authRole={this.props.authRole} />
-                )}
-              />}
-            {this.props.parsedPermissions.reports.canView &&  // @todo : replace with canCreateCustomReport permission  when available
-              <Route
-                path="/report-builder/:reportId(\d+)"
-                render={(props) => (
-                  <ReportBuilder {...props} />
-                )}
-              />}
-            {this.props.parsedPermissions.reports.canView &&  // @todo : replace with canCreateCustomReport permission  when available
-              <Route
-                path="/report-builder"
-                render={(props) => (
-                  <ReportBuilder {...props} />
-                )}
-              />}
-            {
-              /* @todo, 2018-06-14 (vwilson@cardinalsolutions.com)
-                        scoped to canView reports for now, until canSchedule permissions
-                        is added to some test users
-              */
-              this.props.parsedPermissions.reports.canView &&
-              <Route
-                path="/schedule"
-                render={(props) => (
-                  <Scheduler {...props} />
+                  <Reports 
+                  {...props} 
+                  />
                 )}
               />
-            }
-            {this.props.parsedPermissions.personalInformation.canEdit &&
               <Route
-                path="/settings"
+                path="/loadplanner"
                 render={(props) => (
-                  <Settings {...props} authRole={this.props.authRole} />
+                  <LoadPlaner 
+                  {...props} 
+                  />
                 )}
               />
-            }
-
-            {this.props.parsedPermissions.merchants.canView &&
               <Route
-                path="/locations/management"
+                path="/mill-preferences"
                 render={(props) => (
-                  <LocationManagement {...props} />
+                  <MillPreferences 
+                  {...props} 
+                  authRole={this.props.authRole} 
+                  />
                 )}
               />
-            }
-
-            {this.props.parsedPermissions.merchants.canView &&
               <Route
-                path="/managelocations"
+                path="/som-tester"
                 render={(props) => (
-                  <LocationManagement {...props} />
-                )}
-              />
-            }
-
-            {this.props.parsedPermissions.merchants.canView &&
-              <Route
-                path="/locations/equipment"
-                render={(props) => (
-                  <Equipment {...props} />
-                )}
-              />
-            }
-
-            {/* @TODO currently, these all point to Admin. eventually they'll point to their own containers. */}
-            {hasAdminPermissions && <Route
-              path="/admin"
-              render={(props) => (
-                <Admin {...props} authRole={this.props.authRole} />
-              )}
-            />}
-            {hasAdminPermissions && <Route
-              path="/user-management"
-              render={(props) => (
-                <Admin {...props} authRole={this.props.authRole} />
-              )}
-            />}
-            {hasAdminPermissions && <Route
-              path="/manage-notifications"
-              render={(props) => (
-                <Admin {...props} authRole={this.props.authRole} />
-              )}
-            />}
-            {hasAdminPermissions && <Route
-              path="/banking-details"
-              render={(props) => (
-                <Admin {...props} authRole={this.props.authRole} />
-              )}
-            />}
-            {hasAdminPermissions && <Route
-              path="/add-statement-notice"
-              render={(props) => (
-                <Admin {...props} authRole={this.props.authRole} />
-              )}
-            />}
-
-            {this.props.parsedPermissions.transactions.canSearch &&
-              <Route
-                path="/transaction-finder"
-                render={(props) => (
-                  <TransactionFinder {...props} authRole={this.props.authRole} />
-                )}
-              />}
-
-            {this.props.parsedPermissions.statements.canView &&
-              <Route
-                path="/statements"
-                render={(props) => (
-                  <Statements key="merchant" {...props} userType={'merchant_statement_master'} />
-                )}
-              />}
-
-            {this.props.parsedPermissions.statements.canView &&
-              <Route
-                path="/chain-statements"
-                render={(props) => (
-                  <Statements key="chain" {...props} userType={'chain_statement_master'} />
-                )}
-              />}
-
-            {this.props.parsedPermissions.statements.canView &&
-              <Route
-                path="/reports/chain-aggregate"
-                render={(props) => (
-                  <Statements key="aggregate" {...props} userType={'chain_aggregate'} />
-                )}
-              />}
-            {/* @TODO currently, these all point to Messages. eventually they'll point to their own containers. */}
-            {<Route
-              path="/messages"
-              exact
-              render={(props) => (
-                <Messages {...props} />
-                )}
-            />}
-            {this.props.parsedPermissions.messages.canView && // @todo : replace with correct permission when available
-              <Route
-                path="/messages/notifications"
-                render={(props) => (
-                  <Messages {...props} authRole={this.props.authRole} />
-                )}
-              />}
-            {this.props.parsedPermissions.messages.canView && // @todo : replace with correct permission when available
-              <Route
-                path="/messages/statements"
-                render={(props) => (
-                  <Messages {...props} authRole={this.props.authRole} />
-                )}
-              />}
-            {
-              <Route
-                path="/messages/documents"
-                render={(props) => (
-                  <Documents {...props} />
-                )}
-              />}
-            {this.props.parsedPermissions.messages.canView && // @todo : replace with correct permission when available
-              <Route
-                path="/messages/images"
-                render={(props) => (
-                  <Messages {...props} authRole={this.props.authRole} />
+                  <SomTester 
+                    {...props} 
+                    authRole={this.props.authRole} 
+                  />
                 )}
               />}
 
