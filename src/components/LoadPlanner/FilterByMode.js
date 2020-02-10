@@ -7,12 +7,12 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const CriteriaDropDown = () => {
+const FilterByMode = () => {
     return(
         <div className='classes.root'>
-            Criteria
+            Filter By Mode
         </div>   
     )
 }
 
-export default CriteriaDropDown;
+export default FilterByMode;
