@@ -1,66 +1,43 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
+import { makeStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
-const GreenRadio = withStyles({
-  root: {
-    color: green[400],
-    '&$checked': {
-      color: green[600],
-    },
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(3),
   },
-  checked: {},
-})(props => <Radio color="default" {...props} />);
+}));
 
 const ColumnsToInclude = () => {
-    const [selectedValue, setSelectedValue] = React.useState('a');
+    const classes = useStyles();
 
+    const [value, setValue] = React.useState('female');
+  
     const handleChange = event => {
-      setSelectedValue(event.target.value);
+      setValue(event.target.value);
     };
-    
+
     return(
         <div className='classes.root'>
-            Columns to Include in Selection Data Grid
-            <Radio
-                checked={selectedValue === 'a'}
-                onChange={handleChange}
-                value="a"
-                name="radio-button-demo"
-                inputProps={{ 'aria-label': 'A' }}
-            />
-            <Radio
-                checked={selectedValue === 'b'}
-                onChange={handleChange}
-                value="b"
-                name="radio-button-demo"
-                inputProps={{ 'aria-label': 'B' }}
-            />
-            <GreenRadio
-                checked={selectedValue === 'c'}
-                onChange={handleChange}
-                value="c"
-                name="radio-button-demo"
-                inputProps={{ 'aria-label': 'C' }}
-            />
-            <Radio
-                checked={selectedValue === 'd'}
-                onChange={handleChange}
-                value="d"
-                color="default"
-                name="radio-button-demo"
-                inputProps={{ 'aria-label': 'D' }}
-            />
-            <Radio
-                checked={selectedValue === 'e'}
-                onChange={handleChange}
-                value="e"
-                color="default"
-                name="radio-button-demo"
-                inputProps={{ 'aria-label': 'E' }}
-                size="small"
-            />
+            <FormControl component="fieldset" className={classes.formControl}>
+                <FormLabel component="legend">Columns to Include in Selection Data Grid</FormLabel>
+                <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
+                    <FormControlLabel value="IncludeBoth" control={<Radio />} label="Interfaced Date" />
+                    <FormControlLabel value="OptimizedOnly" control={<Radio />} label="Interfaced User" />
+                    <FormControlLabel  control={<Radio />} label="Optimized User" />
+                    <FormControlLabel  control={<Radio />} label="IMill/Cust Preference" />
+                    <FormControlLabel  control={<Radio />} label="Last Vehicle Wt % Utilized" />
+                    <FormControlLabel  control={<Radio />} label="Last Vehicle Vol % Utilized" />
+                    <FormControlLabel  control={<Radio />} label="Total Rolls" />
+                    <FormControlLabel  control={<Radio />} label="Total Weight" />
+                    <FormControlLabel  control={<Radio />} label="Load Plan Name" />
+                </RadioGroup>
+            </FormControl>
         </div>   
     )
 }
