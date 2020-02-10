@@ -8,6 +8,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const FilterByMode = () => {
+    const classes = useStyles();
+    
     return(
         <div className='classes.root'>
             Filter By Mode

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -10,6 +11,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const FilterSearchBy = () => {
+    const classes = useStyles();
+    
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = event => {
@@ -24,6 +27,7 @@ const FilterSearchBy = () => {
             Filter Search by
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                 Ship To
+                <ArrowDropDownIcon />
             </Button>
             <Menu
                 id="simple-menu"

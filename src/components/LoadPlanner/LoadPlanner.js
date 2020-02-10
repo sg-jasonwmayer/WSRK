@@ -4,6 +4,7 @@ import FilterSearchBy from './FilterSearchBy';
 import CriteriaDropDown from './CriteriaDropDown';
 import ValueInputBox from './ValueInputBox';
 import FilterByMode from './FilterByMode';
+import OptimizedFilter from './OptimizedFilter';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -11,12 +12,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const LoadPlanner = () => {
+    const classes = useStyles();
+
     return(
         <div className='classes.root'>
             <FilterSearchBy />
             <CriteriaDropDown />
             <ValueInputBox />
             <FilterByMode />
+            <OptimizedFilter />
         </div>   
     )
 }
