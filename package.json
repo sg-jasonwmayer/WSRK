@@ -9,6 +9,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "classnames": "^2.2.6",
     "contentful": "^7.12.0",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
@@ -20,18 +21,10 @@
     "typeface-roboto": "0.0.75",
     "typescript": "^3.7.5"
   },
-  "jest": {
-  
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "identity-obj-proxy"
-    }
-   
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -14,18 +14,17 @@ import logo from '../../assets/westRockLogo.png';
 import AppView  from '../AppView';
 import LogOut from '../LogOut';
 import LoadPlaner from '../LoadPlanner';
-import Header from '../Header';
+import Header from '../../Components/Header';
 import Reports from '../Reports';
 import MillPlan from '../MillPlan';
 import SomTester from '../SomTester';
 import LoadPlanSelector from '../LoadPlanSelector';
 
-import './main.scss';
+import './Main.scss';
 
 class Main extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       isSelectorOverlayVisible: false,
     };
