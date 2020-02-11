@@ -73,9 +73,17 @@ class Main extends Component {
           />
         </div> 
         <div className="mobile-message">
-          <svg version="1.1" id="mobile-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1366 912">
-            <img src={logo} />
-            <path d="M1288.3,441.7v28.6h-28.6v-28.6H1288.3 M1296.3,433.7h-44.6v44.6h44.6V433.7L1296.3,433.7z" />
+          <svg 
+            version="1.1" 
+            id="mobile-svg" 
+            xmlns="http://www.w3.org/2000/svg" 
+            x="0px" 
+            y="0px" 
+            viewBox="0 0 1366 912"
+          >
+            <img 
+              src={logo} 
+            />
           </svg>
           <p>This content must be viewed on a larger screen.<span>(Landscape iPad or larger.)</span></p>
         </div>
@@ -96,7 +104,7 @@ class Main extends Component {
                 exact
                 render={(props) => (
                   <Reports 
-                  {...props} 
+                    {...props} 
                   />
                 )}
               />
@@ -104,7 +112,7 @@ class Main extends Component {
                 path="/loadplanner"
                 render={(props) => (
                   <LoadPlaner 
-                  {...props} 
+                    {...props} 
                   />
                 )}
               />
@@ -112,8 +120,8 @@ class Main extends Component {
                 path="/mill-plan"
                 render={(props) => (
                   <MillPlan 
-                  {...props} 
-                  authRole={this.props.authRole} 
+                    {...props} 
+                  millName={this.props.millName} 
                   />
                 )}
               />
@@ -122,7 +130,7 @@ class Main extends Component {
                 render={(props) => (
                   <SomTester 
                     {...props} 
-                    authRole={this.props.authRole} 
+                    userID={this.props.userID} 
                   />
                 )}
               />
@@ -144,13 +152,15 @@ class Main extends Component {
 export default Main;
 
 Main.propTypes = {
-  authRole: PropTypes.object,
+  millName: PropTypes.string.isRequired,
+  userID: PropTypes.string.isRequired,
   overlayClass: PropTypes.string.isRequired,
   parsedPermissions: PropTypes.object.isRequired,
   termsAccepted: PropTypes.bool.isRequired,
 };
 
 Main.defaultProps = {
-  authRole: {},
+  userID: "",
+  millName: "Mill One",
   termsAccepted: false,
 };

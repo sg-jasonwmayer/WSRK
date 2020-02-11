@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, test, expect } from '@testing-library/react';
 import Reports from './Reports';
 
-test.skip('renders learn react link', () => {
+test.skip('Renders Component to the DOM', () => {
   const { getByText } = render(<Reports />);
   expect(getByText).toBeInTheDocument();
 });
