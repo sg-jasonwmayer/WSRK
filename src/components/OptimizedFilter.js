@@ -97,9 +97,9 @@ const OptimizedFilter = () => {
                 <FormControlLabel value="IncludeBoth" control={<Radio />} label="Include Both" />
               </StyledMenuItem>
 
-              <styledMenuItem>
+              <StyledMenuItem>
                 <FormControlLabel value="OptimizedOnly" control={<Radio />} label="Optimized Only" />
-              </styledMenuItem>
+              </StyledMenuItem>
               
               <StyledMenuItem>
                 <FormControlLabel value="UnOptimizedOnly" control={<Radio />} label="UnOptimized Only" />
