@@ -8,9 +8,9 @@ import 'typeface-roboto';
 const App = () => {
   return (
     <div> 
-      <LoadPlanner />
       {/* <ApiTest /> */}
       <AppView />
+      <LoadPlanner />
     </div>
   );
 }

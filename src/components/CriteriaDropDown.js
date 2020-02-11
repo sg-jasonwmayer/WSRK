@@ -1,4 +1,5 @@
 import React from 'react';
+import ValueInputBox from './ValueInputBox';
 import { makeStyles } from '@material-ui/core/styles';
 import { InputLabel,
          MenuItem,
@@ -34,7 +35,6 @@ const CriteriaDropDown = () => {
       setOpen(true);
     };
   
-  
     return(
         <div className='classes.root'>
             Criteria
@@ -57,7 +57,8 @@ const CriteriaDropDown = () => {
                 <MenuItem value={30}>Another one</MenuItem>
                 </Select>
             </FormControl>
-            
+
+            <ValueInputBox />
         </div>   
     )
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, test, expect } from '@testing-library/react';
-import Header from './Header';
+import Main from './Main';
 
-test('renders component', () => {
-  const { getByText } = render(<Header />);
+test('Renders Component to the DOM', () => {
+  const { getByText } = render(<Main />);
   expect(getByText).toBeInTheDocument();
 });

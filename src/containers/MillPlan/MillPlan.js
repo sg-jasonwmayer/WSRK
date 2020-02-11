@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Logout = () => {
+const MillPlan = () => {
     return (
       <div> 
-        LogOut  
+        Mill Plan
       </div>
     );
   }
   
 
-export default Logout;
+export default MillPlan;

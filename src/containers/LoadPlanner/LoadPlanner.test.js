@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, test, expect } from '@testing-library/react';
 import LoadPlanner from './LoadPlanner';
 
-test.skip('renders learn react link', () => {
+test('Renders Component to the DOM', () => {
   const { getByText } = render(<LoadPlanner />);
-  expect(getByText).toBeInTheDocument();
+  expect(getByText).toBeInTheDocument("LoadPlanner");
 });
