@@ -1,6 +1,6 @@
 import React from 'react';
 import LoadPlanner from './containers/LoadPlanner/LoadPlanner';
-// import ApiTest from './components/ApiTest/ApiTest';
+// import ApiTest from './components/Api/Api';
 import AppView from './containers/AppView/AppView';
 
 import 'typeface-roboto';
