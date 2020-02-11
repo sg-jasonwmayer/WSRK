@@ -21,11 +21,12 @@
     "typescript": "^3.7.5"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>test/setup.js",
+  
     "moduleNameMapper": {
-      "^components(.*)$": "<rootDir>/src/components$1"
-    },
-    "verbose": true
+      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+   
   },
   "scripts": {
     "start": "react-scripts start",
