@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ApiTest = () =>  {
+const Api = () =>  {
     const [useMills, setMills] = useState([]);
     const mills = 'http://ms00015080d:7050/api/userpreferences/fhenao';
     const loadedMills = [];
@@ -17,8 +17,8 @@ const ApiTest = () =>  {
             }
 
             setMills(loadedMills);
-            console.log(loadedMills[0]);
-            console.log(useMills)
+            // console.log(loadedMills[0]);
+            // console.log(useMills)
         })
     }, [loadedMills, useMills]);
    
@@ -29,4 +29,4 @@ const ApiTest = () =>  {
     )
 }
 
-export default ApiTest;
+export default Api;
