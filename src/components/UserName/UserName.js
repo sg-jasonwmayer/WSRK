@@ -12,7 +12,7 @@ import axios from 'axios';
 
 import './UserName.scss'
 
-const fhenao = 'http://ms00015080d:7050/api/userpreferences/fhenao';
+const fhenao = 'http://ms00015080d:7050/api/userpreferences/mill/fhenao';
 
 let userName = '';
 let units = '';

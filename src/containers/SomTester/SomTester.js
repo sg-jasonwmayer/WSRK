@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Logout = () => {
+const SomTester = () => {
     return (
       <div> 
-        LogOut  
+        Som Tester
       </div>
     );
   }
   
 
-export default Logout;
+export default SomTester;

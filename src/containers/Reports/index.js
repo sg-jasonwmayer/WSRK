@@ -1,1 +1,1 @@
-export { default } from './LoadPlanner';
+export { default } from './Reports';

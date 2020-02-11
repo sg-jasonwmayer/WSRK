@@ -1,9 +1,13 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import AppView from '../AppView/AppView';
+// import React from 'react';
+// import { 
+//   render,
+//   test,  
+//   expect
+//   } from '@testing-library/react';
+// import Api from './Api';
 
-test.skip('that the component renders on the page', () => {
-  const { getByText } = render(<AppView />);
-  const linkElement = getByText('Load Planner');
-  expect(linkElement).toBeInTheDocument();
-});
+// test('that the component renders on the page', () => {
+//  const { getByText } = render(<Api />);
+//   // const linkElement = getByText('Load Planner');
+//   expect(getByText).toBeInTheDocument();
+// });
