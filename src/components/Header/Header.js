@@ -195,7 +195,7 @@ const Header = () => {
                                   open={open}
                                   classes={{paper: classes.drawerPaper}}
                                 >
-                                    <div className={classes.drawerHeader}>
+                                    <div className='drawer-header'>
                                         <IconButton 
                                           onClick={drawerCloseHandler}
                                         >

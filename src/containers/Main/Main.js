@@ -13,8 +13,12 @@ import logo from '../../assets/westRockLogo.png';
 
 import AppView  from '../AppView';
 import LogOut from '../LogOut';
-
-oadPlanSelector
+import LoadPlaner from '../LoadPlanner';
+import Header from '../Header';
+import Reports from '../Reports';
+import MillPlan from '../MillPlan';
+import SomTester from '../SomTester';
+import LoadPlanSelector from '../LoadPlanSelector';
 
 import './main.scss';
 
@@ -121,7 +125,7 @@ class Main extends Component {
                     authRole={this.props.authRole} 
                   />
                 )}
-              />}
+              />
 
             <Route
               path="/logout"
