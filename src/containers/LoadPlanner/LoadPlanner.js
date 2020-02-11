@@ -6,7 +6,6 @@ import OptimizedFilter from '../../components/OptimizedFilter';
 import ColumnsToInclude from '../../components/ColumnsToInclude';
 
 const LoadPlanner = () => {
-
     return(
         <div className='classes.root'>
             <FilterSearchBy />

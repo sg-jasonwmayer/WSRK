@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import axios from 'axios';
 
-
 import './Location.scss'
 
 const url = 'http://ms00015080d:7050/api/userpreferences/mill/fhenao';

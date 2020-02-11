@@ -52,9 +52,9 @@ const CriteriaDropDown = () => {
                 <MenuItem value="">
                     <em>None</em>
                 </MenuItem>
-                <MenuItem value={10}>Containing</MenuItem>
-                <MenuItem value={20}>Other</MenuItem>
-                <MenuItem value={30}>Another one</MenuItem>
+                <MenuItem value={10}>Starting With</MenuItem>
+                <MenuItem value={20}>Containing</MenuItem>
+                <MenuItem value={30}>Ending With</MenuItem>
                 </Select>
             </FormControl>
 
