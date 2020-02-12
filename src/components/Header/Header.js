@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { 
     ClickAwayListener, 
     AppBar, 
@@ -11,12 +10,10 @@ import {
     ListItemIcon, 
     ListItemText, 
     ListItem, 
-    IconButton 
-} from '@material-ui/core';
+    IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useTheme } from '@material-ui/core/styles';
-
-
+import clsx from 'clsx';
+import {  useTheme } from '@material-ui/core/styles';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
@@ -26,18 +23,16 @@ import ShutterSpeedIcon from '@material-ui/icons/ShutterSpeed';
 import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-
-import clsx from 'clsx';
-
 import logo from '../../assets/westRockLogo.png';
+
 import Location from '../Location/Location';
 import UserName from '../UserName/UserName';
 
 import './Header.scss'
 
 const drawerWidth = 290;
-
 const useStyles = makeStyles(theme => ({
     root: { 
       textAlign: "center",
