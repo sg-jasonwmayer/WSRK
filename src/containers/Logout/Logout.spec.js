@@ -1,5 +1,6 @@
-describe('My Test Suite', () => {
-    it('My Test Case', () => {
-      expect(true).toEqual(true);
-    });
+/* eslint-disable no-undef */
+describe('describe the rendered DOM node', () => {
+  it('Log Out Test', () => {
+    expect(true).toEqual(true);
   });
+});
