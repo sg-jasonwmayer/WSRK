@@ -24,7 +24,7 @@
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start": "react-scripts start",
     "test": "jest --config ./jest.config.json",
     "test:watch": "npm run test -- --watch"
   },
