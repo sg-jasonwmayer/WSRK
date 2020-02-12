@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef*/
+import React, { useState } from 'react';
 import {
   Switch,
   Route,
@@ -6,14 +8,13 @@ import {
 } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 
 
 import logo from '../../assets/westRockLogo.png';
 
 import AppView  from '../AppView';
 import LogOut from '../LogOut';
-import LoadPlaner from '../LoadPlanner';
+import LoadPlanner from '../LoadPlanner';
 import Header from '../../Components/Header';
 import Reports from '../Reports';
 import MillPlan from '../MillPlan';
@@ -22,53 +23,21 @@ import LoadPlanSelector from '../LoadPlanSelector';
 
 import './Main.scss';
 
-class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isSelectorOverlayVisible: false,
-    };
-
-    this.attachBindings();
-  }
-
-  attachBindings() {
-    this.handleRefresh = this.handleRefresh.bind(this);
-    this.handleCollapse = this.handleCollapse.bind(this);
-    this.handleExpand = this.handleExpand.bind(this);
-  }
-
-  handleRefresh() {
-    this.forceUpdate();
-  }
-
-  handleCollapse() {
-    this.setState({
-      isSelectorOverlayVisible: false,
-    });
-  }
-
-  handleExpand() {
-    this.setState({
-      isSelectorOverlayVisible: true,
-    });
-  }
-
-  render() {
-    const { isSelectorOverlayVisible } = this.state;
-    const wrapperClass = classnames('root', this.props.overlayClass);
+const main = props => {
+  const [ overlayState, setOverlayState ] = useState({
+    isSelectorOverlayVisible: true,
+  });
 
     return (
-      <section className={wrapperClass}>
-        <div className="appBar">
+      <section>
+        <div className="app-bar">
           <Header />
         </div>
         <div>
-          {isSelectorOverlayVisible && <div className="overlay" />}
+          {isSelectorOverlayVisible ? <div className="overlay" /> : <div />}
           <LoadPlanSelector
-            onRefresh={this.handleRefresh}
-            onCollapse={this.handleCollapse}
-            onExpand={this.handleExpand}
+            click={setOverlayState}
+            onExpand={overlayState}
           />
         </div> 
         <div className="mobile-message">
@@ -108,9 +77,9 @@ class Main extends Component {
                 )}
               />
               <Route
-                path="/loadplanner"
+                path="/load-planner"
                 render={(props) => (
-                  <LoadPlaner 
+                  <LoadPlanner
                     {...props} 
                   />
                 )}
@@ -145,21 +114,22 @@ class Main extends Component {
         </main>
       </section>
     );
-  }
+  
 }
 
-export default Main;
+export default main;
 
-Main.propTypes = {
+
+main.propTypes = {
   millName: PropTypes.string.isRequired,
   userID: PropTypes.string.isRequired,
   overlayClass: PropTypes.string.isRequired,
-  parsedPermissions: PropTypes.object.isRequired,
-  termsAccepted: PropTypes.bool.isRequired,
+
 };
 
-Main.defaultProps = {
+main.defaultProps = {
   userID: "",
   millName: "Mill One",
   termsAccepted: false,
 };
+
