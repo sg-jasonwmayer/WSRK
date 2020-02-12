@@ -29,6 +29,8 @@ import logo from '../../assets/westRockLogo.png';
 
 import Location from '../Location/Location';
 import UserName from '../UserName/UserName';
+import OptimizedFilter from '../OptimizedFilter';
+import FilterByMode from '../FilterByMode';
 
 import './Header.scss'
 
@@ -99,7 +101,7 @@ const useStyles = makeStyles(theme => ({
     },
     drawerPaper: {
         width: drawerWidth,
-        height: "56%",
+        height: "100%",
     },
     drawerHeader: {
         display: "flex",
@@ -232,7 +234,7 @@ const Header = () => {
                                             <ListItemText 
                                               primary={"Scenario Builder"} 
                                             />
-                                        </ ListItem>
+                                        </ListItem>
                                         <ListItem 
                                           button>
                                             <ListItemIcon>
@@ -241,10 +243,18 @@ const Header = () => {
                                             <ListItemText 
                                              primary={"Som Tester"} 
                                             />
-                                        </ ListItem>
-                                    </ List>
+                                        </ListItem>
                                     <Divider />
-                                </ Drawer>
+                                        <ListItem>
+                                            <OptimizedFilter />
+                                        </ListItem>
+                                    <Divider />
+                                        <ListItem>
+                                            <FilterByMode />
+                                        </ListItem>
+
+                                    </List>
+                                </Drawer>
                             </div>  
                             <img 
                              src={logo} 

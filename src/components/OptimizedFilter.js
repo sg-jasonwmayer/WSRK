@@ -5,7 +5,6 @@ import {
   RadioGroup,
   FormControlLabel,
   FormControl,
-  FormLabel,
   Button,
   Menu,
   MenuItem
@@ -75,7 +74,6 @@ const OptimizedFilter = () => {
           aria-controls="customized-menu"
           aria-haspopup="true"
           variant="contained"
-          color="primary"
           onClick={handleClick}
         >
           Optimized Filter
