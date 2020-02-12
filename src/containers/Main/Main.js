@@ -1,44 +1,38 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef*/
-import React, { useState } from 'react';
+import React from 'react';
 import {
+  BrowserRouter as Router,
+  Redirect,
   Switch,
   Route,
-  Redirect,
-} from 'react-router-dom';
-
-import PropTypes from 'prop-types';
+} from "react-router-dom";
 
 
 import logo from '../../assets/westRockLogo.png';
 
 import AppView  from '../AppView';
-import LogOut from '../LogOut';
+import Logout from '../Logout';
 import LoadPlanner from '../LoadPlanner';
-import Header from '../../Components/Header';
-import Reports from '../Reports';
-import MillPlan from '../MillPlan';
-import SomTester from '../SomTester';
 import LoadPlanSelector from '../LoadPlanSelector';
+import MillPlan from '../MillPlan';
+import Reports from '../Reports';
+import SomTester from '../SomTester';
+
 
 import './Main.scss';
 
-const main = props => {
-  const [ overlayState, setOverlayState ] = useState({
-    isSelectorOverlayVisible: true,
-  });
 
+const main = () => {
+ 
     return (
       <section>
-        <div className="app-bar">
-          <Header />
+        <div className="root">
+        <AppView />
         </div>
         <div>
-          {isSelectorOverlayVisible ? <div className="overlay" /> : <div />}
-          <LoadPlanSelector
-            click={setOverlayState}
-            onExpand={overlayState}
-          />
+          <div className="overlay" /> 
+          <LoadPlanSelector />
         </div> 
         <div className="mobile-message">
           <svg 
@@ -51,9 +45,10 @@ const main = props => {
           >
             <img 
               src={logo} 
+              alt="Westrock Logo"
             />
           </svg>
-          <p>This content must be viewed on a larger screen.<span>(Landscape iPad or larger.)</span></p>
+          <p>This content must be viewed on a larger screen.<span>(Landscape Tablet or larger.)</span></p>
         </div>
 
         <main role="main" className="main-content">
@@ -102,11 +97,10 @@ const main = props => {
                   />
                 )}
               />
-
             <Route
               path="/logout"
               render={(props) => (
-                <LogOut {...props} />
+                <Logout {...props} />
               )}
             />
             <Redirect path="*" to="/" />
@@ -118,18 +112,3 @@ const main = props => {
 }
 
 export default main;
-
-
-main.propTypes = {
-  millName: PropTypes.string.isRequired,
-  userID: PropTypes.string.isRequired,
-  overlayClass: PropTypes.string.isRequired,
-
-};
-
-main.defaultProps = {
-  userID: "",
-  millName: "Mill One",
-  termsAccepted: false,
-};
-
