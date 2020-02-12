@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { 
     ClickAwayListener, 
     AppBar, 
@@ -11,12 +10,10 @@ import {
     ListItemIcon, 
     ListItemText, 
     ListItem, 
-    IconButton 
-} from '@material-ui/core';
+    IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useTheme } from '@material-ui/core/styles';
-
-
+import clsx from 'clsx';
+import {  useTheme } from '@material-ui/core/styles';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
@@ -26,118 +23,116 @@ import ShutterSpeedIcon from '@material-ui/icons/ShutterSpeed';
 import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-
-import clsx from 'clsx';
-
 import logo from '../../assets/westRockLogo.png';
+
 import Location from '../Location/Location';
 import UserName from '../UserName/UserName';
 
 import './Header.scss'
 
 const drawerWidth = 290;
-
 const useStyles = makeStyles(theme => ({
     root: { 
-      textAlign: 'center',
-      display: 'flex'
+      textAlign: "center",
+      display: "flex"
     },
     flex: {
-        display: 'flex'
+        display: "flex"
     },
     // logo:{
-    //     margin:'0', 
-    //     height: '30px', 
-    //     padding: '0',
-    //     marginLeft: '5vh'
+    //     margin:"0", 
+    //     height: "30px", 
+    //     padding: "0",
+    //     marginLeft: "5vh"
     // },
     appBar:{
-        backgroundColor: 'white',
-        position: 'fixed',
-        borderBottom: '5px solid #ff8200',
-        height: '7vh',
-        transition: theme.transitions.create(['margin', 'width'], {
+        backgroundColor: "white",
+        position: "fixed",
+        borderBottom: "5px solid #ff8200",
+        height: "7vh",
+        transition: theme.transitions.create(["margin", "width"], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
         }),
     },
     button: {
-        color: 'inherit'
+        color: "inherit"
     },
     rightContainer: {
-        alignItems: 'center',
-        display: 'flex',
-        justify: 'center',
-        justifyContent: 'flex-end'
+        alignItems: "center",
+        display: "flex",
+        justify: "center",
+        justifyContent: "flex-end"
     },
     centerContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center', 
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center", 
     },
     leftContainer:{
-        display: 'flex',
-        justifyContent:'flex-Start',
-        flexDirection: 'row',
-        justify: 'center'
+        display: "flex",
+        justifyContent:"flex-Start",
+        flexDirection: "row",
+        justify: "center"
     },
     appBarShift: {
         width: `calc(100% - ${drawerWidth}px)`,
         marginLeft: drawerWidth,
-        transition: theme.transitions.create(['margin', 'width'], {
+        transition: theme.transitions.create(["margin", "width"], {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
     },
     menuButton: {
-        margin: '0',
-        padding: '0'
+        margin: "0",
+        padding: "0"
     },
     hide: {
-        display: 'none',
+        display: "none",
     },
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
-        position: 'absolute'
+        position: "absolute"
     },
     drawerPaper: {
         width: drawerWidth,
-        height: '56%',
+        height: "56%",
     },
     drawerHeader: {
-        display: 'flex',
-        alignItems: 'center',
+        display: "flex",
+        alignItems: "center",
         padding: theme.spacing(0, 1),
         ...theme.mixins.toolbar,
-        justifyContent: 'flex-end',
+        justifyContent: "flex-end",
     },
     content: {
         flexGrow: 1,
         padding: theme.spacing(3),
-        transition: theme.transitions.create('margin', {
+        transition: theme.transitions.create("margin", {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
             }),
         marginLeft: -drawerWidth,
     },
     contentShift: {
-        transition: theme.transitions.create('margin', {
+        transition: theme.transitions.create("margin", {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
             }),
         marginLeft: 0,
     },
     quickAccessIconsContainer: {
-        paddingTop: '10vh',
-        borderRight: '2px'
+        paddingTop: "10vh",
+        borderRight: "2px"
     },
     quickAccessIcons: {
-        marginLeft: '2vh',
-        marginTop: '1vh',
-        color: 'gray',
-        opacity: '60%'
+        marginLeft: "2vh",
+        marginTop: "1vh",
+        color: "gray",
+        opacity: "60%"
     }
 }));
 
@@ -177,62 +172,65 @@ const Header = () => {
                                  onClickAway={outsideClickHandler}
                                 >
                                     <IconButton
-                                     color='inherit'
-                                     aria-label='open drawer'
+                                     color="inherit"
+                                     aria-label="open drawer"
                                      onClick={drawerOpenHandler}
-                                     edge='start'
+                                     edge="start"
                                      className={clsx(classes.menuButton, open && classes.hide)}
                                     >
                                       <MenuIcon 
-                                       color='primary' 
+                                       color="primary" 
                                       />
-                                    </ IconButton>
-                                </ ClickAwayListener>
+                                    </IconButton>
+                                </ClickAwayListener>
                                 <Drawer
                                   className={classes.drawer}
-                                  variant='persistent'
-                                  anchor='left'
+                                  variant="persistent"
+                                  anchor="left"
                                   open={open}
-                                  classes={{ paper: classes.drawerPaper }}
+                                  classes={{paper: classes.drawerPaper}}
                                 >
-                                    <div className={classes.drawerHeader}>
+                                    <div className='drawer-header'>
                                         <IconButton 
-                                          onClick={drawerCloseHandler}>
-                                          {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                                          onClick={drawerCloseHandler}
+                                        >
+                                          {theme.direction === "ltr" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                                         </IconButton>
                                     </div>
                                     <Divider />
-
                                     <List>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <AccountTreeIcon />
-                                            </ ListItemIcon>
+                                            </ListItemIcon>
                                             <ListItemText 
-                                              primary={'Load Planner'} />
-                                        </ ListItem>
+                                              primary={"Load Planner"} 
+                                            />
+                                        </ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <SettingsIcon />
-                                            </ ListItemIcon>
+                                            </ListItemIcon>
                                             <ListItemText 
-                                              primary={'Mill Preferences'} />
-                                        </ ListItem>
+                                              primary={"Mill Preferences"} 
+                                            />
+                                        </ListItem>
                                         <ListItem 
                                           button
                                         >
                                             <ListItemIcon>
-                                                <BarChartIcon />
-                                            </ ListItemIcon>
+                                              <BarChartIcon />
+                                            </ListItemIcon>
                                             <ListItemText 
-                                              primary={'Reports'} />
-                                        </ ListItem>
+                                              primary={"Reports"} 
+                                            />
+                                        </ListItem>
                                         <ListItem button>
                                             <ListItemIcon>
                                                 <ExtensionIcon />
-                                            </ ListItemIcon>
+                                            </ListItemIcon>
                                             <ListItemText 
-                                              primary={'Scenario Builder'} 
+                                              primary={"Scenario Builder"} 
                                             />
                                         </ ListItem>
                                         <ListItem 
@@ -241,7 +239,7 @@ const Header = () => {
                                              <ShutterSpeedIcon />
                                             </ListItemIcon>
                                             <ListItemText 
-                                             primary={'Som Tester'} 
+                                             primary={"Som Tester"} 
                                             />
                                         </ ListItem>
                                     </ List>
@@ -250,8 +248,8 @@ const Header = () => {
                             </div>  
                             <img 
                              src={logo} 
-                             alt='West Rock Logo' 
-                             className='logo'
+                             alt="West Rock Logo" 
+                             className="logo"
                            />
                         </Grid>
 
@@ -264,7 +262,7 @@ const Header = () => {
                             <Location 
                              className={classes.location}
                             />
-                        </ Grid>
+                        </Grid>
 {/* -------------------------------------------Right Container---------------------------------------- */}
                         <Grid 
                           item
@@ -272,62 +270,60 @@ const Header = () => {
                           className={classes.rightContainer}
                         >    
                             <IconButton
-                             color='inherit'
-                             size='small'
+                             color="inherit"
+                             size="small"
+                             className={clsx(classes.menuButton)}
                             />
-                             <UserName />
-                    
-
+                            <UserName />
                             <IconButton
-                             color='inherit'
-                             size='small'
-                             className={clsx(classes.menuButton )}
+                             color="inherit"
+                             size="small"
+                             className={clsx(classes.menuButton)}
                             > 
-                                <NotificationsIcon color='action'/> 
-                            </IconButton>
-                             
+                            <NotificationsIcon 
+                             color="action" 
+                            /> 
+                            </IconButton>     
                             <IconButton
-                             color='inherit'
-                             size='small'
-                             className={clsx(classes.menuButton )}
+                             color="inherit"
+                             size="small"
+                             className={clsx(classes.menuButton)}
                             > 
-                              <EmailIcon color='action' />
+                              <EmailIcon 
+                                color="action" 
+                              />
                             </IconButton>
                         </Grid>
                     </Grid>
                 </Toolbar>
             </AppBar>
-
             {/* ------------------------Icons below header (left) ------------ */}
             <Grid 
              className={classes.quickAccessIconsContainer} 
             >
-
                 <Grid 
                  container
-                 spacing={3}
+                 spacing={1}
                 >
                     <IconButton
-                     size='small'
-                     className={clsx(classes.quickAccessIcons )}
+                     size="small"
+                     className={clsx(classes.quickAccessIcons)}
                     > 
                       <AccountTreeIcon />
                     </IconButton>
                 </Grid>
-
                 <Grid>
                     <IconButton
-                     size='small'
-                     className={clsx(classes.quickAccessIcons )}
+                     size="small"
+                     className={clsx(classes.quickAccessIcons)}
                     > 
                       <SettingsIcon />
                     </IconButton>
                 </Grid>
-
                 <Grid>
                     <IconButton
-                        size='small'
-                        className={clsx(classes.quickAccessIcons )}
+                        size="small"
+                        className={clsx(classes.quickAccessIcons)}
                     > 
                         <BarChartIcon />
                     </IconButton>                           
@@ -335,19 +331,19 @@ const Header = () => {
 
                 <Grid>
                     <IconButton
-                        size='small'
-                        className={clsx(classes.quickAccessIcons )}
+                        size="small"
+                        className={clsx(classes.quickAccessIcons)}
                     > 
-                        <ExtensionIcon />
+                     <ExtensionIcon />
                     </IconButton>
                 </Grid>
 
                 <Grid>
                     <IconButton
-                        size='small'
-                        className={clsx(classes.quickAccessIcons )}
+                      size="small"
+                      className={clsx(classes.quickAccessIcons)}
                     > 
-                        <ShutterSpeedIcon />
+                      <ShutterSpeedIcon />
                     </IconButton>
                 </Grid>
             </Grid>

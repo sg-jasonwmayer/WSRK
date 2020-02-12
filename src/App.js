@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import ApiTest from './components/ApiTest/ApiTest';
+import AppView from './containers/AppView/AppView';
 
 import 'typeface-roboto';
 
@@ -8,8 +7,7 @@ import 'typeface-roboto';
 const App = () => {
   return (
     <div> 
-      <Header />
-      <ApiTest />
+      <AppView />
     </div>
   );
 }

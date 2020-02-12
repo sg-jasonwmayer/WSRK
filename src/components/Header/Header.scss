@@ -7,7 +7,7 @@
 .logo {
     margin: 0; 
     height: 30px; 
-    padding: 0;
+    padding-top: 5em;
     margin-left: 5vh;
 
 }
@@ -16,11 +16,14 @@
   .flex {
     display: flex;
 
-  .appBar {
-    background-color: white;
-    position: fixed;
-    border-bottom: 5px solid #ff8200;
-    height: 7vh;  
+    .app-bar {
+      padding-top: 205px;
+      background-color: white;
+      position: fixed;
+      border-bottom: 5px solid #ff8200;
+      height: 7vh;
+    
+    
 
     .button {
       color: inherit;
@@ -34,14 +37,57 @@
     }
     }
 }
+.MuiButtonBase-root {
+ margin-top: 5em;
 
+} 
     
 .logo {
     margin: 0; 
     height: 30px; 
-    padding: 0;
+    padding-top: 5px;
     margin-left: 5vh;
 
 }
+
+.app-bar {
+  padding-top: 205px;
+  background-color: white;
+  position: fixed;
+  border-bottom: 5px solid #ff8200;
+  height: 7vh;
+}
+
+.rightContainer {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  justify-items: center;
+}
+
+.button {
+  color: inherit;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  padding: 0 1;
+  justify-content: flex-end;
+
+}
+
+.drawer {
+  width: 30%;
+  flex-shrink: 0;
+  position: absolute;
+}
+
+.drawer-paper {
+  width: 100%;
+  height: 56%,
+}
+
+
 
 
