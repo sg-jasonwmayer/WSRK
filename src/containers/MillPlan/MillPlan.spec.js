@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 describe('describe the rendered DOM node', () => {
-  it('Log Out Test', () => {
+  it('Mill Plan Test', () => {
     expect(true).toEqual(true);
   });
 });

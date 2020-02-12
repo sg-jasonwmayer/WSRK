@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-describe('My Test Suite', () => {
-    it('My Test Case', () => {
+describe('describe', () => {
+    it('api test', () => {
       expect(true).toEqual(true);
     });
   });
