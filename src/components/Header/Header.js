@@ -1,4 +1,10 @@
 import React from 'react';
+
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
+  
 import { 
     ClickAwayListener, 
     AppBar, 
@@ -153,7 +159,7 @@ const Header = () => {
         setOpen(false);
       };
  
-    return (
+    return ( 
         <div className={classes.root}>
             <AppBar 
               className={classes.appBar}
@@ -199,40 +205,53 @@ const Header = () => {
                                     </div>
                                     <Divider />
                                     <List>
+                                    <Router>
+                                        <nav>
+                                        <Link to="/load-planner">
                                         <ListItem button>
-                                            <ListItemIcon>
-                                                <AccountTreeIcon />
+                                            <ListItemIcon>                                       
+                                                <AccountTreeIcon /> 
                                             </ListItemIcon>
                                             <ListItemText 
                                               primary={"Load Planner"} 
                                             />
                                         </ListItem>
+                                        </Link>   
+                                        <Link to="/mill-preferences">  
                                         <ListItem button>
                                             <ListItemIcon>
-                                                <SettingsIcon />
-                                            </ListItemIcon>
+                                              <SettingsIcon />
+                                            </ ListItemIcon>
                                             <ListItemText 
                                               primary={"Mill Preferences"} 
-                                            />
+                                            />    
                                         </ListItem>
+                                        </Link> 
+                                        <Link to="/reports"> 
                                         <ListItem 
                                           button
                                         >
-                                            <ListItemIcon>
-                                              <BarChartIcon />
-                                            </ListItemIcon>
-                                            <ListItemText 
-                                              primary={"Reports"} 
-                                            />
+                                          <ListItemIcon>
+                                        
+                                            <BarChartIcon />
+                                     
+                                          </ListItemIcon>
+                                          <ListItemText 
+                                            primary={"Reports"} 
+                                          />
                                         </ListItem>
+                                        </Link>
+                                        <Link to="/scenario-builder"> 
                                         <ListItem button>
                                             <ListItemIcon>
-                                                <ExtensionIcon />
+                                              <ExtensionIcon />
                                             </ListItemIcon>
                                             <ListItemText 
                                               primary={"Scenario Builder"} 
                                             />
                                         </ ListItem>
+                                        </Link>
+                                        <Link to="/som-tester"> 
                                         <ListItem 
                                           button>
                                             <ListItemIcon>
@@ -242,7 +261,10 @@ const Header = () => {
                                              primary={"Som Tester"} 
                                             />
                                         </ ListItem>
-                                    </ List>
+                                        </Link>
+                                        </nav>
+                                        </Router>
+                                         </ List>
                                     <Divider />
                                 </ Drawer>
                             </div>  
@@ -298,6 +320,7 @@ const Header = () => {
                 </Toolbar>
             </AppBar>
             {/* ------------------------Icons below header (left) ------------ */}
+            <Router>
             <Grid 
              className={classes.quickAccessIconsContainer} 
             >
@@ -305,49 +328,58 @@ const Header = () => {
                  container
                  spacing={1}
                 >
+                <Link to="/load-planner">
                     <IconButton
                      size="small"
                      className={clsx(classes.quickAccessIcons)}
                     > 
                       <AccountTreeIcon />
                     </IconButton>
+                    </Link> 
                 </Grid>
                 <Grid>
+                <Link to="/mill-preferences"> 
                     <IconButton
                      size="small"
                      className={clsx(classes.quickAccessIcons)}
                     > 
                       <SettingsIcon />
                     </IconButton>
+                    </Link> 
                 </Grid>
                 <Grid>
+                <Link to="/reports"> 
                     <IconButton
                         size="small"
                         className={clsx(classes.quickAccessIcons)}
                     > 
                         <BarChartIcon />
-                    </IconButton>                           
+                    </IconButton>  
+                    </Link>                         
                 </Grid>
-
                 <Grid>
+                <Link to="/scenario-builder"> 
                     <IconButton
                         size="small"
                         className={clsx(classes.quickAccessIcons)}
                     > 
                      <ExtensionIcon />
                     </IconButton>
+                    </Link>
                 </Grid>
-
                 <Grid>
+                <Link to="/som-tester"> 
                     <IconButton
                       size="small"
                       className={clsx(classes.quickAccessIcons)}
                     > 
                       <ShutterSpeedIcon />
                     </IconButton>
+                 </Link>
                 </Grid>
-            </Grid>
 
+            </Grid>
+            </Router>
         </div>
     )
 }
