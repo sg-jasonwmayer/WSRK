@@ -37,16 +37,6 @@ const StyledMenu = withStyles({
   />
 ));
 
-const StyledMenuItem = withStyles(theme => ({
-  root: {
-    '&:focus': {
-      backgroundColor: theme.palette.primary.main,
-      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-        color: theme.palette.common.white,
-      },
-    },
-  },
-}))(MenuItem);
 
 const FilterByMode = () => {
 
@@ -61,27 +51,32 @@ const FilterByMode = () => {
     return(
       <div className='classes.root'>
       <FormControl component="fieldset" className={classes.formControl}>
-         
           <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
-              <StyledMenuItem>
-                <FormControlLabel value="All" control={<Radio />} label="All" />
-              </StyledMenuItem>
-
-              <StyledMenuItem>
-                <FormControlLabel value="Truck" control={<Radio />} label="Truck" />
-              </StyledMenuItem>
-              
-              <StyledMenuItem>
-                <FormControlLabel value="Rail" control={<Radio />} label="Rail" />
-              </StyledMenuItem>
-
-              <StyledMenuItem>
-                <FormControlLabel value="Container" control={<Radio />} label="Container" />
-              </StyledMenuItem>
-
-              <StyledMenuItem>
-                <FormControlLabel value="ContainerOnChasis" control={<Radio />} label="Container On Chasis" />
-              </StyledMenuItem>
+                <FormControlLabel 
+                  value="All" 
+                  control={<Radio />} 
+                  label="All" 
+                />
+                <FormControlLabel 
+                  value="Truck" 
+                  control={<Radio />} 
+                  label="Truck" 
+                /> 
+                <FormControlLabel 
+                  value="Rail" 
+                  control={<Radio />} 
+                  label="Rail" 
+                />
+                <FormControlLabel 
+                  value="Container" 
+                  control={<Radio />} 
+                  label="Container" 
+                />
+                <FormControlLabel 
+                  value="ContainerOnChasis" 
+                  control={<Radio />} 
+                  label="Container On Chasis" 
+                />
              </RadioGroup>
               </FormControl>
       </div>   

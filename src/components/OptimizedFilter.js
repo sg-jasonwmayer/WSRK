@@ -5,8 +5,7 @@ import {
   RadioGroup,
   FormControlLabel,
   FormControl,
-  Menu,
-  MenuItem
+  Menu
 } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
@@ -36,43 +35,34 @@ const StyledMenu = withStyles({
   />
 ));
 
-const StyledMenuItem = withStyles(theme => ({
-  root: {
-    '&:focus': {
-      backgroundColor: theme.palette.primary.main,
-      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-        color: theme.palette.common.white,
-      },
-    },
-  },
-}))(MenuItem);
 
 const OptimizedFilter = () => {
    
     const classes = useStyles();
-
-    const [value, setValue] = React.useState('');
-  
-    const handleChange = event => {
+    const [value, setValue] = React.useState('');  
+    const handleChange = event => {   
       setValue(event.target.value);
     };
 
     return(
-
       <div className='classes.root'>
       <FormControl component="fieldset" className={classes.formControl}>
           <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
-
-              <StyledMenuItem>
-                <FormControlLabel value="IncludeBoth" control={<Radio />} label="Include Both" />
-              </StyledMenuItem>
-              <StyledMenuItem>
-                <FormControlLabel value="OptimizedOnly" control={<Radio />} label="Optimized Only" />
-              </StyledMenuItem> 
-              <StyledMenuItem>
-                <FormControlLabel value="UnOptimizedOnly" control={<Radio />} label="UnOptimized Only" />
-              </StyledMenuItem>
-
+                <FormControlLabel 
+                  value="IncludeBoth" 
+                  control={<Radio />} 
+                  label="Include Both" 
+                />
+                <FormControlLabel 
+                  value="OptimizedOnly" 
+                  control={<Radio />} 
+                  label="Optimized Only" 
+                />
+                <FormControlLabel 
+                  value="UnOptimizedOnly" 
+                  control={<Radio />} 
+                  label="UnOptimized Only" 
+                />
             </RadioGroup>
           </FormControl>
       
