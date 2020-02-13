@@ -276,11 +276,13 @@ const Header = () => {
                                             </Collapsible>
                                         </ListItem>
                                     <Divider />
-                                            <Collapsible trigger="Another Filter Item">
-                                            <p>This is the collapsible content.</p>
-                                            <p>Add your content here</p>
-                                            </Collapsible>
-                                    <Divider />
+                                            <Collapsible trigger="Filters">
+                                            <FilterByMode />
+                                            </ Collapsible>
+                                            <Divider />
+                                            <Collapsible trigger="Filters">
+                                            <OptimizedFilter />
+                                            </ Collapsible>
                                     </List>
                                 </Drawer>
                             </div>  
