@@ -2,7 +2,8 @@ import React from 'react';
 
 import {
     BrowserRouter as Router,
-    Link
+    Link,
+    NavLink
   } from "react-router-dom";
   
 import { 
@@ -47,12 +48,6 @@ const useStyles = makeStyles(theme => ({
     flex: {
         display: "flex"
     },
-    // logo:{
-    //     margin:"0", 
-    //     height: "30px", 
-    //     padding: "0",
-    //     marginLeft: "5vh"
-    // },
     appBar:{
         backgroundColor: "white",
         position: "fixed",
@@ -368,14 +363,14 @@ const Header = () => {
                     </Link>
                 </Grid>
                 <Grid>
-                <Link to="/som-tester"> 
+                <NavLink to="/som-tester"> 
                     <IconButton
                       size="small"
                       className={clsx(classes.quickAccessIcons)}
                     > 
                       <ShutterSpeedIcon />
                     </IconButton>
-                 </Link>
+                 </NavLink>
                 </Grid>
 
             </Grid>

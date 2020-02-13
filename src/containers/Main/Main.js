@@ -2,7 +2,6 @@
 /* eslint-disable no-undef*/
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Redirect,
   Switch,
   Route,
