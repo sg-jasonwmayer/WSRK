@@ -30,6 +30,8 @@ import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
+import Collapsible from 'react-collapsible';
+
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import logo from '../../assets/westRockLogo.png';
 
@@ -266,6 +268,10 @@ const Header = () => {
                                         </Router>
                                          </ List>
                                     <Divider />
+                                    <Collapsible trigger="Start here">
+                                      <p>This is the collapsible content. It can be any element or React component you like.</p>
+                                      <p>It can even be another Collapsible component. Check out the next section!</p>
+                                    </Collapsible>
                                 </ Drawer>
                             </div>  
                             <img 

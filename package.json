@@ -13,6 +13,8 @@
     "contentful": "^7.12.0",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
+    "react-accordion-with-header": "^0.1.2",
+    "react-collapsible": "^2.6.2",
     "react-dom": "^16.12.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
