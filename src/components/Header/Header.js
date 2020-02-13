@@ -275,7 +275,10 @@ const Header = () => {
                                       <p>Check out the next section!</p>
                                     </Collapsible>
                                     <Divider />
-                                    <Collapsible trigger="Another Filter Item">
+                                    <Collapsible 
+                                    trigger="Another Filter Item"
+                                    onClick={drawerCloseHandler}
+                                    >
                                       <p>This is the collapsible content.</p>
                                       <p>Add your content here</p>
                                     </Collapsible>

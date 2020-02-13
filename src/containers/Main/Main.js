@@ -11,10 +11,10 @@ import {
 
 import logo from '../../assets/westRockLogo.png';
 
-import AppView  from '../AppView';
+
 import Logout from '../Logout';
 import LoadPlanner from '../LoadPlanner';
-import LoadPlanSelector from '../LoadPlanSelector';
+// import LoadPlanSelector from '../LoadPlanSelector';
 import MillPlan from '../MillPlan';
 import Reports from '../Reports';
 import SomTester from '../SomTester';
@@ -23,38 +23,11 @@ import SomTester from '../SomTester';
 import './Main.scss';
 
 
-const main = () => {
- 
+const Main = () => {
     return (
-      <section>
-        <div className="root">
-        <AppView />
-        </div>
-        <div>
-          <div className="overlay" /> 
-          <LoadPlanSelector />
-        </div> 
-        <div className="mobile-message">
-       
-            <img 
-              src={logo} 
-              alt="Westrock Logo"
-            />
-      
-          <p>This content must be viewed on a larger screen.<span>(Landscape Tablet or larger.)</span></p>
-        </div>
-
         <main role="main" className="main-content">
           <Switch>
-              <Route
-                exact
-                path="/"
-                render={(props) => (
-                  <AppView 
-                    {...props} 
-                  />
-                )}
-              /> 
+         
               <Route
                 path="/reports"
                 exact
@@ -99,9 +72,9 @@ const main = () => {
             <Redirect path="*" to="/" />
           </Switch>
         </main>
-      </section>
+     
     );
   
 }
 
-export default main;
+export default Main;

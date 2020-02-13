@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Menu, MenuItem, Fade, Grid, IconButton } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
@@ -53,11 +54,11 @@ const Location = () => {
     useEffect(() => {
         axios.get(url)
         .then(resData => {
-            // eslint-disable-next-line react-hooks/exhaustive-deps
             tempMill = resData.data.mills[3].millName;
-            // console.log(resData.data.mills[3].millName);
+            //console.log(resData.data.mills[3].millName);
         })
     }, [tempMill]);
+ 
 
     return(
         <div

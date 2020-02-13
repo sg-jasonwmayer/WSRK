@@ -4,7 +4,7 @@ import React from 'react';
 const LoadPlanner = () => {
     return (
       <div> 
-        LoadPlanner  
+       LoadXpert
       </div>
     );
   }
