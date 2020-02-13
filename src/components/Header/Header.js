@@ -29,6 +29,7 @@ import ShutterSpeedIcon from '@material-ui/icons/ShutterSpeed';
 import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 import Collapsible from 'react-collapsible';
 
@@ -37,10 +38,13 @@ import logo from '../../assets/westRockLogo.png';
 
 import Location from '../Location/Location';
 import UserName from '../UserName/UserName';
+import OptimizedFilter from '../OptimizedFilter';
+import FilterByMode from '../FilterByMode';
+import ColumnsToInclude from '../ColumnsToInclude';
 
 import './Header.scss'
 
-const drawerWidth = 290;
+const drawerWidth = 390;
 const useStyles = makeStyles(theme => ({
     root: { 
       textAlign: "center",
@@ -107,7 +111,7 @@ const useStyles = makeStyles(theme => ({
     },
     drawerPaper: {
         width: drawerWidth,
-        height: "56%",
+        height: "100%",
     },
     drawerHeader: {
         display: "flex",
@@ -207,84 +211,78 @@ const Header = () => {
                                     </div>
                                     <Divider />
                                     <List>
-                                    <Router>
-                                        <nav>
-                                        <Link to="/load-planner">
-                                        <ListItem button>
-                                            <ListItemIcon>                                       
-                                                <AccountTreeIcon /> 
-                                            </ListItemIcon>
-                                            <ListItemText 
-                                              primary={"Load Planner"} 
-                                            />
-                                        </ListItem>
-                                        </Link>   
-                                        <Link to="/mill-preferences">  
-                                        <ListItem button>
-                                            <ListItemIcon>
-                                              <SettingsIcon />
-                                            </ ListItemIcon>
-                                            <ListItemText 
-                                              primary={"Mill Preferences"} 
-                                            />    
-                                        </ListItem>
-                                        </Link> 
-                                        <Link to="/reports"> 
-                                        <ListItem 
-                                          button
-                                        >
-                                          <ListItemIcon>
-                                        
-                                            <BarChartIcon />
-                                     
-                                          </ListItemIcon>
-                                          <ListItemText 
-                                            primary={"Reports"} 
-                                          />
-                                        </ListItem>
-                                        </Link>
-                                        <Link to="/scenario-builder"> 
-                                        <ListItem button>
-                                            <ListItemIcon>
-                                              <ExtensionIcon />
-                                            </ListItemIcon>
-                                            <ListItemText 
-                                              primary={"Scenario Builder"} 
-                                            />
-                                        </ ListItem>
-                                        </Link>
-                                        <Link to="/som-tester"> 
-                                        <ListItem 
-                                          button>
-                                            <ListItemIcon>
-                                             <ShutterSpeedIcon />
-                                            </ListItemIcon>
-                                            <ListItemText 
-                                             primary={"Som Tester"} 
-                                            />
-                                        </ ListItem>
-                                        </Link>
-                                        </nav>
+                                        <Router>
+                                            <nav>
+                                                <Link to="/load-planner">
+                                                    <ListItem button>
+                                                        <ListItemIcon>                                       
+                                                            <AccountTreeIcon /> 
+                                                        </ListItemIcon>
+                                                        <ListItemText 
+                                                        primary={"Load Planner"} 
+                                                        />
+                                                    </ListItem>
+                                                </Link>   
+                                                <Link to="/mill-preferences">  
+                                                    <ListItem button>
+                                                        <ListItemIcon>
+                                                        <SettingsIcon />
+                                                        </ ListItemIcon>
+                                                        <ListItemText 
+                                                        primary={"Mill Preferences"} 
+                                                        />    
+                                                    </ListItem>
+                                                </Link> 
+                                                <Link to="/reports"> 
+                                                    <ListItem 
+                                                    button
+                                                    >
+                                                    <ListItemIcon>
+                                                        <BarChartIcon />
+                                                    </ListItemIcon>
+                                                    <ListItemText 
+                                                        primary={"Reports"} 
+                                                    />
+                                                    </ListItem>
+                                                </Link>
+                                                <Link to="/scenario-builder"> 
+                                                    <ListItem button>
+                                                        <ListItemIcon>
+                                                        <ExtensionIcon />
+                                                        </ListItemIcon>
+                                                        <ListItemText 
+                                                        primary={"Scenario Builder"} 
+                                                        />
+                                                    </ ListItem>
+                                                </Link>
+                                                <Link to="/som-tester"> 
+                                                    <ListItem 
+                                                    button>
+                                                        <ListItemIcon>
+                                                        <ShutterSpeedIcon />
+                                                        </ListItemIcon>
+                                                        <ListItemText 
+                                                        primary={"Som Tester"} 
+                                                        />
+                                                    </ListItem>
+                                                </Link>
+                                            </nav>
                                         </Router>
-                                         </ List>
                                     <Divider />
-                                    <Collapsible 
-                                      trigger="Start here"
-                                      onClick={drawerCloseHandler}>
-                                      <p>This is the collapsible content.</p>
-                                      <p>Check out the next section!</p>
-                                    </Collapsible>
+                                        <ListItem>
+                                            <ArrowDropDownIcon />
+                                            <Collapsible trigger="Columns to Include in Selection Data Grid">
+                                                <ColumnsToInclude />
+                                            </Collapsible>
+                                        </ListItem>
                                     <Divider />
-                                    <Collapsible 
-                                    trigger="Another Filter Item"
-                                    onClick={drawerCloseHandler}
-                                    >
-                                      <p>This is the collapsible content.</p>
-                                      <p>Add your content here</p>
-                                    </Collapsible>
+                                            <Collapsible trigger="Another Filter Item">
+                                            <p>This is the collapsible content.</p>
+                                            <p>Add your content here</p>
+                                            </Collapsible>
                                     <Divider />
-
-                                </ Drawer>
+                                    </List>
+                                </Drawer>
                             </div>  
                             <Router>
                             <Link to="/"> 

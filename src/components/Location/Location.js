@@ -16,7 +16,7 @@ import {
 
 import './Location.scss'
 
-const url = 'http://ms00015080d:7050/api/userpreferences/fhenao';
+const url = 'http://ms00015080d:7050/api/userpreferences/mill/fhenao';
 
 const useStyles = makeStyles(theme => ({
     root: {

@@ -15,6 +15,8 @@ import LoadPlanner from '../LoadPlanner';
 import MillPlan from '../MillPlan';
 import Reports from '../Reports';
 import SomTester from '../SomTester';
+// import Api from '../../components/Api/Api';
+// import Main from '../Main/Main';
 
 
 const AppView = () => {
@@ -69,6 +71,8 @@ const AppView = () => {
      </Switch>
      </div>
      </Router>
+      {/* <Api />  */}
+      {/* <Main /> */}
     </div>
     
   );
