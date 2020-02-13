@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
         borderBottom: "5px solid #ff8200",
         height: "7vh",
         transition: theme.transitions.create(["margin", "width"], {
-        easing: theme.transitions.easing.sharp,
+        easing: theme.transitions.easingOut,
         duration: theme.transitions.duration.leavingScreen,
         }),
     },
@@ -120,7 +120,7 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1,
         padding: theme.spacing(3),
         transition: theme.transitions.create("margin", {
-            easing: theme.transitions.easing.sharp,
+          easing: theme.transitions.easing.easeIn,
             duration: theme.transitions.duration.leavingScreen,
             }),
         marginLeft: -drawerWidth,
@@ -268,7 +268,9 @@ const Header = () => {
                                         </Router>
                                          </ List>
                                     <Divider />
-                                    <Collapsible trigger="Start here">
+                                    <Collapsible 
+                                      trigger="Start here"
+                                      onClick={drawerCloseHandler}>
                                       <p>This is the collapsible content.</p>
                                       <p>Check out the next section!</p>
                                     </Collapsible>

@@ -35,19 +35,12 @@ const main = () => {
           <LoadPlanSelector />
         </div> 
         <div className="mobile-message">
-          <svg 
-            version="1.1" 
-            id="mobile-svg" 
-            xmlns="http://www.w3.org/2000/svg" 
-            x="0px" 
-            y="0px" 
-            viewBox="0 0 1366 912"
-          >
+       
             <img 
               src={logo} 
               alt="Westrock Logo"
             />
-          </svg>
+      
           <p>This content must be viewed on a larger screen.<span>(Landscape Tablet or larger.)</span></p>
         </div>
 
