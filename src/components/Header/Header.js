@@ -281,11 +281,15 @@ const Header = () => {
 
                                 </ Drawer>
                             </div>  
+                            <Router>
+                            <Link to="/"> 
                             <img 
                              src={logo} 
                              alt="West Rock Logo" 
                              className="logo"
                            />
+                           </ Link>
+                           </Router>
                         </Grid>
 
 {/* -------------------------------------------Center Container----------------------------------------*/}
