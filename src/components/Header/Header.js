@@ -225,8 +225,8 @@ const Header = () => {
                                                 <Link to="/mill-preferences">  
                                                     <ListItem button>
                                                         <ListItemIcon>
-                                                        <SettingsIcon />
-                                                        </ ListItemIcon>
+                                                            <SettingsIcon />
+                                                        </ListItemIcon>
                                                         <ListItemText 
                                                         primary={"Mill Preferences"} 
                                                         />    
@@ -252,13 +252,13 @@ const Header = () => {
                                                         <ListItemText 
                                                         primary={"Scenario Builder"} 
                                                         />
-                                                    </ ListItem>
+                                                    </ListItem>
                                                 </Link>
                                                 <Link to="/som-tester"> 
                                                     <ListItem 
                                                     button>
                                                         <ListItemIcon>
-                                                        <ShutterSpeedIcon />
+                                                            <ShutterSpeedIcon />
                                                         </ListItemIcon>
                                                         <ListItemText 
                                                         primary={"Som Tester"} 
@@ -269,29 +269,29 @@ const Header = () => {
                                         </Router>
                                     <Divider />
                                    
-                                            <Collapsible trigger="Columns to Include in Selection Data Grid">
-                                                <ColumnsToInclude />
-                                            </Collapsible>
                             
                                     <Divider />
-                                            <Collapsible trigger="Filter by Mode">
+                                        <Collapsible trigger="Filter by Mode">
                                             <FilterByMode />
-                                            </ Collapsible>
-                                            <Divider />
-                                            <Collapsible trigger="Optimized Filters">
+                                        </Collapsible>
+                                        <Divider />
+                                        <Collapsible trigger="Optimized Filters">
                                             <OptimizedFilter />
-                                            </ Collapsible>
+                                        </ Collapsible>
+                                        <Collapsible trigger="Columns to Include in Selection Data Grid">
+                                            <ColumnsToInclude />
+                                        </Collapsible>
                                     </List>
                                 </Drawer>
                             </div>  
                             <Router>
-                            <Link to="/"> 
-                            <img 
-                             src={logo} 
-                             alt="West Rock Logo" 
-                             className="logo"
-                           />
-                           </ Link>
+                                <Link to="/"> 
+                                    <img 
+                                    src={logo} 
+                                    alt="West Rock Logo" 
+                                    className="logo"
+                                    />
+                                </ Link>
                            </Router>
                         </Grid>
 

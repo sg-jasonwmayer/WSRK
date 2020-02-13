@@ -1,5 +1,4 @@
 import React from 'react';
-import LoadPlanner from './containers/LoadPlanner/LoadPlanner';
 // import ApiTest from './components/Api/Api';
 import AppView from './containers/AppView/AppView';
 
@@ -10,7 +9,7 @@ const App = () => {
     <div> 
       {/* <ApiTest /> */}
       <AppView />
-      {/* <LoadPlanner /> */}
+
     </div>
   );
 }
