@@ -5,11 +5,10 @@ import {
   RadioGroup,
   FormControlLabel,
   FormControl,
-  Button,
+
   Menu,
   MenuItem
 } from '@material-ui/core';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -17,6 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+// eslint-disable-next-line no-unused-vars
 const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',
@@ -49,16 +49,6 @@ const StyledMenuItem = withStyles(theme => ({
 }))(MenuItem);
 
 const FilterByMode = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handleClick = event => {
-      setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
-    // --
 
     const classes = useStyles();
 
@@ -70,27 +60,9 @@ const FilterByMode = () => {
 
     return(
       <div className='classes.root'>
-        <Button
-          aria-controls="customized-menu"
-          aria-haspopup="true"
-          variant="contained"
-          onClick={handleClick}
-        >
-          Filter By Mode
-          <ArrowDropDownIcon 
-            />
-        </Button>
-
-        <StyledMenu
-          id="customized-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-          <FormControl component="fieldset" className={classes.formControl}>
-            <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
-
+      <FormControl component="fieldset" className={classes.formControl}>
+         
+          <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
               <StyledMenuItem>
                 <FormControlLabel value="All" control={<Radio />} label="All" />
               </StyledMenuItem>
@@ -110,10 +82,8 @@ const FilterByMode = () => {
               <StyledMenuItem>
                 <FormControlLabel value="ContainerOnChasis" control={<Radio />} label="Container On Chasis" />
               </StyledMenuItem>
-              
-            </RadioGroup>
-          </FormControl>
-        </StyledMenu>
+             </RadioGroup>
+              </FormControl>
       </div>   
     )
 }

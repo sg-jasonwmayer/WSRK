@@ -5,11 +5,9 @@ import {
   RadioGroup,
   FormControlLabel,
   FormControl,
-  Button,
   Menu,
   MenuItem
 } from '@material-ui/core';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -17,6 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+// eslint-disable-next-line no-unused-vars
 const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',
@@ -49,17 +48,7 @@ const StyledMenuItem = withStyles(theme => ({
 }))(MenuItem);
 
 const OptimizedFilter = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handleClick = event => {
-      setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
-    // --
-
+   
     const classes = useStyles();
 
     const [value, setValue] = React.useState('');
@@ -69,43 +58,24 @@ const OptimizedFilter = () => {
     };
 
     return(
-      <div className='classes.root'>
-        <Button
-          aria-controls="customized-menu"
-          aria-haspopup="true"
-          variant="contained"
-          onClick={handleClick}
-        >
-          Optimized Filter
-          <ArrowDropDownIcon 
-            />
-        </Button>
 
-        <StyledMenu
-          id="customized-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-          <FormControl component="fieldset" className={classes.formControl}>
-            <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
+      <div className='classes.root'>
+      <FormControl component="fieldset" className={classes.formControl}>
+          <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
 
               <StyledMenuItem>
                 <FormControlLabel value="IncludeBoth" control={<Radio />} label="Include Both" />
               </StyledMenuItem>
-
               <StyledMenuItem>
                 <FormControlLabel value="OptimizedOnly" control={<Radio />} label="Optimized Only" />
-              </StyledMenuItem>
-              
+              </StyledMenuItem> 
               <StyledMenuItem>
                 <FormControlLabel value="UnOptimizedOnly" control={<Radio />} label="UnOptimized Only" />
               </StyledMenuItem>
 
             </RadioGroup>
           </FormControl>
-        </StyledMenu>
+      
       </div>   
     )
 }
