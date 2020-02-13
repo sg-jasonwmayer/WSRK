@@ -31,6 +31,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
+
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import logo from '../../assets/westRockLogo.png';
 
@@ -261,6 +262,7 @@ const Header = () => {
                                         </Router>
                                          </ List>
                                     <Divider />
+                               
                                 </ Drawer>
                             </div>  
                             <img 
@@ -276,6 +278,7 @@ const Header = () => {
                           xs={4} 
                           className={classes.centerContainer}
                         >
+                    
                             <Location 
                              className={classes.location}
                             />

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import Button from 'Components/Button';
-import HollowButton from 'Components/Button/HollowButton';
-import PrimaryButton from 'Components/Button/PrimaryButton';
-import RightPointerIcon from 'Components/icons/right-pointer-icon';
+import Button from '../Button/';
+import HollowButton from '../Button/HollowButton';
+import PrimaryButton from '../Button/PrimaryButton';
+import RightPointerIcon from '../Icons/right-pointer-icon/RightPointerIcon.js';
 
 import './WizardAccordion.scss';
 

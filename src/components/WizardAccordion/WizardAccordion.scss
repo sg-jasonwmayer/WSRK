@@ -1,7 +1,6 @@
 .wizard-accordion__wrapper {
-  @include stack(l);
 
-  background-color: brand-color(muted, base);
+
   width: 100%;
   &.hidden {
     display: none;
@@ -9,23 +8,23 @@
 }
 
 .report-builder-wizard-accordion__wrapper {
-  @include stack(l);
 
-  background-color: brand-color(muted, base);
+
+
   width: 100%;
 }
 
 .wizard-accordion__header {
-  @include equal-spacing(s);
+ 
 
   align-items: center;
-  background-color: brand-color(gray, base);
+  background-color:gray;
   cursor: pointer;
   display: flex;
   height: 44px;
 
   &--toggled {
-    background-color: brand-color(primary, base);
+    background-color:gray;
   }
 }
 
@@ -44,15 +43,14 @@
   margin-right: spacing(m);
 
   &--expanded::before {
-    background-color: brand-color(muted);
-    color: brand-color(primary, base);
+  
     content: '–';
     padding: 0 7px;
   }
 
   &--collapsed::before {
     background-color: brand-color(muted);
-    color: brand-color(gray, base);
+    color: gray;
     content: '+';
     padding: 0 spacing(s);
   }
@@ -81,14 +79,10 @@
   }
 }
 
-.wizard-accordion__content {
-  @include equal-spacing(l);
-}
-
 .wizard-accordion__section {
-  @include offset-spacing(m, none);
 
-  border-top: 1px solid brand-color(muted, dark-blue);
+
+  border-top: 1px dark-blue;
 
   &:first-child {
     border-top: 0;
@@ -101,7 +95,6 @@
 }
 
 .wizard-accordion__footer {
-  @include offset-spacing(m, l);
 
   align-items: center;
   background-color: #f8f9fc;
@@ -112,29 +105,22 @@
 }
 
 .wizard-accordion__footer-right {
-  color: brand-color(gray, dark);
+  color:gray;
   display: flex;
   flex-direction: column;
   font-weight: 700;
   justify-content: flex-end;
 
   .button {
-    @include stack(s);
+
 
     margin-left: spacing(s);
     width: 100px;
   }
 
-  @include breakpoint(m) {
-    flex-direction: row;
-
-    .button {
-      margin-bottom: 0;
-    }
-  }
 
   .right-pointer-icon {
-    color: brand-color(alert, success);
+
     margin-left: spacing(s);
   }
 }
