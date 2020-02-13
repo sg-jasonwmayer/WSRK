@@ -6,7 +6,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const LoadPlanner = () => {
+const LoadPlanResults = () => {
     const classes = useStyles();
 
     return(
@@ -16,4 +16,4 @@ const LoadPlanner = () => {
     )
 }
 
-export default LoadPlanner;
+export default LoadPlanResults;

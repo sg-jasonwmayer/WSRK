@@ -1,15 +1,15 @@
 import React from 'react';
-// import ApiTest from './components/Api/Api';
 import AppView from './containers/AppView/AppView';
+import LoadPlanResults from './components/LoadPlanResults'
+
 
 import 'typeface-roboto';
 
 const App = () => {
   return (
     <div> 
-      {/* <ApiTest /> */}
       <AppView />
-
+      <LoadPlanResults />
     </div>
   );
 }

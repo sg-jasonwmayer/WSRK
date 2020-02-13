@@ -268,7 +268,6 @@ const Header = () => {
                                             </nav>
                                         </Router>
                                     <Divider />
-                                   
                             
                                     <Divider />
                                         <Collapsible trigger="Filter by Mode">
@@ -348,13 +347,13 @@ const Header = () => {
                  container
                  spacing={1}
                 >
-                <Link to="/load-planner">
-                    <IconButton
-                     size="small"
-                     className={clsx(classes.quickAccessIcons)}
-                    > 
-                      <AccountTreeIcon />
-                    </IconButton>
+                    <Link to="/load-planner">
+                        <IconButton
+                        size="small"
+                        className={clsx(classes.quickAccessIcons)}
+                        > 
+                        <AccountTreeIcon />
+                        </IconButton>
                     </Link> 
                 </Grid>
                 <Grid>
@@ -365,37 +364,37 @@ const Header = () => {
                     > 
                       <SettingsIcon />
                     </IconButton>
-                    </Link> 
+                </Link> 
                 </Grid>
                 <Grid>
-                <Link to="/reports"> 
-                    <IconButton
-                        size="small"
-                        className={clsx(classes.quickAccessIcons)}
-                    > 
-                        <BarChartIcon />
-                    </IconButton>  
+                    <Link to="/reports"> 
+                        <IconButton
+                            size="small"
+                            className={clsx(classes.quickAccessIcons)}
+                        > 
+                            <BarChartIcon />
+                        </IconButton>  
                     </Link>                         
                 </Grid>
                 <Grid>
-                <Link to="/scenario-builder"> 
-                    <IconButton
-                        size="small"
-                        className={clsx(classes.quickAccessIcons)}
-                    > 
-                     <ExtensionIcon />
-                    </IconButton>
+                    <Link to="/scenario-builder"> 
+                        <IconButton
+                            size="small"
+                            className={clsx(classes.quickAccessIcons)}
+                        > 
+                        <ExtensionIcon />
+                        </IconButton>
                     </Link>
                 </Grid>
                 <Grid>
-                <Link to="/som-tester"> 
-                    <IconButton
-                      size="small"
-                      className={clsx(classes.quickAccessIcons)}
-                    > 
-                      <ShutterSpeedIcon />
-                    </IconButton>
-                 </Link>
+                    <Link to="/som-tester"> 
+                        <IconButton
+                        size="small"
+                        className={clsx(classes.quickAccessIcons)}
+                        > 
+                        <ShutterSpeedIcon />
+                        </IconButton>
+                    </Link>
                 </Grid>
 
             </Grid>
