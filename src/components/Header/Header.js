@@ -29,7 +29,6 @@ import ShutterSpeedIcon from '@material-ui/icons/ShutterSpeed';
 import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 import Collapsible from 'react-collapsible';
 
@@ -269,18 +268,17 @@ const Header = () => {
                                             </nav>
                                         </Router>
                                     <Divider />
-                                        <ListItem>
-                                            <ArrowDropDownIcon />
+                                   
                                             <Collapsible trigger="Columns to Include in Selection Data Grid">
                                                 <ColumnsToInclude />
                                             </Collapsible>
-                                        </ListItem>
+                            
                                     <Divider />
-                                            <Collapsible trigger="Filters">
+                                            <Collapsible trigger="Filter by Mode">
                                             <FilterByMode />
                                             </ Collapsible>
                                             <Divider />
-                                            <Collapsible trigger="Filters">
+                                            <Collapsible trigger="Optimized Filters">
                                             <OptimizedFilter />
                                             </ Collapsible>
                                     </List>
