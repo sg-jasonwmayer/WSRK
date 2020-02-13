@@ -1,75 +1,38 @@
-import React, { Component } from 'react';
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef*/
+import React from 'react';
 import {
+  BrowserRouter as Router,
+  Redirect,
   Switch,
   Route,
-  Redirect,
-} from 'react-router-dom';
-
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+} from "react-router-dom";
 
 
 import logo from '../../assets/westRockLogo.png';
 
 import AppView  from '../AppView';
-import LogOut from '../LogOut';
-import LoadPlaner from '../LoadPlanner';
-import Header from '../../Components/Header';
-import Reports from '../Reports';
-import MillPlan from '../MillPlan';
-import SomTester from '../SomTester';
+import Logout from '../Logout';
+import LoadPlanner from '../LoadPlanner';
 import LoadPlanSelector from '../LoadPlanSelector';
+import MillPlan from '../MillPlan';
+import Reports from '../Reports';
+import SomTester from '../SomTester';
+
 
 import './Main.scss';
 
-class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isSelectorOverlayVisible: false,
-    };
 
-    this.attachBindings();
-  }
-
-  attachBindings() {
-    this.handleRefresh = this.handleRefresh.bind(this);
-    this.handleCollapse = this.handleCollapse.bind(this);
-    this.handleExpand = this.handleExpand.bind(this);
-  }
-
-  handleRefresh() {
-    this.forceUpdate();
-  }
-
-  handleCollapse() {
-    this.setState({
-      isSelectorOverlayVisible: false,
-    });
-  }
-
-  handleExpand() {
-    this.setState({
-      isSelectorOverlayVisible: true,
-    });
-  }
-
-  render() {
-    const { isSelectorOverlayVisible } = this.state;
-    const wrapperClass = classnames('root', this.props.overlayClass);
-
+const main = () => {
+ 
     return (
-      <section className={wrapperClass}>
-        <div className="appBar">
-          <Header />
+      <section>
+        <div className="root">
+        <AppView />
         </div>
         <div>
-          {isSelectorOverlayVisible && <div className="overlay" />}
-          <LoadPlanSelector
-            onRefresh={this.handleRefresh}
-            onCollapse={this.handleCollapse}
-            onExpand={this.handleExpand}
-          />
+          <div className="overlay" /> 
+          <LoadPlanSelector />
         </div> 
         <div className="mobile-message">
           <svg 
@@ -82,9 +45,10 @@ class Main extends Component {
           >
             <img 
               src={logo} 
+              alt="Westrock Logo"
             />
           </svg>
-          <p>This content must be viewed on a larger screen.<span>(Landscape iPad or larger.)</span></p>
+          <p>This content must be viewed on a larger screen.<span>(Landscape Tablet or larger.)</span></p>
         </div>
 
         <main role="main" className="main-content">
@@ -108,9 +72,9 @@ class Main extends Component {
                 )}
               />
               <Route
-                path="/loadplanner"
+                path="/load-planner"
                 render={(props) => (
-                  <LoadPlaner 
+                  <LoadPlanner
                     {...props} 
                   />
                 )}
@@ -133,11 +97,10 @@ class Main extends Component {
                   />
                 )}
               />
-
             <Route
               path="/logout"
               render={(props) => (
-                <LogOut {...props} />
+                <Logout {...props} />
               )}
             />
             <Redirect path="*" to="/" />
@@ -145,21 +108,7 @@ class Main extends Component {
         </main>
       </section>
     );
-  }
+  
 }
 
-export default Main;
-
-Main.propTypes = {
-  millName: PropTypes.string.isRequired,
-  userID: PropTypes.string.isRequired,
-  overlayClass: PropTypes.string.isRequired,
-  parsedPermissions: PropTypes.object.isRequired,
-  termsAccepted: PropTypes.bool.isRequired,
-};
-
-Main.defaultProps = {
-  userID: "",
-  millName: "Mill One",
-  termsAccepted: false,
-};
+export default main;

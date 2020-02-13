@@ -5,6 +5,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import axios from 'axios';
 
+
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
+
+
+
 import './Location.scss'
 
 const url = 'http://ms00015080d:7050/api/userpreferences/mill/fhenao';
@@ -78,7 +86,6 @@ const Location = () => {
                     </h4> 
                 </IconButton>
             </Grid>
-
             <Menu
               id="fade-menu"
               anchorEl={anchorEl}
@@ -87,21 +94,29 @@ const Location = () => {
               onClose={handleClose}
               TransitionComponent={Fade}
             >
-              <MenuItem 
+             <Router>
+             <MenuItem 
                 onClick={handleClose}
               >
+              <Link to="/mill-one">
                 Mill One
+              </Link>
               </ MenuItem>
               <MenuItem 
                 onClick={handleClose}
               >
+              <Link to="/mill-two">
                 Mill Two
+                </Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
+                <Link to="/mill-three">
                 Mill Three
+                </Link>
               </ MenuItem>
+              </Router>
             </ Menu>
         </ div>
     )
