@@ -4,6 +4,7 @@ const Reports = () => {
     return (
       <div> 
          Reports 
+         {console.log}
       </div>
     );
   }

@@ -5,9 +5,7 @@ import {
   RadioGroup,
   FormControlLabel,
   FormControl,
-
-  Menu,
-  MenuItem
+  Menu
 } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
