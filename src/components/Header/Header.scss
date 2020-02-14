@@ -104,7 +104,11 @@ a:active {
   text-decoration: none;
 }
 .Collapsible {
-  background-color: white; }
+  background-color: white; 
+}
+.Collapsible:hover{
+  opacity:0.8;
+}
 
 .Collapsible__contentInner {
   padding: 10px;
@@ -125,11 +129,12 @@ a:active {
   position: relative;
   border: 1px solid white;
   padding: 10px;
-  background: #113f74;
-  color: white; }
+  background: #004B87;
+  color: white;
+ }
   .Collapsible__trigger:after {
     font-family: 'Roboto';
-    content: '\f107';
+    // content: '\f107';
     position: absolute;
     right: 10px;
     top: 10px;
@@ -146,8 +151,8 @@ a:active {
   background-color: lightcoral;
   transition: background-color 200ms ease; }
 
-.CustomTriggerCSS--open {
-  background-color: darkslateblue; }
+// .CustomTriggerCSS--open {
+//   background-color: darkslateblue; }
 
 .Collapsible__custom-sibling {
   padding: 5px;
