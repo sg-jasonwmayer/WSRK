@@ -105,10 +105,25 @@ const Location = () => {
              <MenuItem 
                 onClick={handleClose}
               >
-              <Link to="/mill-one">
-                Mill One
-              </Link>
+                <Route
+                   exact
+                   path="/load-planner/mill-one"
+                   render={routeProps => (
+                  <div className="load-planner">
+                 
+                  <Nav routes={getloadPlannerRoutes()} secondary={true} />
+                    <LoadPlanner>
+                      <MillOne {...routeProps} /> 
+                    </LoadPlanner>
+                    <Link to="/mill-one">
+                   Mill One
+                  </Link>
+              
+                </div>
+                 )}
+                  />
               </ MenuItem>
+          
               <MenuItem 
                 onClick={handleClose}
               >
