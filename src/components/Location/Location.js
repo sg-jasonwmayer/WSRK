@@ -58,6 +58,14 @@ const Location = () => {
     }, [tempMill]);
  
 
+   const  getloadPlannerRoutes = () => {
+      return [
+        { path: '/load-planner/mill-one', label: 'load-planner.routes.mill-one' },
+        { path: '/load-planner/mill-two', label: 'load-planner.routes.mill-two' },
+        { path: '/load-planner/mill-three', label: 'load-planner.routes.mill-three' }
+      ];
+    };
+  
     return(
         <div
           className={classes.root}
@@ -77,7 +85,6 @@ const Location = () => {
                 > 
                     <ArrowDropDownIcon 
                       color={'primary'}
-                  
                     />
                     <h4 
                       className={classes.centerContainer}
