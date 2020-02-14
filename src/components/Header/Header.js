@@ -41,6 +41,7 @@ import OptimizedFilter from '../OptimizedFilter';
 import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
 import FilterSearchBy from '../FilterSearchBy';
+import CriteriaDropDown from '../CriteriaDropDown';
 
 import './Header.scss'
 
@@ -273,6 +274,9 @@ const Header = () => {
                                     <Divider />
                                         <Collapsible trigger="Filter Search By">
                                             <FilterSearchBy />
+                                        </Collapsible>
+                                        <Collapsible trigger="Criteria">
+                                            <CriteriaDropDown />
                                         </Collapsible>
                                     <Divider />
                                         <Collapsible trigger="Filter by Mode">

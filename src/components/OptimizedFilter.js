@@ -46,26 +46,25 @@ const OptimizedFilter = () => {
 
     return(
       <div className='classes.root'>
-      <FormControl component="fieldset" className={classes.formControl}>
+        <FormControl component="fieldset" className={classes.formControl}>
           <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
-                <FormControlLabel 
-                  value="IncludeBoth" 
-                  control={<Radio />} 
-                  label="Include Both" 
-                />
-                <FormControlLabel 
-                  value="OptimizedOnly" 
-                  control={<Radio />} 
-                  label="Optimized Only" 
-                />
-                <FormControlLabel 
-                  value="UnOptimizedOnly" 
-                  control={<Radio />} 
-                  label="UnOptimized Only" 
-                />
-            </RadioGroup>
-          </FormControl>
-      
+            <FormControlLabel 
+              value="IncludeBoth" 
+              control={<Radio />} 
+              label="Include Both" 
+            />
+            <FormControlLabel 
+              value="OptimizedOnly" 
+              control={<Radio />} 
+              label="Optimized Only" 
+            />
+            <FormControlLabel 
+              value="UnOptimizedOnly" 
+              control={<Radio />} 
+              label="UnOptimized Only" 
+            />
+          </RadioGroup>
+        </FormControl>
       </div>   
     )
 }
