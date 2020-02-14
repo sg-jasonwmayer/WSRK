@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-
 const useStyles = makeStyles(theme => ({
     root: {
       '& > *': {
@@ -13,16 +12,15 @@ const useStyles = makeStyles(theme => ({
   }));
 
 const ValueInputBox = () => {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return(
-        <div className='classes.root'>
-            <form className={classes.root} noValidate autoComplete="off">
-                value
-                <TextField id="outlined-basic" label="Value" variant="outlined" />
-            </form>
-        </div>   
-    )
+  return(
+    <div className='classes.root'>
+      <form className={classes.root} noValidate autoComplete="off">
+          <TextField id="outlined-basic" label="Value" variant="outlined" />
+      </form>
+    </div>   
+  )
 }
 
 export default ValueInputBox;

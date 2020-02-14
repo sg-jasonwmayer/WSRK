@@ -42,6 +42,7 @@ import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
 import FilterSearchBy from '../FilterSearchBy';
 import CriteriaDropDown from '../CriteriaDropDown';
+import ValueInputBox from '../ValueInputBox';
 
 import './Header.scss'
 
@@ -269,20 +270,19 @@ const Header = () => {
                                                 </Link>
                                             </nav>
                                         </Router>
-                                    <Divider />
-                            
-                                    <Divider />
+                           
+                                        <ValueInputBox />
                                         <Collapsible trigger="Filter Search By">
                                             <FilterSearchBy />
                                         </Collapsible>
                                         <Collapsible trigger="Criteria">
                                             <CriteriaDropDown />
                                         </Collapsible>
-                                    <Divider />
+                               
                                         <Collapsible trigger="Filter by Mode">
                                             <FilterByMode />
                                         </Collapsible>
-                                        <Divider />
+                                   
                                         <Collapsible trigger="Optimized Filters">
                                             <OptimizedFilter />
                                         </ Collapsible>
