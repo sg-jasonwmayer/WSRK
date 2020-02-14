@@ -5,12 +5,13 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import axios from 'axios';
+
 import {
   BrowserRouter as Router,
-  Link
+  Link,
+  Route,
+  useRouteMatch
 } from "react-router-dom";
-
-
 
 import './Location.scss'
 
@@ -33,14 +34,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Location = () => {
+    let match = useRouteMatch();
+    let tempMill = '';
+
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const opens = Boolean(anchorEl);
 // eslint-disable-next-line no-unused-vars
     const [useMills, setMills] =useState([]);
-    let tempMill = '';
-    
-
     const handleClick = event => {
       setAnchorEl(event.currentTarget);
     };
@@ -65,7 +66,12 @@ const Location = () => {
         { path: '/load-planner/mill-three', label: 'load-planner.routes.mill-three' }
       ];
     };
-  
+
+    function MillOne() {
+      return <h2>Mill One</h2>;
+    }
+
+    
     return(
         <div
           className={classes.root}
@@ -108,17 +114,16 @@ const Location = () => {
                 <Route
                    exact
                    path="/load-planner/mill-one"
+                   routes={getloadPlannerRoutes()}
                    render={routeProps => (
                   <div className="load-planner">
-                 
-                  <Nav routes={getloadPlannerRoutes()} secondary={true} />
-                    <LoadPlanner>
-                      <MillOne {...routeProps} /> 
-                    </LoadPlanner>
-                    <Link to="/mill-one">
-                   Mill One
+                    
+                    <Link 
+                    to={`${match.url}/mill-one`}
+                    >
+                    <MillOne {...routeProps} /> 
                   </Link>
-              
+               
                 </div>
                  )}
                   />
@@ -145,3 +150,4 @@ const Location = () => {
 }
 
 export default Location;
+
