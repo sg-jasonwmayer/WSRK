@@ -270,13 +270,14 @@ const Header = () => {
                                                 </Link>
                                             </nav>
                                         </Router>
+                                    <Divider />
                            
                                         <ValueInputBox />
-                                        <Collapsible trigger="Filter Search By">
-                                            <FilterSearchBy />
-                                        </Collapsible>
                                         <Collapsible trigger="Criteria">
                                             <CriteriaDropDown />
+                                        </Collapsible>
+                                        <Collapsible trigger="Filter Search By">
+                                            <FilterSearchBy />
                                         </Collapsible>
                                
                                         <Collapsible trigger="Filter by Mode">
