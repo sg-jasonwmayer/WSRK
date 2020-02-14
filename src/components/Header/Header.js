@@ -40,6 +40,7 @@ import UserName from '../UserName/UserName';
 import OptimizedFilter from '../OptimizedFilter';
 import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
+import FilterSearchBy from '../FilterSearchBy';
 
 import './Header.scss'
 
@@ -269,6 +270,10 @@ const Header = () => {
                                         </Router>
                                     <Divider />
                             
+                                    <Divider />
+                                        <Collapsible trigger="Filter Search By">
+                                            <FilterSearchBy />
+                                        </Collapsible>
                                     <Divider />
                                         <Collapsible trigger="Filter by Mode">
                                             <FilterByMode />
