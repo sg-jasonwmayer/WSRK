@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+
 import { 
   Menu, 
   MenuItem, 
@@ -7,30 +8,29 @@ import {
   Grid, 
   IconButton 
 } from '@material-ui/core';
-
-import { makeStyles } from '@material-ui/core/styles';
-import { translate } from 'react-polyglot';
-
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-
-import clsx from 'clsx';
-import axios from 'axios';
-
 import {
   BrowserRouter as Router,
   Link,
   Route,
-  useRouteMatch,
-  withRouter
+  useRouteMatch
+  // withRouter
 } from "react-router-dom";
+import { makeStyles } from '@material-ui/core/styles';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+
+import { translate } from 'react-polyglot';
+
+import MillOne from '../../containers/MillOne/MillOne';
+import messages from './messages/en_us.json';
+
+import clsx from 'clsx';
+import axios from 'axios';
 
 import './Location.scss'
 
 const url = 'http://ms00015080d:7050/api/userpreferences/mill/fhenao';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-    },
     centerContainer: {
         display: 'flex',
         justify: 'center',
@@ -69,19 +69,6 @@ const Location = () => {
         })
     }, [tempMill]);
  
-
-   const  getloadPlannerRoutes = () => {
-      return [
-        { path: '/load-planner/mill-one', label: 'load-planner.routes.mill-one' },
-        { path: '/load-planner/mill-two', label: 'load-planner.routes.mill-two' },
-        { path: '/load-planner/mill-three', label: 'load-planner.routes.mill-three' }
-      ];
-    };
-
-    function MillOne() {
-      return <h2>Mill One</h2>;
-    }
-
     
     return(
         <div
@@ -125,7 +112,7 @@ const Location = () => {
                 <Route
                    exact
                    path="/load-planner/mill-one"
-                   routes={getloadPlannerRoutes()}
+                   //routes={getloadPlannerRoutes()}
                    render={routeProps => (
                   <div className="load-planner">
                     

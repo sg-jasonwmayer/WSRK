@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './SomTester.scss'
+
 const SomTester = () => {
     return (
       <div> 

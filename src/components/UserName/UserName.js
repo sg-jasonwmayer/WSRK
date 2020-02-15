@@ -24,7 +24,7 @@ axios.get(fhenao).then((res) => {
   language = res.data.language;
 })
   .catch((err) => {
-      // console.log(err);
+      console.log(err);
   })
   // console.log(userName);
   // console.log(units);

@@ -1,13 +1,14 @@
 import React from 'react';
 
+import './Reports.scss';
+
 const Reports = () => {
     return (
-      <div> 
-         Reports 
-         {console.log}
+      <div>
+        <h2>Reports</h2>
       </div>
     );
   }
   
 
-export default Reports;
+export default Reports; 

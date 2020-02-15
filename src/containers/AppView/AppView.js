@@ -18,6 +18,8 @@ import SomTester from '../SomTester';
 // import Api from '../../components/Api/Api';
 // import Main from '../Main/Main';
 
+import './AppView.scss';
+
 
 const AppView = () => {
   return (
@@ -43,6 +45,7 @@ const AppView = () => {
              />
            )}
          />
+
          <Route
            path="/mill-plan"
            render={(props) => (

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './MillPlan.scss';
+
 const MillPlan = () => {
     return (
       <div> 
