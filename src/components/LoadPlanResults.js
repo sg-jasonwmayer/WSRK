@@ -26,19 +26,16 @@ function createData(name, BatchId, ShipTo, carbs, protein) {
 }
 
 const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Honeycomb', 408, 3.2, 87, 6.5),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  createData('KitKat', 518, 26.0, 65, 7.0),
-  createData('Lollipop', 392, 0.2, 98, 0.0),
-  createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
+  createData('27444 FTWOR 01_Rail', 305, 'Rail', 67, 4.3),
+  createData('27444 CPARK 01_Rail', 452, 'Rail', 51, 4.9),
+  createData('27444 JSCHPK01_Piggyback', 49, 'Piggyback', 24, 6.0),
+  createData('27443 APEX 14_Truck', 159, 'Rail', 24, 4.0),
+  createData('27443 APEX 13_Truck', 356, 'Truck', 49, 3.9),
+  createData('27443 INTFORI3_Railb', 408, 'Piggyback', 87, 6.5),
+  createData('27443 INTFORG6_Rail', 237, 'Truck', 37, 4.3),
+  createData('27443 GAPAP 76_Truck', 375, 'Rail', 94, 0.0),
+  createData('27443 GAPAP 76_Rai', 518, 'Truck', 65, 7.0),
+  createData('27438 NORCR 01_Truck', 392, 'Rail', 98, 0.0)
 ];
 
 function descendingComparator(a, b, orderBy) {
