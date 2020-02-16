@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React,{useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 //import { lighten, makeStyles,withStyles } from '@material-ui/core/styles';
@@ -12,14 +13,14 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import LoadPlanResultsTableHead from './_loadplanResultsTableHead';
 import LoadPlanResultsToolBar from './_loadplanResultsToolbar';
-import {stableSort} from '../../selectors/LoadPlanResultsSorter';
+import { stableSort, getSorting } from '../../selectors/LoadPlanResultsSorter';
 //import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 //import Fab from '@material-ui/core/Fab';
 //import LaunchIcon from '@material-ui/icons/Launch';
 import IconButton from '@material-ui/core/IconButton';
 //import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-
+import MillContext from '../../contexts/mill-context';
 
  
   const loadPlanResults = [];
@@ -53,7 +54,7 @@ import IconButton from '@material-ui/core/IconButton';
     },
   }));
   
-  function LoadPlanResults() {
+  function LoadPlanResults({handleViewLoadPlan}) {
     const classes = useStyles();
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('calories');
@@ -61,8 +62,7 @@ import IconButton from '@material-ui/core/IconButton';
     const [page, setPage] = React.useState(0);
     const [dense, setDense] = React.useState(true);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
-    // eslint-disable-next-line no-unused-vars
-    const [loadplans]  = React.useState([]);
+    const { loadplans } = useContext(MillContext);
   
   
     const handleRequestSort = (event, property) => {
@@ -173,7 +173,7 @@ import IconButton from '@material-ui/core/IconButton';
                                 aria-label="delete" 
                                 className={classes.margin} 
                                 onClick={()=> {
-                                  
+                                  handleViewLoadPlan(row.id,row.name)
                                 }}
                                 size="small">
                             <SearchIcon fontSize="inherit" />
@@ -214,5 +214,5 @@ import IconButton from '@material-ui/core/IconButton';
     );
   }
   
-  export default LoadPlanResults;
+  export default LoadPlanResults
   
