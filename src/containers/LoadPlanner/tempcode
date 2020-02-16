@@ -1,0 +1,38 @@
+
+   <Grid item xs={2}>
+          <Paper className={classes.paper} elevation={10} style={{backgroundColor:'#e3f2fd'}}>
+              Vehicle : <br />
+              <u>{tabData.vehicles[selectedVehicleIndex].vehicleName}</u>
+           </Paper>
+        </Grid>
+        <Grid item xs={2}>
+            <Paper className={classes.paper}  elevation={10} style={{backgroundColor:'#e3f2fd'}}>
+              Jurisdiction : <br />
+              <u>{tabData.vehicles[selectedVehicleIndex].jurisdictionName}</u>
+           </Paper>
+        </Grid>
+        <Grid item xs={2}>
+        <Paper className={classes.paper}  elevation={10} style={{backgroundColor:'#e3f2fd'}}>
+              Securement : <br/>
+              <u>{tabData.vehicles[selectedVehicleIndex].securementName}</u>
+           </Paper>
+        </Grid>
+        <Grid item xs={2}>
+        <Paper className={classes.paper} elevation={10} style={{backgroundColor:'#f8bbd0'}}>
+              <b>Weight</b> / Volume % : <br />
+              <b><u>{tabData.vehicles[selectedVehicleIndex].weightPercentage}</u></b> / <u>{tabData.vehicles[selectedVehicleIndex].volumePercentage}</u>
+           </Paper>
+        </Grid>
+        <Grid item xs={2}>
+        <Paper className={classes.paper} elevation={10} style={{backgroundColor:'#ff8a80'}}>
+              Pay load : <br />
+              <b><u>{tabData.vehicles[selectedVehicleIndex].payLoad} lbs</u></b>
+           </Paper>
+        </Grid>
+        <Grid item xs={2}>
+        <Paper className={classes.paper}  elevation={10} style={{backgroundColor:'#fce4ec'}}>
+              Max Payload : <br />
+              <u>{tabData.vehicles[selectedVehicleIndex].maxPayLoad} lbs</u>
+           </Paper>
+        </Grid>
+    
