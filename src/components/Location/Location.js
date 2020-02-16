@@ -11,8 +11,8 @@ import {
 import {
   BrowserRouter as Router,
   Link,
-  Route,
-  useRouteMatch
+  Route
+  //useRouteMatch
   // withRouter
 } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Location = () => {
-    let match = useRouteMatch();
+    // let match = useRouteMatch();
     let tempMill = '';
 
     const classes = useStyles();
@@ -65,9 +65,9 @@ const Location = () => {
         axios.get(url)
         .then(resData => {
             tempMill = resData.data.mills[3].millName;
-            //console.log(resData.data.mills[3].millName);
+            console.log(resData.data.mills[3].millName);
         })
-    }, [tempMill]);
+    }, []);
  
     
     return(
@@ -117,7 +117,7 @@ const Location = () => {
                   <div className="load-planner">
                     
                     <Link 
-                    to={`${match.url}/mill-one`}
+                    to={`${url}/mill-one`}
                     >
                     <MillOne /> 
                   </Link>
