@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React,{useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -47,26 +48,26 @@ export default function UncontrolledTextField() {
     
     
   
-    // useEffect(()=>{
-    //     if(!loadplans) return;
-    //     if(loadplans.loadplanname)
-    //         setLoadPlanName(loadplans.loadplanname)
-    //     if(loadplans.mode)
-    //         setMode(loadplans.mode)
-    //     if(loadplans.mill)
-    //         setMill(loadplans.mill)
-    //     if(loadplans.searchcondition)
-    //         setSearchCondition(loadplans.searchcondition)
+    useEffect(()=>{
+        if(!loadplans) return;
+        if(loadplans.loadplanname)
+            setLoadPlanName(loadplans.loadplanname)
+        if(loadplans.mode)
+            setMode(loadplans.mode)
+        if(loadplans.mill)
+            setMill(loadplans.mill)
+        if(loadplans.searchcondition)
+            setSearchCondition(loadplans.searchcondition)
 
-    //     async function InvokeAsync(){
-    //         const jsonResponse = await WebApiCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,progressDispatch)
-    //         loadplanDispatch(populateSearchResults(jsonResponse))
-    //   }
+        async function InvokeAsync(){
+            const jsonResponse = await WebApiCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,progressDispatch)
+            loadplanDispatch(populateSearchResults(jsonResponse))
+      }
 
-    //     InvokeAsync();
+        InvokeAsync();
             
 
-    // },[]);
+    },[]);
 
     const handleModeChange = event => {
         setMode(event.target.value);
@@ -196,4 +197,4 @@ export default function UncontrolledTextField() {
             </div>
         </form>
     );
-}
+}  
