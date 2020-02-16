@@ -25,23 +25,27 @@ const AppView = () => {
     <div> 
       <Header />
       <div>
-        reports
+       {<div className="app-view">
+         hello world
       <Router>
-      <Switch>  
-         <Route
+      <Switch> 
+      <Route exact path="/reports" component={Reports} />
+         {/* <Route
            path="/reports"
            exact
-           render={() => (
-             <Reports >
-               {this.props.children} 
-             Reports</Reports>
+           render={(props) => (
+             <Reports
+             {...props} 
+              > 
+              reports        
+             </Reports>
            )}
-         />
+         /> */}
          <Route
+           exact
            path="/load-planner"
            render={(props) => (
              <LoadPlanner
-         
                {...props} 
              />
            )}
@@ -76,10 +80,9 @@ const AppView = () => {
      </Router>
      </div>
 
-      {/* <Api />  */}
-      {/* <Main /> */}
+         }
     </div>
-    
+    </div>
   );
 }
 

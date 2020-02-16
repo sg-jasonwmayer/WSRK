@@ -165,7 +165,7 @@ const EnhancedTableToolbar = props => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle">
-          Load-Plans
+          LoadPlans
         </Typography>
       )}
 
@@ -364,4 +364,4 @@ function Reports() {
   );
 }
 
-export default Reports;
+export default Reports

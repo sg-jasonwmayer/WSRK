@@ -1,14 +1,13 @@
 import React from 'react';
-import AppView from './containers/AppView/AppView';
+import Header from './components/Header/Header';
 
 import './App.scss'
-
 import 'typeface-roboto';
 
 const App = () => {
   return (
     <div> 
-      <AppView />
+      <Header />
     </div>
   );
 }

@@ -1,6 +1,12 @@
 .root {
-
+  width: 100%; 
   text-align: center;
   display: flex;
+}
+
+.reports-enhanced {
+  width: 100%; 
+  flex-direction: row;
+  text-align: center;
 
 }

@@ -2,7 +2,9 @@ import React from 'react';
 
 import {
     BrowserRouter as Router,
-    Link
+    Link,
+    Route, 
+    Switch
   } from "react-router-dom";
   
 import { 
@@ -35,11 +37,20 @@ import Collapsible from 'react-collapsible';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import logo from '../../assets/westRockLogo.png';
 
+
 import Location from '../Location/Location';
 import UserName from '../UserName/UserName';
 import OptimizedFilter from '../OptimizedFilter';
 import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
+
+import ScenarioBuilder from '../../containers/ScenarioBuilder';
+import LoadPlanner from '../../containers/LoadPlanner';
+import MillPreferences from '../../containers/MillPreferences';
+import Reports from '../../containers/Reports';
+import SomTester from '../../containers/SomTester';
+
+
 
 import './Header.scss'
 
@@ -165,6 +176,7 @@ const Header = () => {
       };
  
     return ( 
+        <Router>
         <div className={classes.root}>
             <AppBar 
               className={classes.appBar}
@@ -210,7 +222,7 @@ const Header = () => {
                                     </div>
                                     <Divider />
                                     <List>
-                                        <Router>
+                                  
                                             <nav>
                                                 <Link to="/load-planner">
                                                     <ListItem button>
@@ -233,6 +245,7 @@ const Header = () => {
                                                     </ListItem>
                                                 </Link> 
                                                 <Link to="/reports"> 
+                                        
                                                     <ListItem 
                                                     button
                                                     >
@@ -266,25 +279,23 @@ const Header = () => {
                                                     </ListItem>
                                                 </Link>
                                             </nav>
-                                        </Router>
-                                    <Divider />
                                    
-                                            <Collapsible trigger="Columns to Include in Selection Data Grid">
-                                                <ColumnsToInclude />
-                                            </Collapsible>
-                            
                                     <Divider />
-                                            <Collapsible trigger="Filter by Mode">
-                                            <FilterByMode />
-                                            </ Collapsible>
-                                            <Divider />
-                                            <Collapsible trigger="Optimized Filters">
+                                      <Collapsible trigger="Columns to Include in Selection Data Grid">
+                                        <ColumnsToInclude />
+                                      </Collapsible>
+                                    <Divider />
+                                      <Collapsible trigger="Filter by Mode">
+                                        <FilterByMode />
+                                      </ Collapsible>
+                                      <Divider />
+                                     <Collapsible trigger="Optimized Filters">
                                             <OptimizedFilter />
                                             </ Collapsible>
                                     </List>
                                 </Drawer>
                             </div>  
-                            <Router>
+                     
                             <Link to="/"> 
                             <img 
                              src={logo} 
@@ -292,7 +303,7 @@ const Header = () => {
                              className="logo"
                            />
                            </ Link>
-                           </Router>
+                   
                         </Grid>
 
 {/* -------------------------------------------Center Container----------------------------------------*/}
@@ -340,7 +351,7 @@ const Header = () => {
                 </Toolbar>
             </AppBar>
             {/* ------------------------Icons below header (left) ------------ */}
-            <Router>
+        
             <Grid 
              className={classes.quickAccessIconsContainer} 
             >
@@ -397,10 +408,30 @@ const Header = () => {
                     </IconButton>
                  </Link>
                 </Grid>
-
             </Grid>
-            </Router>
+            <div>
+        <Switch>
+        <Route 
+        exact path="/reports" 
+        component={Reports} 
+        />
+        <Route 
+        exact path="/mill-preferences" 
+        component={MillPreferences} 
+        />
+        <Route exact path="/load-planner" component={LoadPlanner} />
+        <Route exact path="/som-tester" component={SomTester} />
+        <Route exact path="/scenario-builder" component={ScenarioBuilder} />
+        <Route exact path="/" component={Reports} />
+        </Switch>    
         </div>
+ 
+    
+    
+        </div>
+        </Router>
+      
+
     )
 }
 
