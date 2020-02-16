@@ -52,9 +52,9 @@ const useStyles = makeStyles(theme => ({
       textAlign: "center",
       display: "flex"
     },
-    flex: {
-        display: "flex"
-    },
+    // flex: {
+    //     display: "flex"
+    // },
     // logo:{
     //     margin:"0", 
     //     height: "30px", 
@@ -166,6 +166,11 @@ const Header = () => {
     const outsideClickHandler = () => {
         setOpen(false);
       };
+
+    const handleClickCollapsible = (e) => {
+        e.preventDefault();
+
+    }
  
     return ( 
         <div className={classes.root}>
@@ -176,27 +181,27 @@ const Header = () => {
                     <Grid 
                      container
                     >
+                    <ClickAwayListener
+                     onClickAway={outsideClickHandler}
+                        >
                         <Grid
                          item 
                          xs={4}
                          className={classes.leftContainer}
                         >
-                          <div>
-                                <ClickAwayListener
-                                 onClickAway={outsideClickHandler}
+                          
+                                <IconButton
+                                    color="inherit"
+                                    aria-label="open drawer"
+                                    onClick={drawerOpenHandler}
+                                    edge="start"
+                                    className={clsx(classes.menuButton, open && classes.hide)}
                                 >
-                                    <IconButton
-                                     color="inherit"
-                                     aria-label="open drawer"
-                                     onClick={drawerOpenHandler}
-                                     edge="start"
-                                     className={clsx(classes.menuButton, open && classes.hide)}
-                                    >
-                                      <MenuIcon 
-                                       color="primary" 
-                                      />
-                                    </IconButton>
-                                </ClickAwayListener>
+                                    <MenuIcon 
+                                    color="primary" 
+                                    />
+                                </IconButton>
+                                
                                 <Drawer
                                   className={classes.drawer}
                                   variant="persistent"
@@ -270,10 +275,10 @@ const Header = () => {
                                                 </Link>
                                             </nav>
                                         </Router>
-                                    <Divider />
+                                        <Divider />
                            
                                         <ValueInputBox />
-                                        <Collapsible trigger="Criteria">
+                                        <Collapsible onClick={handleClickCollapsible} trigger="Criteria">
                                             <CriteriaDropDown />
                                         </Collapsible>
                                         <Collapsible trigger="Filter Search By">
@@ -292,7 +297,7 @@ const Header = () => {
                                         </Collapsible>
                                     </List>
                                 </Drawer>
-                            </div>  
+                            
                             <Router>
                                 <Link to="/"> 
                                     <img 
@@ -303,6 +308,7 @@ const Header = () => {
                                 </ Link>
                            </Router>
                         </Grid>
+                    </ClickAwayListener>
 
 {/* -------------------------------------------Center Container----------------------------------------*/}
                         <Grid

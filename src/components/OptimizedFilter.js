@@ -35,7 +35,6 @@ const StyledMenu = withStyles({
   />
 ));
 
-
 const OptimizedFilter = () => {
    
     const classes = useStyles();
