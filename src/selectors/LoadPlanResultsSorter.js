@@ -9,7 +9,7 @@ export function desc(a, b, orderBy) {
   return 0;
 }
 
-export function stableSort(array, cmp) {
+// export function stableSort(array, cmp) {
   // const stabilizedThis = array.slice((el, index) => [el, index]);
   // stabilizedThis.sort((a, b) => {
   //   const order = cmp(a[0], b[0]);
@@ -17,9 +17,9 @@ export function stableSort(array, cmp) {
   //   return a[1] - b[1];
   // // });
   // return stabilizedThis.map(el => el[0]);
-}
+// }
 
-export function getSorting(order, orderBy) {
+export function stableSort(order, orderBy) {
   return order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy);
 }
 

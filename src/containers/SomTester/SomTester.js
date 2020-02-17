@@ -40,6 +40,17 @@ const rows = [
   createData('909877553', 452, 25.0, 51, 4.9),
   createData('446332837', 237, 9.0, 37, 4.3),
   createData('387638459', 262, 16.0, 24, 6.0),
+  createData('387623843', 305, 3.7, 67, 4.3),
+  createData('978677553', 452, 25.0, 51, 4.9),
+  createData('897236322', 262, 16.0, 24, 6.0),
+  createData('158927362', 159, 6.0, 24, 4.0),
+  createData('233456356', 356, 16.0, 49, 3.9),
+  createData('084896208', 408, 3.2, 87, 6.5),
+  createData('772837837', 237, 9.0, 37, 4.3),
+  createData('988888683', 375, 0.0, 94, 0.0),
+  createData('900000553', 452, 25.0, 51, 4.9),
+  createData('440032837', 237, 9.0, 37, 4.3),
+  createData('383333459', 262, 16.0, 24, 6.0),
 
 ];
 
@@ -191,7 +202,10 @@ EnhancedTableToolbar.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
+    paddingTop: theme.spacing(10),
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(1),
+    width: 2380,
     marginTop: theme.spacing(3),
   },
   paper: {
@@ -266,7 +280,7 @@ function SomTester() {
   };
 
   const handleChangeRowsPerPage = event => {
-    setRowsPerPage(parseInt(event.target.value, 10));
+    setRowsPerPage(parseInt(event.target.value, 20));
     setPage(0);
   };
 
@@ -340,7 +354,7 @@ function SomTester() {
           </Table>
         </div>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[10, 25, 50]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}

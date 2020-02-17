@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React,{useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 //import { lighten, makeStyles,withStyles } from '@material-ui/core/styles';
@@ -12,7 +13,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import LoadPlanResultsTableHead from './_loadplanResultsTableHead';
 import LoadPlanResultsToolBar from './_loadplanResultsToolbar';
-import {stableSort,getSorting} from '../../selectors/LoadPlanResultsSorter';
+import {stableSort} from '../../selectors/LoadPlanResultsSorter';
 //import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 //import Fab from '@material-ui/core/Fab';
@@ -137,8 +138,8 @@ import MillContext from '../../contexts/mill-context';
                 rowCount={loadPlanResults.length}
               />
               <TableBody>
-                {/* {stableSort(loadplans, getSorting(order, orderBy))
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) */}
+                {stableSort(loadplans, stableSort(order, orderBy))
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)}
                  {stableSort((row, index) => {
                     const isItemSelected = isSelected(row.name);
                     const labelId = `enhanced-table-checkbox-${index}`;
