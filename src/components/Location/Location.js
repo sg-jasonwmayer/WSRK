@@ -18,6 +18,8 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
+import DropButton from '../DropButton/DropButton';
+
 import { translate } from 'react-polyglot';
 import messages from './messages/en_us.json';
 
@@ -42,34 +44,55 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const Location = () => {
+const Location = props => {
     // let match = useRouteMatch();
     let resData = '';
-    let resData2 = '';
-    let tempMill1 = '';
     let tempMill = '';
-    let tempMill2 = '';
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const opens = Boolean(anchorEl);
-// eslint-disable-next-line no-unused-vars
-    const [useMills, setMills] = useState([]);
     const handleClick = event => {
       setAnchorEl(event.currentTarget);
     };
+
+  
+const [ millState ] = useState({
+  millNames: [
+    {name: 'Hopewell Mill'},
+    {name: 'Hodge Mill'},
+    {name: 'Dublin Mill'},
+    {name: 'Ferdnadina Beach Mill'},
+    {name: 'Florence Mill'},
+    {name: 'La Tuque Mill'},
+    {name: 'Panama City Mill'},
+    {name: 'Solvay Mill'},
+    {name: 'Seminole Mill'},
+    {name: 'Roanoke Rapids DEV'},
+    {name: 'Stevenson Mill'},
+    {name: 'West Point Mill'},
+    {name: 'Tacoma Mill'}
+    
+  ]
+
+});
+
+
   
     const handleClose = () => {
       setAnchorEl(null);
     };
 
+  
+
     useEffect(() => {
       axios.get(url)
-      .then(resData2 => {
-          tempMill2 = resData2.data.mills[2].millName;
-          console.log(resData2.data.mills[2].millName);
+      .then(resData => {
+          tempMill = resData.data.mills[2].millName;
+          console.log(resData.data.mills[2].millName);
       })
+      
       return () => {
-        tempMill2 = resData2.data.mills[2].millName;
+        tempMill = resData.data.mills[2].millName;
 
       }
   }, 
@@ -80,10 +103,10 @@ const Location = () => {
     useEffect(() => {
         axios.get(url)
         .then(resData => {
-            tempMill = resData.data.mills[3].millName;
-            console.log(resData.data.mills[3].millName);
-            console.log(resData.data.mills[4].millName);
-            console.log(resData.data.mills[5].millName);
+            tempMill = resData.data.mills[13].millName;
+             console.log(resData.data.mills[13].millName);
+     
+    
         })
     }, 
     []);
@@ -92,9 +115,12 @@ const Location = () => {
     useEffect(() => {
       axios.get(url)
       .then(resData => {
-         tempMill1 = resData.data.mills[1].millName;
-          console.log(resData.data.mills[1].millName);
+         tempMill = resData.data.mills[13].millName;
+     
+
+     
       })
+      
   }, 
   []);
 
@@ -140,37 +166,121 @@ const Location = () => {
                 onClick={handleClose}
               >
               <Link to="/hopewell-mill">
-              Hopewell Mill
+                <DropButton
+                name={millState.millNames[0].name}
+                 />
+    
                 </ Link>
               </ MenuItem>
              <MenuItem 
                 onClick={handleClose}
               >
               <Link to="/hodge-mill">
-              Hodge Mill
+              <DropButton
+                name={millState.millNames[1].name}
+              />
                 </ Link>
               </ MenuItem>
               <MenuItem 
                 onClick={handleClose}
               >
               <Link to="/dublin-mill">
-              Dublin Mill
-                </ Link>
+              <DropButton
+                name={millState.millNames[2].name}
+              />
+              </ Link>
               </ MenuItem>
               <MenuItem 
                 onClick={handleClose}
               >
               <Link to="/fernandina-beach-mill">
-              Fernandina Beach Mill
+              <DropButton
+                name={millState.millNames[3].name}
+              />
                 </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to="/Florence-Mill">
-                Florence Mill
+                <Link to={millState.millNames[4].name}>
+                <DropButton
+                name={millState.millNames[4].name}
+              />
+              </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[5].name}>
+                <DropButton
+                name={millState.millNames[5].name}
+              />
                 </ Link>
               </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[6].name}>
+                <DropButton
+                 name={millState.millNames[6].name}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[7].name}>
+                <DropButton
+                 name={millState.millNames[7].name}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[8].name}>
+                <DropButton
+                 name={millState.millNames[8].name}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[9].name}>
+                <DropButton
+                 name={millState.millNames[9].name}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[10].name}>
+                <DropButton
+                 name={millState.millNames[10].name}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[11].name}>
+                <DropButton
+                 name={millState.millNames[11].name}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[12].name}>
+                <DropButton
+                 name={millState.millNames[12].name}
+              />
+                </ Link>
+              </ MenuItem>
+              
               </ Router>
             </ Menu>
         </ div>
@@ -178,4 +288,5 @@ const Location = () => {
 }
 
 export default Location;
+
 
