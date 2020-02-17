@@ -22,26 +22,28 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
 
-import './Reports.scss';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+
+import './ScenarioBuilder.scss';
+
+function createData(scenarioBuilder, BatchID, shipTo, orderNo, protein) {
+  return { scenarioBuilder, BatchID, shipTo, orderNo, protein };
 }
 
 const rows = [
-  createData('305376743', 305, 3.7, 67, 4.3),
-  createData('453748329', 452, 25.0, 51, 4.9),
-  createData('262356627', 262, 16.0, 24, 6.0),
-  createData('178947504', 159, 6.0, 24, 4.0),
-  createData('356164839', 356, 16.0, 49, 3.9),
-  createData('408328765', 408, 3.2, 87, 6.5),
-  createData('237903743', 237, 9.0, 37, 4.3),
-  createData('298813185', 375, 0.0, 94, 0.0),
-  createData('518263421', 518, 26.0, 65, 7.0),
-  createData('394728293', 392, 0.2, 98, 0.0),
-  createData('318938744', 318, 0, 81, 2.0),
-  createData('198737345', 360, 19.0, 9, 37.0),
-  createData('874437682', 437, 18.0, 63, 4.0),
+  createData('90382381', 305, 3.7, 67, 4.3),
+  createData('90382381', 452, 25.0, 51, 4.9),
+  createData('26872394', 262, 16.0, 24, 6.0),
+  createData('12879421', 159, 6.0, 24, 4.0),
+  createData('35672938', 356, 16.0, 49, 3.9),
+  createData('87639234', 408, 3.2, 87, 6.5),
+  createData('98273042', 237, 9.0, 37, 4.3),
+  createData('67820234', 375, 0.0, 94, 0.0),
+  createData('37231094', 518, 26.0, 65, 7.0),
+  createData('10197682', 392, 0.2, 98, 0.0),
+  createData('78623421', 318, 0, 81, 2.0),
+  createData('36029831', 360, 19.0, 9, 37.0),
+  createData('43789276', 437, 18.0, 63, 4.0),
 ];
 
 function desc(a, b, orderBy) {
@@ -69,11 +71,11 @@ function getSorting(order, orderBy) {
 }
 
 const headCells = [
-  { id: 'name', numeric: false, disablePadding: true, label: 'LoadPlan Name' },
-  { id: 'batchID', numeric: true, disablePadding: false, label: 'Batch Id' },
+  { id: 'scenarioBuilder', numeric: false, disablePadding: true, label: 'Scenario Builder' },
+  { id: 'BatchID', numeric: true, disablePadding: false, label: 'Batch Id' },
   { id: 'shipTo', numeric: true, disablePadding: false, label: 'Ship To' },
   { id: 'orderNo', numeric: true, disablePadding: false, label: 'Order Number(s)' },
-  { id: 'createdBy', numeric: true, disablePadding: false, label: 'Created By' },
+  { id: 'Created By', numeric: true, disablePadding: false, label: 'Created By' },
 ];
 
 function EnhancedTableHead(props) {
@@ -90,7 +92,7 @@ function EnhancedTableHead(props) {
             indeterminate={numSelected > 0 && numSelected < rowCount}
             checked={numSelected === rowCount}
             onChange={onSelectAllClick}
-            inputProps={{ 'aria-label': 'select all items' }}
+            inputProps={{ 'aria-label': 'select all desserts' }}
           />
         </TableCell>
         {headCells.map(headCell => (
@@ -165,7 +167,7 @@ const EnhancedTableToolbar = props => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle">
-          LoadPlans
+          ScenarioBuilders
         </Typography>
       )}
 
@@ -192,7 +194,8 @@ EnhancedTableToolbar.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: 1980,
+    
+    width: 1680,
     marginTop: theme.spacing(3),
   },
   paper: {
@@ -218,10 +221,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Reports() {
+function ScenarioBuilder() {
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('calories');
+  const [orderBy, setOrderBy] = React.useState('BatchID');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -235,19 +238,19 @@ function Reports() {
 
   const handleSelectAllClick = event => {
     if (event.target.checked) {
-      const newSelecteds = rows.map(n => n.name);
+      const newSelecteds = rows.map(n => n.scenarioBuilder);
       setSelected(newSelecteds);
       return;
     }
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
+  const handleClick = (event, scenarioBuilder) => {
+    const selectedIndex = selected.indexOf(scenarioBuilder);
     let newSelected = [];
 
     if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
+      newSelected = newSelected.concat(selected, scenarioBuilder);
     } else if (selectedIndex === 0) {
       newSelected = newSelected.concat(selected.slice(1));
     } else if (selectedIndex === selected.length - 1) {
@@ -275,7 +278,7 @@ function Reports() {
     setDense(event.target.checked);
   };
 
-  const isSelected = name => selected.indexOf(name) !== -1;
+  const isSelected = scenarioBuilder => selected.indexOf(scenarioBuilder) !== -1;
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -303,17 +306,17 @@ function Reports() {
               {stableSort(rows, getSorting(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row.scenarioBuilder);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={event => handleClick(event, row.name)}
+                      onClick={event => handleClick(event, row.scenarioBuilder)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.scenarioBuilder}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
@@ -323,11 +326,11 @@ function Reports() {
                         />
                       </TableCell>
                       <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.name}
+                        {row.scenarioBuilder}
                       </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
-                      <TableCell align="right">{row.carbs}</TableCell>
+                      <TableCell align="right">{row.BatchID}</TableCell>
+                      <TableCell align="right">{row.shipTo}</TableCell>
+                      <TableCell align="right">{row.orderNo}</TableCell>
                       <TableCell align="right">{row.protein}</TableCell>
                     </TableRow>
                   );
@@ -364,4 +367,4 @@ function Reports() {
   );
 }
 
-export default Reports
+export default ScenarioBuilder;

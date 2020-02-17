@@ -1,11 +1,137 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import LoadPlanResults from './LoadPlanResults';
+import LoadPlanSearchForm from './LoadPlanSearchForm';
+import {WebAPIGetCall} from '../../actions/webapicalls';
+import MillContext from '../../contexts/mill-context';
+import {LoadPlanView} from './LoadPlanView';
 
-const LoadPlanner = () => {
-    return(
-        <div className='classes.root'>
-  
-        </div>   
-    )
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <Typography
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`scrollable-auto-tabpanel-${index}`}
+      aria-labelledby={`scrollable-auto-tab-${index}`}
+      {...other}
+    >
+      <Box p={3}>{children}</Box>
+    </Typography>
+  );
 }
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `scrollable-auto-tab-${index}`,
+    'aria-controls': `scrollable-auto-tabpanel-${index}`,
+  };
+}
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    width: '100%',
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
+
+function LoadPlanner() {
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+  const [tabs, setTabs] = React.useState([]);
+
+  //const {mills,dispatch} = useContext(MillContext);
+  const {progressDispatch} = useContext(MillContext);
+
+  const handleChange = (event, newValue) => {
+      setValue(newValue);
+  };
+  const handleCheckBoxClick = (event, newValue) => {
+    setValue(newValue);
+  };
+  
+  const handleViewLoadPlan = (loadplanid,loadplanname) => {
+    //console.log("handleViewLoadPlan "+loadplanid+" "+loadplanname);
+
+    const tabcount =tabs.length;
+
+    let response = undefined;
+    async function InvokeAsync(){
+      response = await WebAPIGetCall(`LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`,progressDispatch);
+    }
+    InvokeAsync().then(() => {
+      setTabs([...tabs,
+        {
+          label:loadplanname,
+          tabData:{
+            ...response
+          }
+        }
+      ]);
+      setValue(tabcount+1);
+    });
+      
+  }
+
+  const handleTabClose = (loadplanname) =>{
+    setTabs([...tabs.filter(tab=> tab.label!== loadplanname)]);
+    setValue(0);
+  }
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" color="default">
+        <Tabs
+          value={value}
+          onChange={handleChange} 
+          indicatorColor="primary"
+          textColor="primary"
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="scrollable auto tabs example"
+        >
+          <Tab label="Open Load Plans" {...a11yProps(0)} />
+
+          {tabs.map((tab,index)=>{
+            return (<Tab key={tab.label} label={tab.label} {...a11yProps({index})} />)
+          })}
+
+         </Tabs>
+      </AppBar>
+      <TabPanel value={value} index={0}>
+
+        <LoadPlanSearchForm />      
+        <LoadPlanResults handleCheckBoxClick={handleCheckBoxClick} handleViewLoadPlan={handleViewLoadPlan} />
+      </TabPanel>
+
+       
+      {tabs.map((tab,index)=>{
+          
+            return (
+              <TabPanel key={tab.label} value={value} index={index+1}>
+              <LoadPlanView tabData={tab.tabData} handleTabClose={handleTabClose} label={tab.label}/>
+              </TabPanel> 
+            )
+      })}
+   
+    </div>
+  );
+}
+
 
 export default LoadPlanner;
