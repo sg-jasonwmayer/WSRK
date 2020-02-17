@@ -18,10 +18,10 @@ const Api = () =>  {
 
             setMills(loadedMills);
             // console.log(loadedMills[0]);
-            console.log(useMills)
+            console.log(resData.data.mills[key].millId)
         })
     }, []);
-   
+
     return (
         <div>
             {useMills.length  <= 0 ? "loading..." : "" }

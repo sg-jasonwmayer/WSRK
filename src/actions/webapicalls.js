@@ -1,6 +1,6 @@
 import {ShowBusy,HideBusy} from '../actions/activityindicator';
-// 
-// export const SERVER_URL = "https://localhost:3000/";
+
+//export const SERVER_URL = "https://localhost:44327/";
 
 export const SERVER_URL = "http://MS00015080D:9000/";
 
@@ -24,6 +24,6 @@ export const WebAPIGetCall = (apicall,dispatch)=>{
         }finally{
         }
     }
-    return WebAPIGetCall(apicall, dispatch);
+    return WebApiCall(apicall,dispatch);
 
 }

@@ -1,15 +1,24 @@
 import React,{useReducer,useEffect} from 'react';
 import clsx from 'clsx';
-import { useTheme,makeStyles } from '@material-ui/core/styles';
-// import AppBar from '@material-ui/core/AppBar';
+import {
+  useTheme,
+  makeStyles
+} from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
+
 import MillReducer from '../reducers/MillReducer';
 import LoadPlanReducer from '../reducers/LoadPlanReducer';
-import MillContext from '../contexts/mill-context';
-import {addMill,populateMills} from '../actions/Mills';
-import {WebAPIGetCall} from '../actions/webapicalls';
-import ActivityIndicator from '../components/ActivityIndicator';
 import ActivityIndicatorReducer from '../reducers/ActivityIndicatorReducer';
+
+import MillContext from '../contexts/mill-context';
+import {
+  addMill,
+  populateMills
+} from '../actions/Mills';
+
+import { WebAPIGetCall } from '../actions/webapicalls';
+import ActivityIndicator from '../components/ActivityIndicator';
 
 const drawerWidth = 240;
 
@@ -27,7 +36,7 @@ const useStyles = makeStyles(theme => ({
       display: 'block',
     },
   },
-  
+
   menuButton: {
     marginRight: 36,
   },
@@ -71,20 +80,20 @@ function Layout(props) {
     const [open, setOpen] = React.useState(false);
     const [selectedIndex, setSelectedIndex] = React.useState(false);
 
-   
+
      useEffect(()=>{
        (async function InvokeAsync(){
-         const jsonResponse = await WebAPIGetCall('Query/AllMills',progressDispatch)
+         const jsonResponse = await WebAPIGetCall('Query/AllMills', progressDispatch)
          millDispatch(populateMills(jsonResponse))
        })()
-       
+
       },[]);
 
     const handleDrawerOpen = () => {
-      millDispatch(populateMills(['Fernandina Beach Mill','Stevenson Mill','Dublin Mill']));
+      millDispatch(populateMills(['Fernandina Beach Mill', 'Stevenson Mill','Dublin Mill']));
       setOpen(true);
       };
-    
+
       const handleDrawerClose = () => {
         millDispatch(addMill('Dhiru Beach Mill'));
         setOpen(false);
@@ -94,45 +103,32 @@ function Layout(props) {
         setOpen(false);
         console.log(e);
       }
-  
+
     return (
 
-      <MillContext.Provider value={{mills,millDispatch,loadplans,loadplanDispatch,busy,progressDispatch}}>
+      <MillContext.Provider value={{mills, millDispatch, loadplans, loadplanDispatch, busy, progressDispatch}}>
         <div className={classes.root}>
-          <CssBaseline />
-          {/* <AppBar
+        <CssBaseline />
+         <AppBar
             position="fixed"
             className={clsx(classes.appBar, {
               [classes.appBarShift]: open,
             })}
           >
-       
-          </AppBar> */}
-   
+
+          </AppBar>
+
           <main className={classes.content}>
             <div className={classes.toolbar} />
             <ActivityIndicator/>
             {children}
           </main>
-        
+
         </div>
       </MillContext.Provider>
-     
+
     );
   }
 
 
   export default Layout;
-
-
-
-// json-server --watch store.json --port 3004
-
-//   const page = compose(
-//     withRedux,
-//     withAuth,
-//     withLogging,
-//     withLayout('default'),
-//   );
-//   export default page;
-
