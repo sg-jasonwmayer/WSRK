@@ -15,9 +15,7 @@ const useStyles = makeStyles(theme => ({
 
 const ColumnsToInclude = () => {
     const classes = useStyles();
-
     const [value, setValue] = React.useState('female');
-  
     const handleChange = event => {
       setValue(event.target.value);
     };
@@ -27,8 +25,8 @@ const ColumnsToInclude = () => {
             <FormControl component="fieldset" className={classes.formControl}>
                 {/* <FormLabel component="legend">Columns to Include in Selection Data Grid</FormLabel> */}
                 <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
-                    <FormControlLabel value="IncludeBoth" control={<Radio />} label="Interfaced Date" />
-                    <FormControlLabel value="OptimizedOnly" control={<Radio />} label="Interfaced User" />
+                    <FormControlLabel  value="IncludeBoth" control={<Radio />} label="Interfaced Date" />
+                    <FormControlLabel  value="OptimizedOnly" control={<Radio />} label="Interfaced User" />
                     <FormControlLabel  value="OptimizedUser" control={<Radio />} label="Optimized User" />
                     <FormControlLabel  value="CustPreference" control={<Radio />} label="IMill/Cust Preference" />
                     <FormControlLabel  value="LastVehicleWT" control={<Radio />} label="Last Vehicle Wt % Utilized" />

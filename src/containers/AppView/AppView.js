@@ -12,30 +12,37 @@ import {
 
 import Logout from '../Logout';
 import LoadPlanner from '../LoadPlanner';
-import MillPlan from '../MillPlan';
+import MillPreferences from '../MillPreferences';
 import Reports from '../Reports';
 import SomTester from '../SomTester';
 // import Api from '../../components/Api/Api';
 // import Main from '../Main/Main';
 
+import './AppView.scss';
 
 const AppView = () => {
   return (
     <div> 
-      <Router>
       <Header />
       <div>
-      <Switch>  
-         <Route
+       {<div className="app-view">
+         hello world
+      <Router>
+      <Switch> 
+      <Route exact path="/reports" component={Reports} />
+         {/* <Route
            path="/reports"
            exact
            render={(props) => (
-             <Reports 
-               {...props} 
-             />
+             <Reports
+             {...props} 
+              > 
+              reports        
+             </Reports>
            )}
-         />
+         /> */}
          <Route
+           exact
            path="/load-planner"
            render={(props) => (
              <LoadPlanner
@@ -43,10 +50,11 @@ const AppView = () => {
              />
            )}
          />
+
          <Route
            path="/mill-plan"
            render={(props) => (
-             <MillPlan 
+             <MillPreferences
                {...props} 
               millName={this.props.millName} 
              />
@@ -69,12 +77,12 @@ const AppView = () => {
        />
        <Redirect path="*" to="/" />
      </Switch>
-     </div>
      </Router>
-      {/* <Api />  */}
-      {/* <Main /> */}
+     </div>
+
+         }
     </div>
-    
+    </div>
   );
 }
 
