@@ -195,27 +195,27 @@ const Header = () => {
                     <Grid 
                      container
                     >
-                    <ClickAwayListener
-                     onClickAway={outsideClickHandler}
-                        >
                         <Grid
                          item 
                          xs={4}
                          className={classes.leftContainer}
                         >
-                          
-                                <IconButton
-                                    color="inherit"
-                                    aria-label="open drawer"
-                                    onClick={drawerOpenHandler}
-                                    edge="start"
-                                    className={clsx(classes.menuButton, open && classes.hide)}
+                          <div>
+                                <ClickAwayListener
+                                 onClickAway={outsideClickHandler}
                                 >
-                                    <MenuIcon 
-                                    color="primary" 
-                                    />
-                                </IconButton>
-                                
+                                    <IconButton
+                                     color="inherit"
+                                     aria-label="open drawer"
+                                     onClick={drawerOpenHandler}
+                                     edge="start"
+                                     className={clsx(classes.menuButton, open && classes.hide)}
+                                    >
+                                      <MenuIcon 
+                                       color="primary" 
+                                      />
+                                    </IconButton>
+                                </ClickAwayListener>
                                 <Drawer
                                   className={classes.drawer}
                                   variant="persistent"
@@ -247,8 +247,8 @@ const Header = () => {
                                                 <Link to="/mill-preferences">  
                                                     <ListItem button>
                                                         <ListItemIcon>
-                                                            <SettingsIcon />
-                                                        </ListItemIcon>
+                                                        <SettingsIcon />
+                                                        </ ListItemIcon>
                                                         <ListItemText 
                                                         primary={"Mill Preferences"} 
                                                         />    
@@ -275,13 +275,13 @@ const Header = () => {
                                                         <ListItemText 
                                                         primary={"Scenario Builder"} 
                                                         />
-                                                    </ListItem>
+                                                    </ ListItem>
                                                 </Link>
                                                 <Link to="/som-tester"> 
                                                     <ListItem 
                                                     button>
                                                         <ListItemIcon>
-                                                            <ShutterSpeedIcon />
+                                                        <ShutterSpeedIcon />
                                                         </ListItemIcon>
                                                         <ListItemText 
                                                         primary={"Som Tester"} 
@@ -289,25 +289,22 @@ const Header = () => {
                                                     </ListItem>
                                                 </Link>
                                             </nav>
-<<<<<<< HEAD
-                                        </Router>
-                                        <Divider />
-                           
-                                        <ValueInputBox />
+                                   
+                                    <Divider />
+
+                                       <ValueInputBox />
                                         <Collapsible onClick={handleClickCollapsible} trigger="Criteria">
                                             <CriteriaDropDown />
                                         </Collapsible>
                                         <Collapsible trigger="Filter Search By">
                                             <FilterSearchBy />
                                         </Collapsible>
-                               
                                         <Collapsible trigger="Filter by Mode">
                                             <FilterByMode />
                                         </Collapsible>
                                    
                                         <Collapsible trigger="Optimized Filters">
-=======
-                                   
+                                        </Collapsible>
                                     <Divider />
                                       <Collapsible trigger="Columns to Include in Selection Data Grid">
                                         <ColumnsToInclude />
@@ -318,26 +315,14 @@ const Header = () => {
                                       </ Collapsible>
                                       <Divider />
                                      <Collapsible trigger="Optimized Filters">
->>>>>>> 0821f1948554ae544b43b7a4f7b03044485ea942
                                             <OptimizedFilter />
                                         </ Collapsible>
                                         <Collapsible trigger="Columns to Include in Selection Data Grid">
                                             <ColumnsToInclude />
                                         </Collapsible>
+                                     
                                     </List>
                                 </Drawer>
-<<<<<<< HEAD
-                            
-                            <Router>
-                                <Link to="/"> 
-                                    <img 
-                                    src={logo} 
-                                    alt="West Rock Logo" 
-                                    className="logo"
-                                    />
-                                </ Link>
-                           </Router>
-=======
                             </div>  
                      
                             <Link to="/"> 
@@ -348,9 +333,7 @@ const Header = () => {
                            />
                            </ Link>
                    
->>>>>>> 0821f1948554ae544b43b7a4f7b03044485ea942
                         </Grid>
-                    </ClickAwayListener>
 
 {/* -------------------------------------------Center Container----------------------------------------*/}
                         <Grid
@@ -405,13 +388,13 @@ const Header = () => {
                  container
                  spacing={1}
                 >
-                    <Link to="/load-planner">
-                        <IconButton
-                        size="small"
-                        className={clsx(classes.quickAccessIcons)}
-                        > 
-                        <AccountTreeIcon />
-                        </IconButton>
+                <Link to="/load-planner">
+                    <IconButton
+                     size="small"
+                     className={clsx(classes.quickAccessIcons)}
+                    > 
+                      <AccountTreeIcon />
+                    </IconButton>
                     </Link> 
                 </Grid>
                 <Grid>
@@ -422,37 +405,37 @@ const Header = () => {
                     > 
                       <SettingsIcon />
                     </IconButton>
-                </Link> 
+                    </Link> 
                 </Grid>
                 <Grid>
-                    <Link to="/reports"> 
-                        <IconButton
-                            size="small"
-                            className={clsx(classes.quickAccessIcons)}
-                        > 
-                            <BarChartIcon />
-                        </IconButton>  
+                <Link to="/reports"> 
+                    <IconButton
+                        size="small"
+                        className={clsx(classes.quickAccessIcons)}
+                    > 
+                        <BarChartIcon />
+                    </IconButton>  
                     </Link>                         
                 </Grid>
                 <Grid>
-                    <Link to="/scenario-builder"> 
-                        <IconButton
-                            size="small"
-                            className={clsx(classes.quickAccessIcons)}
-                        > 
-                        <ExtensionIcon />
-                        </IconButton>
+                <Link to="/scenario-builder"> 
+                    <IconButton
+                        size="small"
+                        className={clsx(classes.quickAccessIcons)}
+                    > 
+                     <ExtensionIcon />
+                    </IconButton>
                     </Link>
                 </Grid>
                 <Grid>
-                    <Link to="/som-tester"> 
-                        <IconButton
-                        size="small"
-                        className={clsx(classes.quickAccessIcons)}
-                        > 
-                        <ShutterSpeedIcon />
-                        </IconButton>
-                    </Link>
+                <Link to="/som-tester"> 
+                    <IconButton
+                      size="small"
+                      className={clsx(classes.quickAccessIcons)}
+                    > 
+                      <ShutterSpeedIcon />
+                    </IconButton>
+                 </Link>
                 </Grid>
             </Grid>
             <div>
