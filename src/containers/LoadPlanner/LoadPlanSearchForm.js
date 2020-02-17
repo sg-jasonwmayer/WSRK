@@ -46,7 +46,7 @@ export default function UncontrolledTextField() {
     const [mill, setMill] = React.useState('2');
     const [searchcondition, setSearchCondition] = React.useState('contains');
     
-    const {mills,loadplans,loadplanDispatch,progressDispatch} = useContext(MillContext);
+    const {mills, loadplans, loadplanDispatch} = useContext(MillContext);
   
     useEffect(()=>{
         if(!loadplans) return;
@@ -60,7 +60,7 @@ export default function UncontrolledTextField() {
             setSearchCondition(loadplans.searchcondition)
 
         async function InvokeAsync(){
-            const jsonResponse = await WebAPIGetCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,progressDispatch)
+            const jsonResponse = await WebAPIGetCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,[])
             loadplanDispatch(populateSearchResults(jsonResponse))
       }
 
@@ -68,6 +68,8 @@ export default function UncontrolledTextField() {
             
 
     },[]);
+
+    const progressDispatch = [];
 
     const handleModeChange = event => {
         setMode(event.target.value);
@@ -95,7 +97,7 @@ export default function UncontrolledTextField() {
             loadplanDispatch(populateSearchResults(jsonResponse))
         }
         InvokeAsync();
-        //loadplanDispatch(populateSearchCriteria({loadplanname,mode,mill,searchcondition}));
+        // loadplanDispatch(populateSearchCriteria({loadplanname,mode,mill,searchcondition}));
     }
 
     return (

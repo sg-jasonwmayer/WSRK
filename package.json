@@ -13,6 +13,7 @@
     "contentful": "^7.12.0",
     "node-polyglot": "^2.4.0",
     "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-accordion-with-header": "^0.1.2",
     "react-collapsible": "^2.6.2",
@@ -22,10 +23,10 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
+    "recompose": "^0.30.0",
     "redux": "^4.0.5",
     "typeface-roboto": "0.0.75",
-    "typescript": "^3.7.5",
-    "recompose": "^0.30.0"
+    "typescript": "^3.7.5"
   },
   "scripts": {
     "build": "react-scripts build",

@@ -412,28 +412,20 @@ const Header = () => {
                 </Grid>
             </Grid>
             <div>
-         <Layout>
+         {/* <Layout> */}
         <Switch>
-        <Route 
-        exact path="/reports" 
-        component={Reports} 
-        />
-        <Route 
-        exact path="/mill-preferences" 
-        component={MillPreferences} 
-        />
+        <Route  exact path="/reports" component={Reports} />
+        <Route exact path="/mill-preferences" component={MillPreferences} />
         <Route exact path="/mill-one" component={MillOne} />
         <Route exact path="/load-planner" component={LoadPlanner} />
         <Route exact path="/som-tester" component={SomTester} />
         <Route exact path="/scenario-builder" component={ScenarioBuilder} />
         <Route exact path="/" component={Reports} />
         </Switch> 
-        </Layout>   
+        {/* </Layout> */}
         </div>
         </div>
-    
-        </Router>
-      
+        </Router> 
 
     )
 }

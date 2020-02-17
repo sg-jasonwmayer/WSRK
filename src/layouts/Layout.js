@@ -1,10 +1,8 @@
 import React,{useReducer,useEffect} from 'react';
 import clsx from 'clsx';
 import { useTheme,makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
+// import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import TopHeader from './TopHeader';
-import LeftDrawer from './LeftDrawer';
 import MillReducer from '../reducers/MillReducer';
 import LoadPlanReducer from '../reducers/LoadPlanReducer';
 import MillContext from '../contexts/mill-context';
@@ -29,21 +27,7 @@ const useStyles = makeStyles(theme => ({
       display: 'block',
     },
   },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
+  
   menuButton: {
     marginRight: 36,
   },
@@ -54,24 +38,6 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
-  },
-  drawerOpen: {
-    width: drawerWidth,
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  drawerClose: {
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    overflowX: 'hidden',
-    width: theme.spacing(7) + 1,
-    [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9) + 1,
-    },
   },
   toolbar: {
     display: 'flex',
@@ -105,7 +71,6 @@ function Layout(props) {
     const [open, setOpen] = React.useState(false);
     const [selectedIndex, setSelectedIndex] = React.useState(false);
 
-
    
      useEffect(()=>{
        (async function InvokeAsync(){
@@ -135,28 +100,15 @@ function Layout(props) {
       <MillContext.Provider value={{mills,millDispatch,loadplans,loadplanDispatch,busy,progressDispatch}}>
         <div className={classes.root}>
           <CssBaseline />
-          <AppBar
+          {/* <AppBar
             position="fixed"
             className={clsx(classes.appBar, {
               [classes.appBarShift]: open,
             })}
           >
-          {
-            <TopHeader 
-                open={open} 
-                classes={classes} 
-                handleDrawerOpen={handleDrawerOpen} />
-         
-          }
-          </AppBar>
-          <LeftDrawer 
-                open={open} 
-                classes={classes} 
-                handleDrawerClose={handleDrawerClose}
-                handleDrawerClick={handleDrawerClick}
-                theme={theme}
-                selectedIndex={selectedIndex}
-          />
+       
+          </AppBar> */}
+   
           <main className={classes.content}>
             <div className={classes.toolbar} />
             <ActivityIndicator/>
@@ -172,16 +124,15 @@ function Layout(props) {
 
   export default Layout;
 
-/*
 
-json-server --watch store.json --port 3004
 
-  const page = compose(
-    withRedux,
-    withAuth,
-    withLogging,
-    withLayout('default'),
-  );
-  export default page;
+// json-server --watch store.json --port 3004
 
-  */
+//   const page = compose(
+//     withRedux,
+//     withAuth,
+//     withLogging,
+//     withLayout('default'),
+//   );
+//   export default page;
+

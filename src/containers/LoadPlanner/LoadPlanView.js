@@ -79,7 +79,7 @@ export const LoadPlanView = ({tabData,handleTabClose,label})=>{
 
     const [open, setOpen] = React.useState(false);
     const [transition, setTransition] = React.useState(undefined);
-    console.log(setViewImagePath);
+   //console.log(setViewImagePath);
 
     function handleClick(event) {
         event.preventDefault();
@@ -242,5 +242,3 @@ export const LoadPlanView = ({tabData,handleTabClose,label})=>{
 
     );
 }
-
-export default LoadPlanView;

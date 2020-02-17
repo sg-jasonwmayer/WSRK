@@ -61,7 +61,7 @@ import MillContext from '../../contexts/mill-context';
     const [page, setPage] = React.useState(0);
     const [dense, setDense] = React.useState(true);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
-    const {loadplans} = useContext(MillContext);
+    // const {loadplans} = useContext(MillContext);
   
   
     const handleRequestSort = (event, property) => {
@@ -213,5 +213,5 @@ import MillContext from '../../contexts/mill-context';
     );
   }
   
-  export default LoadPlanResults
+  export default LoadPlanResults;
   

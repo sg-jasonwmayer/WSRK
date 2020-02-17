@@ -75,8 +75,6 @@ const [ millState ] = useState({
   ]
 
 });
-
-
   
     const handleClose = () => {
       setAnchorEl(null);
@@ -91,14 +89,9 @@ const [ millState ] = useState({
           console.log(resData.data.mills[2].millName);
       })
       
-      return () => {
-        tempMill = resData.data.mills[2].millName;
-
-      }
+      
   }, 
   []);
-
-
 
     useEffect(() => {
         axios.get(url)
