@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Menu, MenuItem, Fade, Grid, IconButton } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
@@ -6,9 +7,16 @@ import clsx from 'clsx';
 import axios from 'axios';
 
 
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
+
+
+
 import './Location.scss'
 
-const url = 'http://ms00015080d:7050/api/userpreferences/fhenao';
+const url = 'http://ms00015080d:7050/api/userpreferences/mill/fhenao';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -46,11 +54,11 @@ const Location = () => {
     useEffect(() => {
         axios.get(url)
         .then(resData => {
-            // eslint-disable-next-line react-hooks/exhaustive-deps
             tempMill = resData.data.mills[3].millName;
-            // console.log(resData.data.mills[3].millName);
+            //console.log(resData.data.mills[3].millName);
         })
     }, [tempMill]);
+ 
 
     return(
         <div
@@ -71,6 +79,7 @@ const Location = () => {
                 > 
                     <ArrowDropDownIcon 
                       color={'primary'}
+                  
                     />
                     <h4 
                       className={classes.centerContainer}
@@ -79,7 +88,6 @@ const Location = () => {
                     </h4> 
                 </IconButton>
             </Grid>
-
             <Menu
               id="fade-menu"
               anchorEl={anchorEl}
@@ -88,21 +96,29 @@ const Location = () => {
               onClose={handleClose}
               TransitionComponent={Fade}
             >
-              <MenuItem 
+             <Router>
+             <MenuItem 
                 onClick={handleClose}
               >
+              <Link to="/mill-one">
                 Mill One
+              </Link>
               </ MenuItem>
               <MenuItem 
                 onClick={handleClose}
               >
+              <Link to="/mill-two">
                 Mill Two
+                </Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
+                <Link to="/mill-three">
                 Mill Three
+                </Link>
               </ MenuItem>
+              </Router>
             </ Menu>
         </ div>
     )
