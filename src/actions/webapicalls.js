@@ -24,6 +24,6 @@ export const WebAPIGetCall = (apicall,dispatch)=>{
         }finally{
         }
     }
-    return WebApiCall(apicall,dispatch);
+    return WebAPIGetCall(apicall,dispatch);
     
 }
