@@ -283,6 +283,21 @@ const Header = () => {
                                             </nav>
                                    
                                     <Divider />
+
+                                       <ValueInputBox />
+                                        <Collapsible onClick={handleClickCollapsible} trigger="Criteria">
+                                            <CriteriaDropDown />
+                                        </Collapsible>
+                                        <Collapsible trigger="Filter Search By">
+                                            <FilterSearchBy />
+                                        </Collapsible>
+                                        <Collapsible trigger="Filter by Mode">
+                                            <FilterByMode />
+                                        </Collapsible>
+                                   
+                                        <Collapsible trigger="Optimized Filters">
+                                        </Collapsible>
+                                    <Divider />
                                       <Collapsible trigger="Columns to Include in Selection Data Grid">
                                         <ColumnsToInclude />
                                       </Collapsible>
@@ -293,7 +308,11 @@ const Header = () => {
                                       <Divider />
                                      <Collapsible trigger="Optimized Filters">
                                             <OptimizedFilter />
-                                            </ Collapsible>
+                                        </ Collapsible>
+                                        <Collapsible trigger="Columns to Include in Selection Data Grid">
+                                            <ColumnsToInclude />
+                                        </Collapsible>
+                                     
                                     </List>
                                 </Drawer>
                             </div>  
