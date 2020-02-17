@@ -9,10 +9,8 @@
     height: 30px; 
     padding-top: 5em;
     margin-left: 5vh;
-
 }
 
- 
   .flex {
     display: flex;
 
@@ -22,8 +20,6 @@
       position: fixed;
       border-bottom: 5px solid #ff8200;
       height: 7vh;
-    
-    
 
     .button {
       color: inherit;
@@ -39,7 +35,6 @@
 }
 .MuiButtonBase-root {
  margin-top: 5em;
-
 } 
     
 .logo {
@@ -47,7 +42,6 @@
     height: 30px; 
     padding-top: 5px;
     margin-left: 5vh;
-
 }
 
 .app-bar {
@@ -74,7 +68,6 @@
   align-items: center;
   padding: 0 1;
   justify-content: flex-end;
-
 }
 
 .drawer {
@@ -104,7 +97,11 @@ a:active {
   text-decoration: none;
 }
 .Collapsible {
-  background-color: white; }
+  background-color: white; 
+}
+.Collapsible:hover{
+  opacity:0.8;
+}
 
 .Collapsible__contentInner {
   padding: 10px;
@@ -125,29 +122,30 @@ a:active {
   position: relative;
   border: 1px solid white;
   padding: 10px;
-  background: #113f74;
-  color: white; }
-  .Collapsible__trigger:after {
-    font-family: 'Roboto';
-    content: '\f107';
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    display: block;
-    transition: transform 300ms; }
-  .Collapsible__trigger.is-open:after {
-    transform: rotateZ(180deg); }
-  .Collapsible__trigger.is-disabled {
-    opacity: 0.5;
-    background-color: grey; }
+  background: #004B87;
+  color: white;
+ }
+  // .Collapsible__trigger:after {
+  //   font-family: 'Roboto';
+  //   // content: '\f107';
+  //   position: absolute;
+  //   right: 10px;
+  //   top: 10px;
+  //   display: block;
+  //   transition: transform 300ms; }
+  // .Collapsible__trigger.is-open:after {
+  //   transform: rotateZ(180deg); }
+  // .Collapsible__trigger.is-disabled {
+  //   opacity: 0.5;
+  //   background-color: grey; }
 
 
 .CustomTriggerCSS {
   background-color: lightcoral;
   transition: background-color 200ms ease; }
 
-.CustomTriggerCSS--open {
-  background-color: darkslateblue; }
+// .CustomTriggerCSS--open {
+//   background-color: darkslateblue; }
 
 .Collapsible__custom-sibling {
   padding: 5px;

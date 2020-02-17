@@ -1,7 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-
+import { 
+  TextField,
+  Button}
+   from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -13,16 +16,25 @@ const useStyles = makeStyles(theme => ({
   }));
 
 const ValueInputBox = () => {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return(
-        <div className='classes.root'>
-            <form className={classes.root} noValidate autoComplete="off">
-                value
-                <TextField id="outlined-basic" label="Value" variant="outlined" />
-            </form>
-        </div>   
-    )
+  return(
+    <div className='classes.root'>
+      <Button variant="contained" href="#contained-buttons">
+        Apply Criteria
+      </Button>
+       <Button 
+        variant="contained"
+        color="secondary"
+        startIcon={<DeleteIcon />}
+        href="#contained-buttons">
+        Discard
+      </Button>
+      <form className={classes.root} noValidate autoComplete="off">
+          <TextField id="outlined-basic" label="Value" variant="outlined" />
+      </form>
+    </div>   
+  )
 }
 
 export default ValueInputBox;

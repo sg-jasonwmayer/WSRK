@@ -232,7 +232,6 @@ const Header = () => {
                                     </div>
                                     <Divider />
                                     <List>
-                                  
                                             <nav>
                                                 <Link to="/load-planner">
                                                     <ListItem button>
@@ -289,31 +288,10 @@ const Header = () => {
                                                     </ListItem>
                                                 </Link>
                                             </nav>
-                                    
+                                            </List>
                                         <Divider />
-                           
-                                        <ValueInputBox />
-                                        <Collapsible onClick={handleClickCollapsible} trigger="Criteria">
-                                            <CriteriaDropDown />
-                                        </Collapsible>
-                                        <Collapsible trigger="Filter Search By">
-                                            <FilterSearchBy />
-                                        </Collapsible>
-                               
-                                        <Collapsible trigger="Filter by Mode">
-                                            <FilterByMode />
-                                        </Collapsible>
-                                   
-                                        <Collapsible trigger="Optimized Filters">
-                                            <OptimizedFilter />
-                                        </ Collapsible>
-                                        <Collapsible trigger="Columns to Include in Selection Data Grid">
-                                            <ColumnsToInclude />
-                                        </Collapsible>
-                                    </List>
-                                </Drawer>
-                          
-                     
+                                      
+
                             <Link to="/"> 
                             <img 
                              src={logo} 
@@ -321,8 +299,9 @@ const Header = () => {
                              className="logo"
                            />
                            </ Link>
+                           </Drawer>
                    
-                        </Grid>
+                          </Grid>
                         </ClickAwayListener>
                    
                   
@@ -431,6 +410,9 @@ const Header = () => {
                     </Link>
                 </Grid>
             </Grid>
+       
+            </Router>
+                <Router>
             <div>
          {/* <Layout> */}
         <Switch>
