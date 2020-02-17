@@ -42,6 +42,9 @@ import UserName from '../UserName/UserName';
 import OptimizedFilter from '../OptimizedFilter';
 import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
+import FilterSearchBy from '../FilterSearchBy';
+import CriteriaDropDown from '../CriteriaDropDown';
+import ValueInputBox from '../ValueInputBox';
 
 import Layout from '../../layouts/Layout';
 
@@ -61,9 +64,9 @@ const useStyles = makeStyles(theme => ({
       textAlign: "center",
       display: "flex"
     },
-    flex: {
-        display: "flex"
-    },
+    // flex: {
+    //     display: "flex"
+    // },
     // logo:{
     //     margin:"0", 
     //     height: "30px", 
@@ -175,6 +178,11 @@ const Header = () => {
     const outsideClickHandler = () => {
         setOpen(false);
       };
+
+    const handleClickCollapsible = (e) => {
+        e.preventDefault();
+
+    }
  
     return ( 
         <Router>
