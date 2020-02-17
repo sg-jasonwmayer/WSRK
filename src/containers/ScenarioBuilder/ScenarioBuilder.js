@@ -22,6 +22,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
 
+
+
 import './ScenarioBuilder.scss';
 
 function createData(scenarioBuilder, BatchID, shipTo, orderNo, protein) {
@@ -29,19 +31,19 @@ function createData(scenarioBuilder, BatchID, shipTo, orderNo, protein) {
 }
 
 const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Honeycomb', 408, 3.2, 87, 6.5),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  createData('KitKat', 518, 26.0, 65, 7.0),
-  createData('Lollipop', 392, 0.2, 98, 0.0),
-  createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
+  createData('90382381', 305, 3.7, 67, 4.3),
+  createData('90382381', 452, 25.0, 51, 4.9),
+  createData('26872394', 262, 16.0, 24, 6.0),
+  createData('12879421', 159, 6.0, 24, 4.0),
+  createData('35672938', 356, 16.0, 49, 3.9),
+  createData('87639234', 408, 3.2, 87, 6.5),
+  createData('98273042', 237, 9.0, 37, 4.3),
+  createData('67820234', 375, 0.0, 94, 0.0),
+  createData('37231094', 518, 26.0, 65, 7.0),
+  createData('10197682', 392, 0.2, 98, 0.0),
+  createData('78623421', 318, 0, 81, 2.0),
+  createData('36029831', 360, 19.0, 9, 37.0),
+  createData('43789276', 437, 18.0, 63, 4.0),
 ];
 
 function desc(a, b, orderBy) {
@@ -192,7 +194,8 @@ EnhancedTableToolbar.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
+    
+    width: 1680,
     marginTop: theme.spacing(3),
   },
   paper: {

@@ -43,6 +43,8 @@ import OptimizedFilter from '../OptimizedFilter';
 import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
 
+import Layout from '../../layouts/Layout';
+
 import MillOne from '../../containers/MillOne';
 import ScenarioBuilder from '../../containers/ScenarioBuilder';
 import LoadPlanner from '../../containers/LoadPlanner';
@@ -176,6 +178,7 @@ const Header = () => {
  
     return ( 
         <Router>
+             
         <div className={classes.root}>
             <AppBar 
               className={classes.appBar}
@@ -409,6 +412,7 @@ const Header = () => {
                 </Grid>
             </Grid>
             <div>
+         <Layout>
         <Switch>
         <Route 
         exact path="/reports" 
@@ -418,17 +422,16 @@ const Header = () => {
         exact path="/mill-preferences" 
         component={MillPreferences} 
         />
-            <Route exact path="/mill-one" component={MillOne} />
+        <Route exact path="/mill-one" component={MillOne} />
         <Route exact path="/load-planner" component={LoadPlanner} />
         <Route exact path="/som-tester" component={SomTester} />
         <Route exact path="/scenario-builder" component={ScenarioBuilder} />
         <Route exact path="/" component={Reports} />
-        </Switch>    
+        </Switch> 
+        </Layout>   
         </div>
- 
-    
-    
         </div>
+    
         </Router>
       
 

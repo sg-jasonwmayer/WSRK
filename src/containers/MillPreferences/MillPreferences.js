@@ -15,7 +15,8 @@ import './MillPreferences.scss';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '900 px',
+    paddingTop: 20,
+    width: 1780,
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -52,7 +53,7 @@ function MillPreferences() {
   const classes = useStyles();
 
   return (
-    <div className="mill-preferences">
+    <div className={classes.root}>
       <ExpansionPanel defaultExpanded>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
