@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -8,9 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import LoadPlanResults from './LoadPlanResults';
 import LoadPlanSearchForm from './LoadPlanSearchForm';
-import WebApiCall from '../../actions/webapicalls';
-
-import LoadPlanView from './LoadPlanView';
+import {WebAPIGetCall} from '../../actions/webapicalls';
+import MillContext from '../../contexts/mill-context';
+import {LoadPlanView} from './LoadPlanView';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,7 +56,7 @@ function LoadPlanner() {
   const [tabs, setTabs] = React.useState([]);
 
   //const {mills,dispatch} = useContext(MillContext);
-  //const {progressDispatch} = useContext(MillContext);
+  const {progressDispatch} = useContext(MillContext);
 
   const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -72,7 +72,7 @@ function LoadPlanner() {
 
     let response = undefined;
     async function InvokeAsync(){
-      response = await WebApiCall(`LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`,[]);
+      response = await WebAPIGetCall(`LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`,progressDispatch);
     }
     InvokeAsync().then(() => {
       setTabs([...tabs,
@@ -134,4 +134,4 @@ function LoadPlanner() {
 }
 
 
-export default LoadPlanner;
+export default LoadPlanner

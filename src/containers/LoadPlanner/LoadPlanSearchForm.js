@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React,{useEffect} from 'react';
+import React,{useContext,useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -10,9 +9,11 @@ import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import SearchIcon from '@material-ui/icons/Search';
+import MillContext from '../../contexts/mill-context';
 
-import  WebApiCall  from '../../actions/webapicalls';
-import { populateSearchResults } from '../../actions/loadplanner/SearchResults';
+
+import {WebAPIGetCall} from '../../actions/webapicalls';
+import {populateSearchResults} from '../../actions/loadplanner/SearchResults';
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -41,12 +42,11 @@ const useStyles = makeStyles(theme => ({
 export default function UncontrolledTextField() {
     const classes = useStyles();
     const [loadplanname, setLoadPlanName] = React.useState('');
-    const [mill,loadplans,loadplanDispatch,progressDispatch] = React.useState('');
     const [mode, setMode] = React.useState('AllModes');
-    const [mills, setMill] = React.useState('2');
+    const [mill, setMill] = React.useState('2');
     const [searchcondition, setSearchCondition] = React.useState('contains');
     
-    
+    const {mills,loadplans,loadplanDispatch,progressDispatch} = useContext(MillContext);
   
     useEffect(()=>{
         if(!loadplans) return;
@@ -60,7 +60,7 @@ export default function UncontrolledTextField() {
             setSearchCondition(loadplans.searchcondition)
 
         async function InvokeAsync(){
-            const jsonResponse = await WebApiCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,progressDispatch)
+            const jsonResponse = await WebAPIGetCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,progressDispatch)
             loadplanDispatch(populateSearchResults(jsonResponse))
       }
 
@@ -91,7 +91,7 @@ export default function UncontrolledTextField() {
 
     const handleSearchLoadPlans =()=>{
         async function InvokeAsync(){
-            const jsonResponse = await WebApiCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,progressDispatch)
+            const jsonResponse = await WebAPIGetCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,progressDispatch)
             loadplanDispatch(populateSearchResults(jsonResponse))
         }
         InvokeAsync();
@@ -139,7 +139,7 @@ export default function UncontrolledTextField() {
                         labelId="demo-simple-select-placeholder-label-label"
                         id="demo-simple-select-placeholder-label"
                         value={mode}
-                       onChange={handleModeChange}
+                        onChange={handleModeChange}
                         displayEmpty
                         className={classes.selectEmpty}
                     >
@@ -152,7 +152,7 @@ export default function UncontrolledTextField() {
                     </Select>
                     <FormHelperText>(Transport Modes)</FormHelperText>
                 </FormControl>
-            
+                {mills && (
                     <FormControl className={classes.formControl}>
                     <InputLabel shrink id="demo-simple-select-placeholder-label-label">
                         Mills
@@ -161,19 +161,20 @@ export default function UncontrolledTextField() {
                         labelId="demo-simple-select-placeholder-label-label"
                         id="demo-simple-select-placeholder-label"
                         displayEmpty
-                    
+                        value={mill}
                         onChange={handleMillChange}
                         className={classes.selectEmpty}
                     >
-                
-                    <MenuItem value="Id">MillName</MenuItem>
-                                        
-                
+                        {mills.map(mill => { 
+                            return ( 
+                                <MenuItem key={mill.Id} value={mill.Id}>{mill.Name}</MenuItem>
+                            )}
+                        )}
                        
                        </Select>
                     <FormHelperText>(Mills)</FormHelperText>
                 </FormControl>
-                )
+                )}
             </div>
             <div>
                <Button
@@ -197,4 +198,4 @@ export default function UncontrolledTextField() {
             </div>
         </form>
     );
-}  
+}

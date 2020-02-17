@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -16,7 +15,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import {SERVER_URL} from '../../actions/webapicalls';
 import Snackbar from '@material-ui/core/Snackbar';
-
+import Slide from '@material-ui/core/Slide';
 
 
 
@@ -50,18 +49,32 @@ const useStyles = makeStyles(theme => ({
 
 
 
+  function TransitionLeft(props) {
+    return <Slide {...props} direction="left" />;
+  }
+  
+  function TransitionUp(props) {
+    return <Slide {...props} direction="up" />;
+  }
+  
+  function TransitionRight(props) {
+    return <Slide {...props} direction="right" />;
+  }
+  
+  function TransitionDown(props) {
+    return <Slide {...props} direction="down" />;
+  }
+
+
   const serverURL = SERVER_URL;
 
 
-// eslint-disable-next-line react/prop-types
-export const LoadPlanView = ({ tabData, handleTabClose, label})=>{
+export const LoadPlanView = ({tabData,handleTabClose,label})=>{
     const classes = useStyles();
   
-    // eslint-disable-next-line react/prop-types
     const {loadPlanName,reference,lastUpdateDate,submittedBy} = tabData;
     const [selectedVehicleIndex,setSelectedVehicleIndex] = useState(0);
     const [view,setSelectedView] = useState("threeDimensionalView");
-    // eslint-disable-next-line react/prop-types
     const [viewImagePath,setViewImagePath] = useState(serverURL+tabData.vehicles[0].images.threeDimensionalView);
 
     const [open, setOpen] = React.useState(false);
@@ -74,7 +87,6 @@ export const LoadPlanView = ({ tabData, handleTabClose, label})=>{
     
     const handleSelectVehicle = (index)=>{
         setSelectedVehicleIndex(index);
-        // eslint-disable-next-line react/prop-types
         setViewImagePath(serverURL+tabData.vehicles[index].images.threeDimensionalView);
         setSelectedView("threeDimensionalView");
     }
@@ -84,25 +96,18 @@ export const LoadPlanView = ({ tabData, handleTabClose, label})=>{
         setSelectedView(selectedvalue);
    
         if(selectedvalue==="threeDimensionalView"){
-            // eslint-disable-next-line react/prop-types
             setViewImagePath(serverURL+tabData.vehicles[selectedVehicleIndex].images.threeDimensionalView);
         }else if(selectedvalue==="twoDimensionalView"){
-            // eslint-disable-next-line react/prop-types
             setViewImagePath(serverURL+tabData.vehicles[selectedVehicleIndex].images.twoDimensionalView);
         }else if(selectedvalue==="twoDimWithSideAndTop"){
-            // eslint-disable-next-line react/prop-types
             setViewImagePath(serverURL+tabData.vehicles[selectedVehicleIndex].images.twoDimWithSideAndTop);
         }else if(selectedvalue==="twoDimEnlarged"){
-            // eslint-disable-next-line react/prop-types
             setViewImagePath(serverURL+tabData.vehicles[selectedVehicleIndex].images.twoDimEnlarged);
         }else if(selectedvalue==="threeDimensionalFront"){
-            // eslint-disable-next-line react/prop-types
             setViewImagePath(serverURL+tabData.vehicles[selectedVehicleIndex].images.threeDimensionalFront);
         }else if(selectedvalue==="threeDimensionalRear"){
-            // eslint-disable-next-line react/prop-types
             setViewImagePath(serverURL+tabData.vehicles[selectedVehicleIndex].images.threeDimensionalRear);
         }else{
-            // eslint-disable-next-line react/prop-types
             setViewImagePath(serverURL+tabData.vehicles[selectedVehicleIndex].images.threeDimensionalView);
         }
     }
@@ -211,6 +216,7 @@ export const LoadPlanView = ({ tabData, handleTabClose, label})=>{
               Max Payload : <br />
               <u>{tabData.vehicles[selectedVehicleIndex].maxPayLoad} lbs</u>
            </Paper>
+   
          </Grid>
         <Grid item xs={8}>
           <Paper className={classes.paper}>
@@ -219,7 +225,7 @@ export const LoadPlanView = ({ tabData, handleTabClose, label})=>{
         </Grid>
         <Grid item xs={2}>
         <div>
-          <Button variant="contained" color="Primary" onClick={handleSnackbarClick()}>Re-Optimize</Button>
+          <Button variant="contained" color="Primary" onClick={handleSnackbarClick(TransitionRight)}>Re-Optimize</Button>
           <Snackbar
             open={open}
             onClose={handleClose}
@@ -227,7 +233,6 @@ export const LoadPlanView = ({ tabData, handleTabClose, label})=>{
             ContentProps={{
               'aria-describedby': 'message-id',
             }}
-          // eslint-disable-next-line react/prop-types
           message={<span id="message-id">Your LoadPlan [{tabData.loadPlanName}] is being Optimized, for more updated status see the notification window!</span>}
           />
         </div>
@@ -237,6 +242,3 @@ export const LoadPlanView = ({ tabData, handleTabClose, label})=>{
 
     );
 }
-
-
-export default LoadPlanView;

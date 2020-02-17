@@ -19,8 +19,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 import { translate } from 'react-polyglot';
-
-import MillOne from '../../containers/MillOne/MillOne';
 import messages from './messages/en_us.json';
 
 import clsx from 'clsx';
@@ -46,13 +44,16 @@ const useStyles = makeStyles(theme => ({
 
 const Location = () => {
     // let match = useRouteMatch();
+    let resData = '';
+    let resData2 = '';
+    let tempMill1 = '';
     let tempMill = '';
-
+    let tempMill2 = '';
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const opens = Boolean(anchorEl);
 // eslint-disable-next-line no-unused-vars
-    const [useMills, setMills] =useState([]);
+    const [useMills, setMills] = useState([]);
     const handleClick = event => {
       setAnchorEl(event.currentTarget);
     };
@@ -62,12 +63,41 @@ const Location = () => {
     };
 
     useEffect(() => {
+      axios.get(url)
+      .then(resData2 => {
+          tempMill2 = resData2.data.mills[2].millName;
+          console.log(resData2.data.mills[2].millName);
+      })
+      return () => {
+        tempMill2 = resData2.data.mills[2].millName;
+
+      }
+  }, 
+  []);
+
+
+
+    useEffect(() => {
         axios.get(url)
         .then(resData => {
             tempMill = resData.data.mills[3].millName;
             console.log(resData.data.mills[3].millName);
+            console.log(resData.data.mills[4].millName);
+            console.log(resData.data.mills[5].millName);
         })
-    }, []);
+    }, 
+    []);
+
+
+    useEffect(() => {
+      axios.get(url)
+      .then(resData => {
+         tempMill1 = resData.data.mills[1].millName;
+          console.log(resData.data.mills[1].millName);
+      })
+  }, 
+  []);
+
  
     
     return(
@@ -93,10 +123,10 @@ const Location = () => {
                     <h4 
                       className={classes.centerContainer}
                     >
-                      {tempMill}
-                    </h4> 
-                </IconButton>
-            </Grid>
+               
+                    </ h4> 
+                </ IconButton>
+            </ Grid>
             <Menu
               id="fade-menu"
               anchorEl={anchorEl}
@@ -109,39 +139,39 @@ const Location = () => {
              <MenuItem 
                 onClick={handleClose}
               >
-                <Route
-                   exact
-                   path="/load-planner/mill-one"
-                   //routes={getloadPlannerRoutes()}
-                   render={routeProps => (
-                  <div className="load-planner">
-                    
-                    <Link 
-                    to={`${url}/mill-one`}
-                    >
-                    <MillOne /> 
-                  </Link>
-               
-                </div>
-                 )}
-                  />
+              <Link to="/hopewell-mill">
+              Hopewell Mill
+                </ Link>
               </ MenuItem>
-          
+             <MenuItem 
+                onClick={handleClose}
+              >
+              <Link to="/hodge-mill">
+              Hodge Mill
+                </ Link>
+              </ MenuItem>
               <MenuItem 
                 onClick={handleClose}
               >
-              <Link to="/mill-two">
-                Mill Two
-                </Link>
+              <Link to="/dublin-mill">
+              Dublin Mill
+                </ Link>
+              </ MenuItem>
+              <MenuItem 
+                onClick={handleClose}
+              >
+              <Link to="/fernandina-beach-mill">
+              Fernandina Beach Mill
+                </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to="/mill-three">
-                Mill Three
-                </Link>
+                <Link to="/Florence-Mill">
+                Florence Mill
+                </ Link>
               </ MenuItem>
-              </Router>
+              </ Router>
             </ Menu>
         </ div>
     )

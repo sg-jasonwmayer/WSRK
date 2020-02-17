@@ -1,12 +1,12 @@
 import {ShowBusy,HideBusy} from '../actions/activityindicator';
 
-export const SERVER_URL = "https://localhost:3000/";
+//export const SERVER_URL = "https://localhost:44327/";
 
-// export const SERVER_URL = "http://MS00015080D:9000/";
+export const SERVER_URL = "http://MS00015080D:9000/";
 
 export const WEBAPI_SERVER_URL = SERVER_URL+"api";
 
-export const WebApiCall = (apicall,dispatch)=>{
+export const WebAPIGetCall = (apicall,dispatch)=>{
 
     async function WebApiCall(apicall,dispatch){
         try{
@@ -21,12 +21,9 @@ export const WebApiCall = (apicall,dispatch)=>{
             return jsonResponse;
         }catch(e){
             return '';
-        // eslint-disable-next-line no-empty
-        } finally {
+        }finally{
         }
     }
     return WebApiCall(apicall,dispatch);
     
 }
-// eslint-disable-next-line no-undef
-export default WebApiCall;

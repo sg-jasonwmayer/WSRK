@@ -37,19 +37,18 @@ import Collapsible from 'react-collapsible';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import logo from '../../assets/westRockLogo.png';
 
-
 import Location from '../Location/Location';
 import UserName from '../UserName/UserName';
 import OptimizedFilter from '../OptimizedFilter';
 import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
 
+import MillOne from '../../containers/MillOne';
 import ScenarioBuilder from '../../containers/ScenarioBuilder';
 import LoadPlanner from '../../containers/LoadPlanner';
 import MillPreferences from '../../containers/MillPreferences';
 import Reports from '../../containers/Reports';
 import SomTester from '../../containers/SomTester';
-
 
 
 import './Header.scss'
@@ -419,6 +418,7 @@ const Header = () => {
         exact path="/mill-preferences" 
         component={MillPreferences} 
         />
+            <Route exact path="/mill-one" component={MillOne} />
         <Route exact path="/load-planner" component={LoadPlanner} />
         <Route exact path="/som-tester" component={SomTester} />
         <Route exact path="/scenario-builder" component={ScenarioBuilder} />
