@@ -9,15 +9,15 @@ import {
   IconButton 
 } from '@material-ui/core';
 import {
-  BrowserRouter as Router,
-  Link,
-  Route
-  //useRouteMatch
-  // withRouter
+BrowserRouter as Router,
+Link,
+Route,
+Switch
 } from "react-router-dom";
+
+
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-
 import DropButton from '../DropButton/DropButton';
 
 import { translate } from 'react-polyglot';
@@ -79,7 +79,7 @@ const millName = '';
   
     const handleClose = () => {
       setAnchorEl(null);
-    };
+    }
 
   
 
@@ -91,11 +91,6 @@ const millName = '';
           console.log(resData.data.mills[2].millName);
       })
 
-      // const millName = '';
-      // useName(() => {
-
-      // })
- 
 
   }, 
   []);
@@ -116,10 +111,9 @@ const millName = '';
       axios.get(url)
       .then(resData => {
          tempMill = resData.data.mills[13].millName;
-     
-
-
+    
       })
+      
       
   }, 
   []);

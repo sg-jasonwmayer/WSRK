@@ -242,3 +242,6 @@ export const LoadPlanView = ({tabData, handleTabClose,label})=>{
 
     );
 }
+ 
+
+export default LoadPlanView;

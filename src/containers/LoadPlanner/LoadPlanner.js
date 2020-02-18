@@ -11,7 +11,7 @@ import LoadPlanResults from './LoadPlanResults';
 import LoadPlanSearchForm from './LoadPlanSearchForm';
 import {WebAPIGetCall} from '../../actions/webapicalls';
 import MillContext from '../../contexts/mill-context';
-import {LoadPlanView} from './LoadPlanView';
+import LoadPlanView from './LoadPlanView';
 
 import './LoadPlanner.scss';
 
