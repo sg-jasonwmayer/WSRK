@@ -46,7 +46,7 @@ import FilterSearchBy from '../FilterSearchBy';
 import CriteriaDropDown from '../CriteriaDropDown';
 import ValueInputBox from '../ValueInputBox';
 
-// import Layout from '../../layouts/Layout';
+import Layout from '../../layouts/Layout';
 
 import MillOne from '../../containers/MillOne';
 import ScenarioBuilder from '../../containers/ScenarioBuilder';
@@ -291,7 +291,7 @@ const Header = () => {
                                             </nav>
 
                                     <Divider />
-
+                                       <div className="value-input">
                                        <ValueInputBox />
                                         <Collapsible onClick={handleClickCollapsible} trigger="Criteria">
                                             <CriteriaDropDown />
@@ -302,7 +302,6 @@ const Header = () => {
                                         <Collapsible trigger="Filter by Mode">
                                             <FilterByMode />
                                         </Collapsible>
-
                                         <Collapsible trigger="Optimized Filters">
                                         </Collapsible>
                                     <Divider />
@@ -320,7 +319,7 @@ const Header = () => {
                                         <Collapsible trigger="Columns to Include in Selection Data Grid">
                                             <ColumnsToInclude />
                                         </Collapsible>
-
+                                       </div>
                                     </List>
                                 </Drawer>
                             </div>
@@ -439,7 +438,7 @@ const Header = () => {
                 </Grid>
             </Grid>
             <div>
-         {/* <Layout> */}
+        <Layout>
         <Switch>
         <Route  exact path="/reports" component={Reports} />
         <Route exact path="/mill-preferences" component={MillPreferences} />
@@ -449,7 +448,7 @@ const Header = () => {
         <Route exact path="/scenario-builder" component={ScenarioBuilder} />
         <Route exact path="/" component={Reports} />
         </Switch>
-        {/* </Layout> */}
+        </Layout>
         </div>
         </div>
         </Router>

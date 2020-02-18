@@ -3,10 +3,10 @@
   text-align: center;
   display: flex;
 
-      
+
 .logo {
-    margin: 0; 
-    height: 30px; 
+    margin: 0;
+    height: 30px;
     padding-top: 5em;
     margin-left: 5vh;
 }
@@ -35,11 +35,11 @@
 }
 .MuiButtonBase-root {
  margin-top: 5em;
-} 
-    
+}
+
 .logo {
-    margin: 0; 
-    height: 30px; 
+    margin: 0;
+    height: 30px;
     padding-top: 5px;
     margin-left: 5vh;
 }
@@ -97,7 +97,7 @@ a:active {
   text-decoration: none;
 }
 .Collapsible {
-  background-color: white; 
+  background-color: white;
 }
 .Collapsible:hover{
   opacity:0.8;
@@ -151,4 +151,9 @@ a:active {
   padding: 5px;
   font-size: 12px;
   background-color: #FFF;
-  color: black; }
+  color: black;
+}
+
+.value-input {
+  margin-top: 10px;
+}

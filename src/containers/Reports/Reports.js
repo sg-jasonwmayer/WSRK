@@ -192,8 +192,10 @@ EnhancedTableToolbar.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: 1980,
-    marginTop: theme.spacing(3),
+    paddingTop: theme.spacing(12),
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(1),
+    width: 2380,
   },
   paper: {
     width: '100%',

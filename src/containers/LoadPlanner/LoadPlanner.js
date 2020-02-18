@@ -58,8 +58,8 @@ function LoadPlanner() {
   const [value, setValue] = React.useState(0);
   const [tabs, setTabs] = React.useState([]);
 
-  //const {mills,dispatch} = useContext(MillContext);
-  const {progressDispatch} = useContext(MillContext);
+  // const { mills, dispatch } = useContext(MillContext);
+  const progressDispatch = useContext(MillContext);
 
   const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -67,15 +67,15 @@ function LoadPlanner() {
   const handleCheckBoxClick = (event, newValue) => {
     setValue(newValue);
   };
-  
-  const handleViewLoadPlan = (loadplanid,loadplanname) => {
+
+  const handleViewLoadPlan = (loadplanid, loadplanname) => {
     //console.log("handleViewLoadPlan "+loadplanid+" "+loadplanname);
 
     const tabcount =tabs.length;
 
     let response = undefined;
     async function InvokeAsync(){
-      response = await WebAPIGetCall(`LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`,progressDispatch);
+      response = await WebAPIGetCall(`LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`, progressDispatch);
     }
     InvokeAsync().then(() => {
       setTabs([...tabs,
@@ -88,7 +88,7 @@ function LoadPlanner() {
       ]);
       setValue(tabcount+1);
     });
-      
+
   }
 
   const handleTabClose = (loadplanname) =>{
@@ -101,7 +101,7 @@ function LoadPlanner() {
       <AppBar position="static" color="default">
         <Tabs
           value={value}
-          onChange={handleChange} 
+          onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
           variant="scrollable"
@@ -118,20 +118,20 @@ function LoadPlanner() {
       </AppBar>
       <TabPanel value={value} index={0}>
 
-        <LoadPlanSearchForm />      
+        <LoadPlanSearchForm />
         <LoadPlanResults handleCheckBoxClick={handleCheckBoxClick} handleViewLoadPlan={handleViewLoadPlan} />
       </TabPanel>
 
-       
+
       {tabs.map((tab,index)=>{
-          
+
             return (
               <TabPanel key={tab.label} value={value} index={index+1}>
               <LoadPlanView tabData={tab.tabData} handleTabClose={handleTabClose} label={tab.label}/>
-              </TabPanel> 
+              </TabPanel>
             )
       })}
-   
+
     </div>
   );
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { 
+import {
   TextField,
   Button}
    from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
+import './ValueInputBox.scss';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -19,21 +20,22 @@ const ValueInputBox = () => {
   const classes = useStyles();
 
   return(
-    <div className='classes.root'>
-      <Button variant="contained" href="#contained-buttons">
+    <div className="root" >
+      <Button    className="value-button" variant="contained" href="#contained-buttons">
         Apply Criteria
       </Button>
-       <Button 
+       <Button
+       className="value-button"
         variant="contained"
         color="secondary"
         startIcon={<DeleteIcon />}
         href="#contained-buttons">
         Discard
       </Button>
-      <form className={classes.root} noValidate autoComplete="off">
+      <form className='value-input' noValidate autoComplete="off">
           <TextField id="outlined-basic" label="Value" variant="outlined" />
       </form>
-    </div>   
+    </div>
   )
 }
 

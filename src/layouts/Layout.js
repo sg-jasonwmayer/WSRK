@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React,{useReducer,useEffect} from 'react';
 import clsx from 'clsx';
 import {
