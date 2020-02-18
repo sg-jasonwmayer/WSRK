@@ -31,20 +31,13 @@ import ShutterSpeedIcon from '@material-ui/icons/ShutterSpeed';
 import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-
-import Collapsible from 'react-collapsible';
-
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
 import logo from '../../assets/westRockLogo.png';
 
-import Location from '../Location/Location';
-import UserName from '../UserName/UserName';
-import OptimizedFilter from '../OptimizedFilter';
-import FilterByMode from '../FilterByMode';
-import ColumnsToInclude from '../ColumnsToInclude';
-import FilterSearchBy from '../FilterSearchBy';
-import CriteriaDropDown from '../CriteriaDropDown';
-import ValueInputBox from '../ValueInputBox';
+import Location from '../Location';
+import UserName from '../UserName';
+import CollapsibleItems from '../CollapsibleItems/CollapsibleItems';
 
 import Layout from '../../layouts/Layout';
 
@@ -56,7 +49,7 @@ import Reports from '../../containers/Reports';
 import SomTester from '../../containers/SomTester';
 
 
-import './Header.scss'
+import './Header.scss';
 
 const drawerWidth = 390;
 const useStyles = makeStyles(theme => ({
@@ -179,6 +172,7 @@ const Header = () => {
         setOpen(false);
       };
 
+    // eslint-disable-next-line no-unused-vars
     const handleClickCollapsible = (e) => {
         e.preventDefault();
 
@@ -291,35 +285,8 @@ const Header = () => {
                                             </nav>
 
                                     <Divider />
-                                       <div className="value-input">
-                                       <ValueInputBox />
-                                        <Collapsible onClick={handleClickCollapsible} trigger="Criteria">
-                                            <CriteriaDropDown />
-                                        </Collapsible>
-                                        <Collapsible trigger="Filter Search By">
-                                            <FilterSearchBy />
-                                        </Collapsible>
-                                        <Collapsible trigger="Filter by Mode">
-                                            <FilterByMode />
-                                        </Collapsible>
-                                        <Collapsible trigger="Optimized Filters">
-                                        </Collapsible>
-                                    <Divider />
-                                      <Collapsible trigger="Columns to Include in Selection Data Grid">
-                                        <ColumnsToInclude />
-                                      </Collapsible>
-                                    <Divider />
-                                      <Collapsible trigger="Filter by Mode">
-                                        <FilterByMode />
-                                      </ Collapsible>
-                                      <Divider />
-                                     <Collapsible trigger="Optimized Filters">
-                                            <OptimizedFilter />
-                                        </ Collapsible>
-                                        <Collapsible trigger="Columns to Include in Selection Data Grid">
-                                            <ColumnsToInclude />
-                                        </Collapsible>
-                                       </div>
+                                    <CollapsibleItems />
+    
                                     </List>
                                 </Drawer>
                             </div>
@@ -456,4 +423,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Header; 

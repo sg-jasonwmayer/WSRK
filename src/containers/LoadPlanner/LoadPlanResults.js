@@ -14,7 +14,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import LoadPlanResultsTableHead from './_loadplanResultsTableHead';
 import LoadPlanResultsToolBar from './_loadplanResultsToolbar';
-import {stableSort, desc} from '../../selectors/LoadPlanResultsSorter';
+import {
+  stableSort
+  // getSorting
+} from '../../selectors/LoadPlanResultsSorter';
 //import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 //import Fab from '@material-ui/core/Fab';
@@ -23,10 +26,10 @@ import IconButton from '@material-ui/core/IconButton';
 //import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import MillContext from '../../contexts/mill-context';
 
-
+ 
   const loadPlanResults = [];
-
-
+  
+  
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
@@ -54,7 +57,7 @@ import MillContext from '../../contexts/mill-context';
       width: 1,
     },
   }));
-
+  
   function LoadPlanResults({handleViewLoadPlan}) {
     const classes = useStyles();
     const [order, setOrder] = React.useState('asc');
@@ -64,14 +67,14 @@ import MillContext from '../../contexts/mill-context';
     const [dense, setDense] = React.useState(true);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const {loadplans} = useContext(MillContext);
-
-
+  
+  
     const handleRequestSort = (event, property) => {
       const isDesc = orderBy === property && order === 'desc';
       setOrder(isDesc ? 'asc' : 'desc');
       setOrderBy(property);
     };
-
+  
     const handleSelectAllClick = event => {
       if (event.target.checked) {
         const newSelecteds = loadPlanResults.map(n => n.name);
@@ -80,11 +83,11 @@ import MillContext from '../../contexts/mill-context';
       }
       setSelected([]);
     };
-
+  
     const handleClick = (event, name) => {
       const selectedIndex = selected.indexOf(name);
       let newSelected = [];
-
+  
       if (selectedIndex === -1) {
         newSelected = newSelected.concat(selected, name);
       } else if (selectedIndex === 0) {
@@ -97,27 +100,27 @@ import MillContext from '../../contexts/mill-context';
           selected.slice(selectedIndex + 1),
         );
       }
-
+  
       setSelected(newSelected);
     };
-
+  
     const handleChangePage = (event, newPage) => {
       setPage(newPage);
     };
-
+  
     const handleChangeRowsPerPage = event => {
       setRowsPerPage(parseInt(event.target.value, 10));
       setPage(0);
     };
-
+  
     const handleChangeDense = event => {
       setDense(event.target.checked);
     };
-
+  
     const isSelected = name => selected.indexOf(name) !== -1;
-
+  
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, loadPlanResults.length - page * rowsPerPage);
-
+  
     return (
       <div className={classes.root}>
         <Paper className={classes.paper}>
@@ -139,55 +142,44 @@ import MillContext from '../../contexts/mill-context';
                 rowCount={loadPlanResults.length}
               />
               <TableBody>
-                // stableSort(loadplans, stableSort(order, orderBy))
-                //   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)}
-
-
+                {/* {stableSort(loadplans, getSorting(order, orderBy))
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) */}
+                 {stableSort((row, index) => {
+                    const isItemSelected = isSelected(row.name);
+                    const labelId = `enhanced-table-checkbox-${index}`;
+  
                     return (
                       <TableRow
                         hover
                         role="checkbox"
-                        // aria-checked={isItemSelected}
+                        aria-checked={isItemSelected}
                         tabIndex={-1}
-                        // key={row.name}
-                        // selected={isItemSelected}
+                        key={row.name}
+                        selected={isItemSelected}
                       >
                         <TableCell padding="checkbox">
                           <Checkbox
-                            // onClick={event => handleClick(event, row.name)}
-                            // checked={isItemSelected}
-                            // inputProps={{ 'aria-labelledby': labelId }}
+                            onClick={event => handleClick(event, row.name)}
+                            checked={isItemSelected}
+                            inputProps={{ 'aria-labelledby': labelId }}
                           />
                         </TableCell>
-                        <TableCell component="th"
-
-                        >
-
+                        <TableCell component="th" id={row.Id} scope="row" padding="none">
+                          {row.name}
                         </TableCell>
-                        <TableCell align="right">
-
-                        </TableCell>
-                        <TableCell align="right">
-
-                        </TableCell>
-                        <TableCell align="right">
-
-                        </TableCell>
-                        <TableCell align="right">
-
-                      </TableCell>
-                        <TableCell align="right">
-
-                        </TableCell>
+                        <TableCell align="right">{row.batchID}</TableCell>
+                        <TableCell align="right">{row.shipTo}</TableCell>
+                        <TableCell align="right">{row.mode}</TableCell>
+                        <TableCell align="right">{row.SubmitedBy}</TableCell>
+                        <TableCell align="right">{row.ApprovedBy}</TableCell>
                         <TableCell align="center">
-                          <IconButton
-                                // aria-label="delete"
-                                // className={classes.margin}
-                                // onClick={()=> {
-                                //   handleViewLoadPlan(row.id,row.name)
-                                // }}
-                                // size="small"
-                                >
+                          <IconButton 
+                                aria-label="delete" 
+                                className={classes.margin} 
+                                onClick={()=> {
+                                  handleViewLoadPlan(row.id,row.name)
+                                }}
+                                size="small">
                             <SearchIcon fontSize="inherit" />
                           </IconButton>
                         </TableCell>
@@ -225,5 +217,6 @@ import MillContext from '../../contexts/mill-context';
       </div>
     );
   }
-
+  
   export default LoadPlanResults;
+  

@@ -54,27 +54,28 @@ const Location = props => {
     const handleClick = event => {
       setAnchorEl(event.currentTarget);
     };
-
-  
+    
 const [ millState ] = useState({
   millNames: [
-    {name: 'Hopewell Mill'},
-    {name: 'Hodge Mill'},
-    {name: 'Dublin Mill'},
-    {name: 'Ferdnadina Beach Mill'},
-    {name: 'Florence Mill'},
-    {name: 'La Tuque Mill'},
-    {name: 'Panama City Mill'},
-    {name: 'Solvay Mill'},
-    {name: 'Seminole Mill'},
-    {name: 'Roanoke Rapids DEV'},
-    {name: 'Stevenson Mill'},
-    {name: 'West Point Mill'},
-    {name: 'Tacoma Mill'}
+    {MillName: 'Hopewell Mill'},
+    {MillName: 'Hodge Mill'},
+    {MillName: 'Dublin Mill'},
+    {MillName: 'Ferdnadina Beach Mill'},
+    {MillName: 'Florence Mill'},
+    {MillName: 'La Tuque Mill'},
+    {MillName: 'Panama City Mill'},
+    {MillName: 'Solvay Mill'},
+    {MillName: 'Seminole Mill'},
+    {MillName: 'Roanoke Rapids DEV'},
+    {MillName: 'Stevenson Mill'},
+    {MillName: 'West Point Mill'},
+    {MillName: 'Tacoma Mill'}
     
   ]
 
 });
+
+const millName = '';
   
     const handleClose = () => {
       setAnchorEl(null);
@@ -85,11 +86,17 @@ const [ millState ] = useState({
     useEffect(() => {
       axios.get(url)
       .then(resData => {
+    
           tempMill = resData.data.mills[2].millName;
           console.log(resData.data.mills[2].millName);
       })
-      
-      
+
+      // const millName = '';
+      // useName(() => {
+
+      // })
+ 
+
   }, 
   []);
 
@@ -111,7 +118,7 @@ const [ millState ] = useState({
          tempMill = resData.data.mills[13].millName;
      
 
-     
+
       })
       
   }, 
@@ -158,9 +165,9 @@ const [ millState ] = useState({
              <MenuItem 
                 onClick={handleClose}
               >
-              <Link to="/hopewell-mill">
+              <Link to={millState.millNames[0].MillName}>
                 <DropButton
-                name={millState.millNames[0].name}
+                name={millState.millNames[0].MillName}
                  />
     
                 </ Link>
@@ -168,108 +175,108 @@ const [ millState ] = useState({
              <MenuItem 
                 onClick={handleClose}
               >
-              <Link to="/hodge-mill">
+              <Link to={millState.millNames[1].MillName}>
               <DropButton
-                name={millState.millNames[1].name}
+                name={millState.millNames[1].MillName}
               />
                 </ Link>
               </ MenuItem>
               <MenuItem 
                 onClick={handleClose}
               >
-              <Link to="/dublin-mill">
+              <Link to={millState.millNames[2].MillName}>
               <DropButton
-                name={millState.millNames[2].name}
+                name={millState.millNames[2].MillName}
               />
               </ Link>
               </ MenuItem>
               <MenuItem 
                 onClick={handleClose}
               >
-              <Link to="/fernandina-beach-mill">
+              <Link to={millState.millNames[3].MillName}>
               <DropButton
-                name={millState.millNames[3].name}
+                name={millState.millNames[3].MillName}
               />
                 </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to={millState.millNames[4].name}>
+                <Link to={millState.millNames[4].MillName}>
                 <DropButton
-                name={millState.millNames[4].name}
+                name={millState.millNames[4].MillName}
               />
               </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to={millState.millNames[5].name}>
+                <Link to={millState.millNames[5].MillName}>
                 <DropButton
-                name={millState.millNames[5].name}
+                name={millState.millNames[5].MillName}
               />
                 </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to={millState.millNames[6].name}>
+                <Link to={millState.millNames[6].MillName}>
                 <DropButton
-                 name={millState.millNames[6].name}
+                 name={millState.millNames[6].MillName}
               />
                 </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to={millState.millNames[7].name}>
+                <Link to={millState.millNames[7].MillName}>
                 <DropButton
-                 name={millState.millNames[7].name}
+                 name={millState.millNames[7].MillName}
               />
                 </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to={millState.millNames[8].name}>
+                <Link to={millState.millNames[8].MillName}>
                 <DropButton
-                 name={millState.millNames[8].name}
+                 name={millState.millNames[8].MillName}
               />
                 </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to={millState.millNames[9].name}>
+                <Link to={millState.millNames[9].MillName}>
                 <DropButton
-                 name={millState.millNames[9].name}
+                 name={millState.millNames[9].MillName}
               />
                 </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to={millState.millNames[10].name}>
+                <Link to={millState.millNames[10].MillName}>
                 <DropButton
-                 name={millState.millNames[10].name}
+                 name={millState.millNames[10].MillName}
               />
                 </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to={millState.millNames[11].name}>
+                <Link to={millState.millNames[11].MillName}>
                 <DropButton
-                 name={millState.millNames[11].name}
+                 name={millState.millNames[11].MillName}
               />
                 </ Link>
               </ MenuItem>
               <MenuItem
                 onClick={handleClose}
               >
-                <Link to={millState.millNames[12].name}>
+                <Link to={millState.millNames[12].MillName}>
                 <DropButton
-                 name={millState.millNames[12].name}
+                 name={millState.millNames[12].MillName}
               />
                 </ Link>
               </ MenuItem>

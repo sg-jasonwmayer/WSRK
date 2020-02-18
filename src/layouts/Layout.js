@@ -20,7 +20,7 @@ import {
 } from '../actions/Mills';
 
 import { WebAPIGetCall } from '../actions/webapicalls';
-import ActivityIndicator from '../components/ActivityIndicator';
+import ActivityIndicator from '../components/ActivityIndicator/';
 
 const drawerWidth = 240;
 

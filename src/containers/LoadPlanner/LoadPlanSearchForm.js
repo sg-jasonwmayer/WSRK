@@ -15,6 +15,8 @@ import MillContext from '../../contexts/mill-context';
 import {WebAPIGetCall} from '../../actions/webapicalls';
 import {populateSearchResults} from '../../actions/loadplanner/SearchResults';
 
+import Location from '../../components/Location';
+
 const useStyles = makeStyles(theme => ({
     container: {
         display: 'flex',
@@ -159,6 +161,7 @@ export default function UncontrolledTextField() {
                     <InputLabel shrink id="demo-simple-select-placeholder-label-label">
                         Mills
                    </InputLabel>
+                   <Location />
                     <Select
                         labelId="demo-simple-select-placeholder-label-label"
                         id="demo-simple-select-placeholder-label"
@@ -171,9 +174,10 @@ export default function UncontrolledTextField() {
                             return ( 
                                 <MenuItem key={mill.Id} value={mill.Id}>{mill.Name}</MenuItem>
                             )}
-                        )}
-                       
+                        )}  
                        </Select>
+                     {/* <FormControl> */}
+                       {/* <Location />    */}
                     <FormHelperText>(Mills)</FormHelperText>
                 </FormControl>
                 )}
@@ -181,7 +185,7 @@ export default function UncontrolledTextField() {
             <div>
                <Button
                     variant="contained"
-                    color="primary"
+                color="primary"
                     className={classes.button}
                     onClick={handleSearchLoadPlans}
                     startIcon={<SearchIcon />}

@@ -1,18 +1,19 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import LoadPlanResults from './LoadPlanResults';
 
+import LoadPlanResults from './LoadPlanResults';
 import LoadPlanSearchForm from './LoadPlanSearchForm';
 import {WebAPIGetCall} from '../../actions/webapicalls';
 import MillContext from '../../contexts/mill-context';
 import {LoadPlanView} from './LoadPlanView';
 
+import './LoadPlanner.scss';
 
 
 function TabPanel(props) {
@@ -45,21 +46,13 @@ function a11yProps(index) {
   };
 }
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    width: '100%',
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
 
 function LoadPlanner() {
-  const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [tabs, setTabs] = React.useState([]);
 
-  // const { mills, dispatch } = useContext(MillContext);
-  const progressDispatch = useContext(MillContext);
+  //const {mills,dispatch} = useContext(MillContext);
+  const {progressDispatch} = useContext(MillContext);
 
   const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -67,15 +60,15 @@ function LoadPlanner() {
   const handleCheckBoxClick = (event, newValue) => {
     setValue(newValue);
   };
-
-  const handleViewLoadPlan = (loadplanid, loadplanname) => {
+  
+  const handleViewLoadPlan = (loadplanid,loadplanname) => {
     //console.log("handleViewLoadPlan "+loadplanid+" "+loadplanname);
 
     const tabcount =tabs.length;
 
     let response = undefined;
     async function InvokeAsync(){
-      response = await WebAPIGetCall(`LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`, progressDispatch);
+      response = await WebAPIGetCall(`LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`,progressDispatch);
     }
     InvokeAsync().then(() => {
       setTabs([...tabs,
@@ -88,7 +81,7 @@ function LoadPlanner() {
       ]);
       setValue(tabcount+1);
     });
-
+      
   }
 
   const handleTabClose = (loadplanname) =>{
@@ -97,11 +90,11 @@ function LoadPlanner() {
   }
 
   return (
-    <div className={classes.root}>
+    <div className="load-planner">
       <AppBar position="static" color="default">
         <Tabs
           value={value}
-          onChange={handleChange}
+          onChange={handleChange} 
           indicatorColor="primary"
           textColor="primary"
           variant="scrollable"
@@ -118,20 +111,20 @@ function LoadPlanner() {
       </AppBar>
       <TabPanel value={value} index={0}>
 
-        <LoadPlanSearchForm />
+        <LoadPlanSearchForm />      
         <LoadPlanResults handleCheckBoxClick={handleCheckBoxClick} handleViewLoadPlan={handleViewLoadPlan} />
       </TabPanel>
 
-
+       
       {tabs.map((tab,index)=>{
-
+          
             return (
               <TabPanel key={tab.label} value={value} index={index+1}>
               <LoadPlanView tabData={tab.tabData} handleTabClose={handleTabClose} label={tab.label}/>
-              </TabPanel>
+              </TabPanel> 
             )
       })}
-
+   
     </div>
   );
 }
