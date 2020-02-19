@@ -45,7 +45,6 @@ export default function UserName() {
   return (
       <div className='root'>
           <IconButton
-              color='inherit'
               size='small'
               aria-controls='fade-menu' 
               aria-haspopup='true' 
