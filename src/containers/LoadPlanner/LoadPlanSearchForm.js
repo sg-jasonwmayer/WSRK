@@ -103,105 +103,106 @@ export default function UncontrolledTextField() {
     }
 
     return (
-        <form className={classes.container} noValidate autoComplete="off">
-            <div>
-               <FormControl className={classes.formControl}>
-                   <InputLabel shrink id="demo-simple-select-placeholder-label-label">
-                        Search Criteria
-                   </InputLabel>
-                    <Select
-                        labelId="demo-simple-select-placeholder-label-label"
-                        id="demo-simple-select-placeholder-label"
-                        value={searchcondition}
-                        onChange={handleSearchCondition}
-                        displayEmpty
-                        className={classes.selectEmpty}
-                    >
-                        <MenuItem value='contains'>
-                            <em>Contains</em>
-                        </MenuItem>
-                        <MenuItem value={'begins'}>Begins With</MenuItem>
-                        <MenuItem value={'ends'}>Ends With</MenuItem>
-                    </Select>
-                    <FormHelperText>(For LoadPlan Name)</FormHelperText>
-                </FormControl>
-                <TextField
-                    id="standard-search"
-                    label="Search LoadPlan"
-                    type="search"
-                    value={loadplanname}
-                    onChange={handleLoadPlanNameChange}
-                    className={classes.textField}
-                    margin="normal"
-                />
+        <div></div>
+        // <form className={classes.container} noValidate autoComplete="off">
+        //     <div>
+        //        <FormControl className={classes.formControl}>
+        //            <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+        //                 Search Criteria
+        //            </InputLabel>
+        //             <Select
+        //                 labelId="demo-simple-select-placeholder-label-label"
+        //                 id="demo-simple-select-placeholder-label"
+        //                 value={searchcondition}
+        //                 onChange={handleSearchCondition}
+        //                 displayEmpty
+        //                 className={classes.selectEmpty}
+        //             >
+        //                 <MenuItem value='contains'>
+        //                     <em>Contains</em>
+        //                 </MenuItem>
+        //                 <MenuItem value={'begins'}>Begins With</MenuItem>
+        //                 <MenuItem value={'ends'}>Ends With</MenuItem>
+        //             </Select>
+        //             <FormHelperText>(For LoadPlan Name)</FormHelperText>
+        //         </FormControl>
+        //         <TextField
+        //             id="standard-search"
+        //             label="Search LoadPlan"
+        //             type="search"
+        //             value={loadplanname}
+        //             onChange={handleLoadPlanNameChange}
+        //             className={classes.textField}
+        //             margin="normal"
+        //         />
          
-                <FormControl className={classes.formControl}>
-                    <InputLabel shrink id="demo-simple-select-placeholder-label-label">
-                        Mode
-                   </InputLabel>
-                    <Select
-                        labelId="demo-simple-select-placeholder-label-label"
-                        id="demo-simple-select-placeholder-label"
-                        value={mode}
-                        onChange={handleModeChange}
-                        displayEmpty
-                        className={classes.selectEmpty}
-                    >
-                        <MenuItem value='AllModes'>
-                            <em>All Modes</em>
-                        </MenuItem>
-                        <MenuItem value={'Rail'}>Rail</MenuItem>
-                        <MenuItem value={'Truck'}>Trailer</MenuItem>
-                        <MenuItem value={'Piggyback'}>Piggyback</MenuItem>
-                    </Select>
-                    <FormHelperText>(Transport Modes)</FormHelperText>
-                </FormControl>
-                {mills && (
-                    <FormControl className={classes.formControl}>
-                    <InputLabel shrink id="demo-simple-select-placeholder-label-label">
-                        Mills
-                   </InputLabel>
-                   <Location />
-                    <Select
-                        labelId="demo-simple-select-placeholder-label-label"
-                        id="demo-simple-select-placeholder-label"
-                        displayEmpty
-                        value={mill}
-                        onChange={handleMillChange}
-                        className={classes.selectEmpty}
-                    >
-                        {mills.map(mill => { 
-                            return ( 
-                                <MenuItem key={mill.Id} value={mill.Id}>{mill.Name}</MenuItem>
-                            )}
-                        )}  
-                       </Select>
-                     {/* <FormControl> */}
-                       {/* <Location />    */}
-                    <FormHelperText>(Mills)</FormHelperText>
-                </FormControl>
-                )}
-            </div>
-            <div>
-               <Button
-                    variant="contained"
-                color="primary"
-                    className={classes.button}
-                    onClick={handleSearchLoadPlans}
-                    startIcon={<SearchIcon />}
-                >
-                    Search
-                </Button>  
-                <Button
-                    variant="contained"
-                    color="secondary"
-                    className={classes.button}
-                    onClick={handleReset}
-                    startIcon={<DeleteIcon />}
-                >
-                    Reset
-                </Button>  
-            </div>
-        </form>
+        //         <FormControl className={classes.formControl}>
+        //             <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+        //                 Mode
+        //            </InputLabel>
+        //             <Select
+        //                 labelId="demo-simple-select-placeholder-label-label"
+        //                 id="demo-simple-select-placeholder-label"
+        //                 value={mode}
+        //                 onChange={handleModeChange}
+        //                 displayEmpty
+        //                 className={classes.selectEmpty}
+        //             >
+        //                 <MenuItem value='AllModes'>
+        //                     <em>All Modes</em>
+        //                 </MenuItem>
+        //                 <MenuItem value={'Rail'}>Rail</MenuItem>
+        //                 <MenuItem value={'Truck'}>Trailer</MenuItem>
+        //                 <MenuItem value={'Piggyback'}>Piggyback</MenuItem>
+        //             </Select>
+        //             <FormHelperText>(Transport Modes)</FormHelperText>
+        //         </FormControl>
+        //         {mills && (
+        //             <FormControl className={classes.formControl}>
+        //             <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+        //                 Mills
+        //            </InputLabel>
+        //            <Location />
+        //             <Select
+        //                 labelId="demo-simple-select-placeholder-label-label"
+        //                 id="demo-simple-select-placeholder-label"
+        //                 displayEmpty
+        //                 value={mill}
+        //                 onChange={handleMillChange}
+        //                 className={classes.selectEmpty}
+        //             >
+        //                 {mills.map(mill => { 
+        //                     return ( 
+        //                         <MenuItem key={mill.Id} value={mill.Id}>{mill.Name}</MenuItem>
+        //                     )}
+        //                 )}  
+        //                </Select>
+        //              {/* <FormControl> */}
+        //                {/* <Location />    */}
+        //             <FormHelperText>(Mills)</FormHelperText>
+        //         </FormControl>
+        //         )}
+        //     </div>
+        //     <div>
+        //        <Button
+        //             variant="contained"
+        //         color="primary"
+        //             className={classes.button}
+        //             onClick={handleSearchLoadPlans}
+        //             startIcon={<SearchIcon />}
+        //         >
+        //             Search
+        //         </Button>  
+        //         <Button
+        //             variant="contained"
+        //             color="secondary"
+        //             className={classes.button}
+        //             onClick={handleReset}
+        //             startIcon={<DeleteIcon />}
+        //         >
+        //             Reset
+        //         </Button>  
+        //     </div>
+        // </form>
     );
 }
