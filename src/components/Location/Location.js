@@ -136,7 +136,6 @@ const millName = '';
                className={classes.centerContainer}
              > 
                 <IconButton
-                  color="inherit"
                   size='small'
                   className={clsx(classes.menuButton )}
                   aria-controls="fade-menu" 
@@ -149,6 +148,7 @@ const millName = '';
                     <h4 
                       className={classes.centerContainer}
                     >
+                      Panama City Mill
                
                     </ h4> 
                 </ IconButton>
