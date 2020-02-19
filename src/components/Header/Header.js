@@ -89,6 +89,7 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        marginTop: "2.5vh"
     },
     leftContainer:{
         display: "flex",
