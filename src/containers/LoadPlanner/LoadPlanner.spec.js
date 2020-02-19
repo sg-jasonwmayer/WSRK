@@ -4,7 +4,7 @@
 
 import LoadPlanner  from './LoadPlanner';
 
-describe('My Test Suite', () => {
+describe('Loaad Planner Test Suite', () => {
     
 const mockReport = () => {
   return {
