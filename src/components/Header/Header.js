@@ -175,7 +175,6 @@ const Header = () => {
     // eslint-disable-next-line no-unused-vars
     const handleClickCollapsible = (e) => {
         e.preventDefault();
-
     }
 
     return (
@@ -194,10 +193,10 @@ const Header = () => {
                          xs={4}
                          className={classes.leftContainer}
                         >
-                          <div>
                                 <ClickAwayListener
                                  onClickAway={outsideClickHandler}
                                 >
+                          <div>
                                     <IconButton
                                      color="inherit"
                                      aria-label="open drawer"
@@ -209,7 +208,6 @@ const Header = () => {
                                        color="primary"
                                       />
                                     </IconButton>
-                                </ClickAwayListener>
                                 <Drawer
                                   className={classes.drawer}
                                   variant="persistent"
@@ -286,10 +284,12 @@ const Header = () => {
 
                                     <Divider />
                                     <CollapsibleItems />
+
     
                                     </List>
                                 </Drawer>
                             </div>
+                                </ClickAwayListener>
 
                             <Link to="/">
                             <img
