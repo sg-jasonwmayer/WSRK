@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Api = () =>  {
     const [useMills, setMills] = useState([]);
-    const mills = 'http://ms00015080d:7050/api/userpreferences/fhenao';
+    const mills = 'http://ms00015080d:7050/api/userpreferences/mill/fhenao';
     const loadedMills = [];
 
     useEffect(() => {
@@ -18,10 +18,10 @@ const Api = () =>  {
 
             setMills(loadedMills);
             // console.log(loadedMills[0]);
-            // console.log(useMills)
+            console.log(resData.data.mills[key].millId)
         })
-    }, [loadedMills, useMills]);
-   
+    }, []);
+
     return (
         <div>
             {useMills.length  <= 0 ? "loading..." : "" }
