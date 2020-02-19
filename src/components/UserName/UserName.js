@@ -66,13 +66,44 @@ export default function UserName() {
           >
               <MenuItem 
                 onClick={handleClose}
-                language={language}
-              />
+                // language={language}
+              >
+                Language: English
+                </ MenuItem>
+                <MenuItem 
+                onClick={handleClose}
+                // language={language}
+              >
+                Mill Group: Panther
+                </ MenuItem>
+                <MenuItem 
+                onClick={handleClose}
+                // language={language}
+              >
+                Web Role: Admin
+                </ MenuItem>
+                <MenuItem 
+                onClick={handleClose}
+                // language={language}
+              >
+                Units: Imperial
+                </ MenuItem>
               <MenuItem 
                 onClick={handleClose}
                 units={units}
               />
+              
           </ Menu>
       </div>
   )
 }
+
+// "userName": "fhenao",
+// "lX_UserFullName": "fhenao",
+// "language": "English",
+// "units": "Imperial",
+// "mill_group": "Panther",
+// "web_role": "Admin",
+// "lx_role": "Admin",
+// "include_advisecase": false,
+// "lx_system": "Mill"

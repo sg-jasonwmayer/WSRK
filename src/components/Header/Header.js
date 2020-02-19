@@ -95,7 +95,8 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         justifyContent:"flex-Start",
         flexDirection: "row",
-        justify: "center"
+        justify: "center",
+        marginTop: "1vh"
     },
     appBarShift: {
         width: `calc(100% - ${drawerWidth}px)`,
