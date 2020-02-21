@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
 import {
   Radio,
   RadioGroup,
@@ -10,19 +9,17 @@ import {
 
 import './OptimizedFilter.scss';
 
-const useStyles = makeStyles(theme => ({
-  formControl: {
-    margin: theme.spacing(3),
-  },
-}));
 
-// eslint-disable-next-line no-unused-vars
-const StyledMenu = withStyles({
-  paper: {
-    border: '1px solid #d3d4d5',
-  },
-})(props => (
-  <Menu
+const OptimizedFilter = () => {
+   
+    const [value, setValue] = React.useState('');  
+    const handleChange = event => {   
+      setValue(event.target.value);
+    };
+
+    return(
+      <div className="root">
+        <Menu
     elevation={0}
     getContentAnchorEl={null}
     anchorOrigin={{
@@ -33,21 +30,9 @@ const StyledMenu = withStyles({
       vertical: 'top',
       horizontal: 'center',
     }}
-    {...props}
+
   />
-));
-
-const OptimizedFilter = () => {
-   
-    const classes = useStyles();
-    const [value, setValue] = React.useState('');  
-    const handleChange = event => {   
-      setValue(event.target.value);
-    };
-
-    return(
-      <div className='classes.root'>
-        <FormControl component="fieldset" className={classes.formControl}>
+        <FormControl component="fieldset" className="form-control">
           <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
             <FormControlLabel 
               value="IncludeBoth" 

@@ -1,24 +1,23 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import DeleteIcon from '@material-ui/icons/Delete';
 import {
   TextField,
-  Button}
-   from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
+  Button
+}
+from '@material-ui/core';
+
+
+
 import './ValueInputBox.scss';
 
-const useStyles = makeStyles(theme => ({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-        width: 200,
-      },
-    },
-  }));
+
+
+
+
 
 const ValueInputBox = () => {
-  const classes = useStyles();
+
 
   return(
     <div className="root" >
