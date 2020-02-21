@@ -52,10 +52,10 @@ import './Header.scss';
 
 const drawerWidth = 400;
 const useStyles = makeStyles(theme => ({
-    root: {
-      textAlign: "center",
-      display: "flex"
-    },
+    // root: {
+    //   textAlign: "center",
+    //   display: "flex"
+    // },
     appBar:{
         backgroundColor: "white",
         position: "fixed",
@@ -66,15 +66,15 @@ const useStyles = makeStyles(theme => ({
         duration: theme.transitions.duration.leavingScreen,
         }),
     },
-    button: {
-        color: "inherit"
-    },
-    rightContainer: {
-        alignItems: "center",
-        display: "flex",
-        justify: "center",
-        justifyContent: "flex-end"
-    },
+    // button: {
+    //     color: "inherit"
+    // },
+    // rightContainer: {
+    //     alignItems: "center",
+    //     display: "flex",
+    //     justify: "center",
+    //     justifyContent: "flex-end"
+    // },
     centerContainer: {
         display: "flex",
         flexDirection: "column",
@@ -103,15 +103,15 @@ const useStyles = makeStyles(theme => ({
     hide: {
         display: "none",
     },
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-        position: "absolute"
-    },
-    drawerPaper: {
-        width: drawerWidth,
-        height: "100%",
-    },
+    // drawer: {
+    //     width: drawerWidth,
+    //     flexShrink: 0,
+    //     position: "absolute"
+    // },
+    // drawerPaper: {
+    //     width: drawerWidth,
+    //     height: "100%",
+    // },
     drawerHeader: {
         display: "flex",
         alignItems: "center",
@@ -295,7 +295,7 @@ const Header = () => {
                             <Grid
                             item
                             xs={4}
-                            className={classes.rightContainer}
+                            className='rightContainer'
                             >
                                 <IconButton
                                 color="inherit"
