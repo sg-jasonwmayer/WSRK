@@ -35,7 +35,7 @@ bundle.js
 .DS_Store
 /.project
 /.yarnrc
-package-lock.json
+
 
 # VSCode files
 .vscode
