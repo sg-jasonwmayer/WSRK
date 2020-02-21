@@ -1,8 +1,6 @@
 import React from 'react';
 import './CollapsibleItems.scss';
 
-import { Divider } from '@material-ui/core';
-
 import OptimizedFilter from '../OptimizedFilter/OptimizedFilter.js';
 import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
