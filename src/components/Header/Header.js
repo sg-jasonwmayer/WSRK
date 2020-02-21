@@ -52,10 +52,6 @@ import './Header.scss';
 
 const drawerWidth = 400;
 const useStyles = makeStyles(theme => ({
-    // root: {
-    //   textAlign: "center",
-    //   display: "flex"
-    // },
     appBar:{
         backgroundColor: "white",
         position: "fixed",
@@ -65,28 +61,6 @@ const useStyles = makeStyles(theme => ({
         easing: theme.transitions.easingOut,
         duration: theme.transitions.duration.leavingScreen,
         }),
-    },
-    // button: {
-    //     color: "inherit"
-    // },
-    // rightContainer: {
-    //     alignItems: "center",
-    //     display: "flex",
-    //     justify: "center",
-    //     justifyContent: "flex-end"
-    // },
-    centerContainer: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        marginTop: "2.5vh"
-    },
-    leftContainer:{
-        display: "flex",
-        justifyContent:"flex-Start",
-        flexDirection: "row",
-        justify: "center",
-        marginTop: "1vh"
     },
     appBarShift: {
         width: `calc(100% - ${drawerWidth}px)`,
@@ -177,7 +151,7 @@ const Header = () => {
                             <Grid
                             item
                             xs={4}
-                            className={classes.leftContainer}
+                            className="leftContainer"
                             >
                                 <ClickAwayListener
                                 onClickAway={outsideClickHandler}
@@ -285,7 +259,7 @@ const Header = () => {
                             <Grid
                             item
                             xs={4}
-                            className={classes.centerContainer}
+                            className="centerContainer"
                             >
                                 <Location
                                 className={classes.location}

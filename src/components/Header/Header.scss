@@ -1,45 +1,16 @@
-.root {
-  text-align: center;
-  display: flex;
-}
-
-.logo {
-    margin: 0;
-    height: 30px;
-    padding-top: 5em;
-    margin-left: 5vh;
-}
-
-  // .flex {
-  //   display: flex;
-
-    // .app-bar {
-    //   padding-top: 205px;
-    //   background-color: white;
-    //   position: fixed;
-    //   border-bottom: 5px solid #ff8200;
-    //   height: 7vh;
-    // }
-
 .button {
   color: inherit;
 }
-
-// .rightContainer {
-//   align-items: center;
-//   display: flex;
-//   justify-content: flex-end;
-// }
 
 .MuiButtonBase-root {
  margin-top: 5em;
 }
 
 .logo {
-    margin: 0;
-    height: 30px;
-    padding-top: 5px;
-    margin-left: 5vh;
+  margin: 0;
+  height: 30px;
+  padding-top: 5px;
+  margin-left: 5vh;
 }
 
 .app-bar {
@@ -48,6 +19,17 @@
   position: fixed;
   border-bottom: 5px solid #ff8200;
   height: 7vh;
+}
+.leftContainer {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 1.3vh;
+}
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5vh;
 }
 
 .rightContainer {
@@ -81,6 +63,7 @@
 
 a:link {
   text-decoration: none;
+  color: #004B87;
 }
 
 a:visited {
@@ -101,17 +84,6 @@ a:active {
   opacity:0.8;
 }
 
-.Collapsible__contentInner {
-  padding: 10px;
-  border: 1px solid #ebebeb;
-  border-top: 0; }
-  .Collapsible__contentInner p {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 20px; }
-    .Collapsible__contentInner p:last-child {
-      margin-bottom: 0; }
-
 .Collapsible__trigger {
   display: block;
   font-weight: 400;
@@ -119,39 +91,57 @@ a:active {
   color: #333333;
   position: relative;
   border: 1px solid white;
-  padding: 10px;
+  padding: 0.8vh;
   background: #004B87;
   color: white;
- }
-  // .Collapsible__trigger:after {
-  //   font-family: 'Roboto';
-  //   // content: '\f107';
-  //   position: absolute;
-  //   right: 10px;
-  //   top: 10px;
-  //   display: block;
-  //   transition: transform 300ms; }
-  // .Collapsible__trigger.is-open:after {
-  //   transform: rotateZ(180deg); }
-  // .Collapsible__trigger.is-disabled {
-  //   opacity: 0.5;
-  //   background-color: grey; }
-
-
-.CustomTriggerCSS {
-  background-color: lightcoral;
-  transition: background-color 200ms ease; }
-
-// .CustomTriggerCSS--open {
-//   background-color: darkslateblue; }
-
-.Collapsible__custom-sibling {
-  padding: 5px;
-  font-size: 12px;
-  background-color: #FFF;
-  color: black;
 }
 
 .value-input {
   margin-top: 10px;
+
 }
+
+// .Collapsible__contentInner {
+//   padding: 10px;
+//   border: 1px solid #ebebeb;
+//   border-top: 0; 
+//   margin: 0;
+  
+// }
+// .Collapsible__contentInner p {
+//   // margin-bottom: 10px;
+//   font-size: 14px;
+//   // line-height: 20px; 
+// }
+// .Collapsible__contentInner p:last-child {
+//   margin-bottom: 0; 
+// }
+
+// .Collapsible__trigger:after {
+  //   font-family: 'Roboto';
+  //   // content: '\f107';
+  //   position: absolute;
+//   right: 10px;
+//   top: 10px;
+//   display: block;
+//   transition: transform 300ms; }
+// .Collapsible__trigger.is-open:after {
+//   transform: rotateZ(180deg); }
+// .Collapsible__trigger.is-disabled {
+//   opacity: 0.5;
+//   background-color: grey; }
+
+
+// .CustomTriggerCSS {
+//   background-color: lightcoral;
+//   transition: background-color 200ms ease; }
+
+// .CustomTriggerCSS--open {
+//   background-color: darkslateblue; }
+
+// .Collapsible__custom-sibling {
+//   padding: 5px;
+//   font-size: 12px;
+//   background-color: #FFF;
+//   color: black;
+// }
