@@ -11,7 +11,6 @@ import './ValueInputBox.scss';
 const useStyles = makeStyles(theme => ({
     root: {
       '& > *': {
-        margin: theme.spacing(1),
         width: 200,
       },
     },
@@ -25,7 +24,7 @@ const ValueInputBox = () => {
       <Button    className="value-button" variant="contained" href="#contained-buttons">
         Apply Criteria
       </Button>
-       <Button
+      <Button
        className="value-button"
         variant="contained"
         color="secondary"
