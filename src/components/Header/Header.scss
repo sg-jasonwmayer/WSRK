@@ -78,6 +78,9 @@ a:active {
 .Collapsible:hover{
   opacity:0.8;
 }
+.Collapsible__trigger:hover {
+  overflow: visible;
+}
 
 .Collapsible__trigger {
   display: block;
@@ -93,7 +96,6 @@ a:active {
 
 .value-input {
   margin-top: 10px;
-
 }
 
 // .Collapsible__contentInner {

@@ -3,8 +3,6 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Link,
-    Route,
-    Switch
   } from "react-router-dom";
 
 import {
@@ -38,15 +36,7 @@ import logo from '../../assets/westRockLogo.png';
 import Location from '../Location';
 import UserName from '../UserName';
 import CollapsibleItems from '../CollapsibleItems/CollapsibleItems';
-
-import Layout from '../../layouts/Layout';
-
-import MillOne from '../../containers/MillOne';
-import ScenarioBuilder from '../../containers/ScenarioBuilder';
-import LoadPlanner from '../../containers/LoadPlanner';
-import MillPreferences from '../../containers/MillPreferences';
-import Reports from '../../containers/Reports';
-import SomTester from '../../containers/SomTester';
+import EasyAccessIcons from '../EasyAccessIcons/EasyAccessIcons';
 
 import './Header.scss';
 
@@ -100,16 +90,6 @@ const useStyles = makeStyles(theme => ({
             }),
         marginLeft: 0,
     },
-    quickAccessIconsContainer: {
-        paddingTop: "10vh",
-        borderRight: "2px"
-    },
-    quickAccessIcons: {
-        marginLeft: "2vh",
-        marginTop: "1vh",
-        color: "gray",
-        opacity: "60%"
-    }
 }));
 
 const Header = () => {
@@ -231,7 +211,7 @@ const Header = () => {
                                                     </Link>
                                                 </nav>
                                                 <Divider />
-                                                <CollapsibleItems />
+                                                <CollapsibleItems/>
                                             </List>
                                         </Drawer>
                                     </div>
@@ -291,75 +271,7 @@ const Header = () => {
                     </Toolbar>
                 </AppBar>
                 {/* ------------------------Icons below header (left) ------------ */}
-
-                <Grid
-                className={classes.quickAccessIconsContainer}
-                >
-                    <Grid
-                    container
-                    spacing={1}
-                    >
-                        <Link to="/load-planner">
-                            <IconButton
-                            size="small"
-                            className={clsx(classes.quickAccessIcons)}
-                            >
-                                <AccountTreeIcon />
-                            </IconButton>
-                        </Link>
-                    </Grid>
-                    <Grid>
-                        <Link to="/mill-preferences">
-                            <IconButton
-                            size="small"
-                            className={clsx(classes.quickAccessIcons)}
-                            >
-                                <SettingsIcon />
-                            </IconButton>
-                        </Link>
-                    </Grid>
-                    <Grid>
-                        <Link to="/reports">
-                            <IconButton
-                                size="small"
-                                className={clsx(classes.quickAccessIcons)}
-                            >
-                                <BarChartIcon />
-                            </IconButton>
-                        </Link>
-                    </Grid>
-                    <Grid>
-                        <Link to="/scenario-builder">
-                            <IconButton
-                                size="small"
-                                className={clsx(classes.quickAccessIcons)}
-                            >
-                                <ExtensionIcon />
-                            </IconButton>
-                        </Link>
-                    </Grid>
-                    <Grid>
-                        <Link to="/som-tester">
-                            <IconButton
-                            size="small"
-                            className={clsx(classes.quickAccessIcons)}
-                            >
-                                <ShutterSpeedIcon />
-                            </IconButton>
-                        </Link>
-                    </Grid>
-                </Grid>
-                <Layout>
-                    <Switch>
-                        <Route  exact path="/reports" component={Reports} />
-                        <Route exact path="/mill-preferences" component={MillPreferences} />
-                        <Route exact path="/mill-one" component={MillOne} />
-                        <Route exact path="/load-planner" component={LoadPlanner} />
-                        <Route exact path="/som-tester" component={SomTester} />
-                        <Route exact path="/scenario-builder" component={ScenarioBuilder} />
-                        <Route exact path="/" component={Reports} />
-                    </Switch>
-                </Layout>
+                <EasyAccessIcons />
             </div>
         </Router>
     )

@@ -14,7 +14,6 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-// eslint-disable-next-line no-unused-vars
 const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',

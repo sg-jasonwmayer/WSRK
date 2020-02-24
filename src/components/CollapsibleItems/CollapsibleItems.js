@@ -11,22 +11,23 @@ import ValueInputBox from '../ValueInputBox/ValueInputBox.js';
 import Collapsible from 'react-collapsible';
 
 const CollapsibleItems = () => {
+
   return (
     <div className="value-input">
       <ValueInputBox />
-      <Collapsible  trigger="Criteria">
+      <Collapsible  trigger="Criteria" transitionTime="150" >
         <CriteriaDropDown /> 
       </Collapsible>
-      <Collapsible trigger="Filter Search By">
+      <Collapsible trigger="Filter Search By" transitionTime="150">
         <FilterSearchBy /> 
       </Collapsible>
-      <Collapsible trigger="Filter by Mode">
+      <Collapsible trigger="Filter by Mode" transitionTime="150">
         <FilterByMode />
       </Collapsible>
-      <Collapsible trigger="Optimized Filters">
+      <Collapsible trigger="Optimized Filters" transitionTime="150">
         <OptimizedFilter />
       </Collapsible>
-      <Collapsible trigger="Columns to Include in Selection Data Grid">
+      <Collapsible trigger="Columns to Include in Selection Data Grid" transitionTime="150">
         <ColumnsToInclude /> 
       </Collapsible> 
     </div>
