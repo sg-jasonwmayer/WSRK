@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2cb28767.chunk.css",
+    "main.js": "/static/js/main.8b98bc3a.chunk.js",
+    "main.js.map": "/static/js/main.8b98bc3a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d0063913.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d0063913.js.map",
+    "static/css/2.8271af8e.chunk.css": "/static/css/2.8271af8e.chunk.css",
+    "static/js/2.d93d1060.chunk.js": "/static/js/2.d93d1060.chunk.js",
+    "static/js/2.d93d1060.chunk.js.map": "/static/js/2.d93d1060.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.38ccafa6ee86ee1545fc5bb9300e45bf.js": "/precache-manifest.38ccafa6ee86ee1545fc5bb9300e45bf.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.8271af8e.chunk.css.map": "/static/css/2.8271af8e.chunk.css.map",
+    "static/css/main.2cb28767.chunk.css.map": "/static/css/main.2cb28767.chunk.css.map",
+    "static/js/2.d93d1060.chunk.js.LICENSE": "/static/js/2.d93d1060.chunk.js.LICENSE",
+    "static/media/index.css": "/static/media/roboto-latin-900italic.ebf6d164.woff2",
+    "static/media/westRockLogo.png": "/static/media/westRockLogo.9606afff.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0063913.js",
+    "static/css/2.8271af8e.chunk.css",
+    "static/js/2.d93d1060.chunk.js",
+    "static/css/main.2cb28767.chunk.css",
+    "static/js/main.8b98bc3a.chunk.js"
+  ]
+}

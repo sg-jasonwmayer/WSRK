@@ -1,0 +1,132 @@
+.button {
+  color: inherit;
+}
+
+.MuiButtonBase-root {
+ margin-top: 5em;
+}
+
+.appBar {
+  background-color: white;
+  position: fixed;
+  border-bottom: 5px solid #ff8200;
+  height: 7vh;
+}
+
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5vh;
+}
+
+.rightContainer {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  justify-items: center;
+}
+
+.button {
+  color: inherit;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  padding: 0 1;
+  justify-content: flex-end;
+}
+
+.drawer {
+  width: 30%;
+  flex-shrink: 0;
+  position: absolute;
+}
+
+a:link {
+  text-decoration: none;
+  color: #004B87;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+.Collapsible {
+  background-color: white;
+}
+.Collapsible:hover{
+  opacity:0.8;
+}
+.Collapsible__trigger:hover {
+  overflow: visible;
+}
+
+.Collapsible__trigger {
+  display: block;
+  font-weight: 400;
+  text-decoration: none;
+  color: #333333;
+  position: relative;
+  border: 1px solid white;
+  padding: 0.8vh;
+  background: #004B87;
+  color: white;
+}
+
+.value-input {
+  margin-top: 10px;
+}
+
+// .Collapsible__contentInner {
+//   padding: 10px;
+//   border: 1px solid #ebebeb;
+//   border-top: 0; 
+//   margin: 0;
+  
+// }
+// .Collapsible__contentInner p {
+//   // margin-bottom: 10px;
+//   font-size: 14px;
+//   // line-height: 20px; 
+// }
+// .Collapsible__contentInner p:last-child {
+//   margin-bottom: 0; 
+// }
+
+// .Collapsible__trigger:after {
+  //   font-family: 'Roboto';
+  //   // content: '\f107';
+  //   position: absolute;
+//   right: 10px;
+//   top: 10px;
+//   display: block;
+//   transition: transform 300ms; }
+// .Collapsible__trigger.is-open:after {
+//   transform: rotateZ(180deg); }
+// .Collapsible__trigger.is-disabled {
+//   opacity: 0.5;
+//   background-color: grey; }
+
+
+// .CustomTriggerCSS {
+//   background-color: lightcoral;
+//   transition: background-color 200ms ease; }
+
+// .CustomTriggerCSS--open {
+//   background-color: darkslateblue; }
+
+// .Collapsible__custom-sibling {
+//   padding: 5px;
+//   font-size: 12px;
+//   background-color: #FFF;
+//   color: black;
+// }

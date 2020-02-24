@@ -1,0 +1,50 @@
+.root {
+  text-align: center;
+  display: flex;
+
+      
+.logo {
+    margin: 0; 
+    height: 30px; 
+    padding: 0;
+    margin-left: 5vh;
+
+}
+
+  .flex {
+    display: flex;
+
+  .appBar {
+    background-color: white;
+    position: fixed;
+    border-bottom: 5px solid #ff8200;
+    height: 7vh;  
+
+    .button {
+      color: inherit;
+    }
+
+    rightContainer {
+      align-items: center;
+      display: flex;
+    }
+
+    }
+  }
+}
+
+.mobile-message {
+  visibility: hidden;
+
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .mobile-message {
+      visibility: visible;
+
+  }
+}
+ 
