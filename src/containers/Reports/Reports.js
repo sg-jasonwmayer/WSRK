@@ -88,7 +88,7 @@ function EnhancedTableHead(props) {
     <div>
 
     <TableHead>
-    < WRLoader  />
+    < WRLoader className="wr-loader" />
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox

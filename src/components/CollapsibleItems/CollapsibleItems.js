@@ -4,6 +4,8 @@ import './CollapsibleItems.scss';
 
 import { Divider } from '@material-ui/core';
 
+import { translate } from 'react-polyglot';
+
 import OptimizedFilter from '../OptimizedFilter/OptimizedFilter.js';
 import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
@@ -21,6 +23,12 @@ const CollapsibleItems = () => {
 //     e.preventDefault();
 
 // }
+
+const translate = {
+  filterbyMode: 'Filter by Mode',
+  columnsToInclude: 'Columns to Include in Selection Data Grid',
+  optimizedFilters: 'Optimized Filters',
+  };
   
   return (
     
@@ -28,12 +36,12 @@ const CollapsibleItems = () => {
      <ValueInputBox />
      <Collapsible  trigger="Criteria">
        <CriteriaDropDown /> 
-     </Collapsible><Collapsible trigger="Filter Search By">
+     </Collapsible><Collapsible trigger={translate.filterSearchBy}>
          <FilterSearchBy /> 
-         </ Collapsible><Collapsible trigger="Filter by Mode">
+         </ Collapsible><Collapsible trigger={translate.filterbyMode}>
              <FilterByMode />
               </Collapsible>
-              <Collapsible trigger="Optimized Filters">
+              <Collapsible trigger={translate.columnsToInclude}>
               </Collapsible>
               <Divider />
               <Collapsible trigger="Columns to Include in Selection Data Grid">
