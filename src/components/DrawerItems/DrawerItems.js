@@ -31,9 +31,7 @@ import CollapsibleItems from '../CollapsibleItems/CollapsibleItems';
 
 import logo from '../../assets/westRockLogo.png';
 
-const useStyles = makeStyles(theme => ({
-
-}))
+const useStyles = makeStyles();
 
 const DrawerItems = () => {
     const classes = useStyles();
@@ -66,7 +64,6 @@ const DrawerItems = () => {
                     aria-label="open drawer"
                     onClick={drawerOpenHandler}
                     edge="start"
-                    // className={clsx(classes.menuButton, open && classes.hide)}
                     className="menuButton"
                     >
                         <MenuIcon
@@ -159,7 +156,6 @@ const DrawerItems = () => {
             />
             </Link>
         </Grid>
-  
     </div>
   );
 }

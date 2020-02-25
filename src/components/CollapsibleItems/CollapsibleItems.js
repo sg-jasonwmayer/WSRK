@@ -12,9 +12,7 @@ const CollapsibleItems = () => {
   return (
     <div className="value-input">
       <ValueInputBox />
-      <Collapsible trigger="Filter by Mode" transitionTime="150">
-        <FilterByMode />
-      </Collapsible>
+      <FilterByMode />
       <Collapsible trigger="Columns to Include in Selection Data Grid" transitionTime="150">
         <ColumnsToInclude /> 
       </Collapsible> 
