@@ -3,8 +3,6 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Link,
-    Route,
-    Switch
   } from "react-router-dom";
 
 import {
@@ -38,34 +36,12 @@ import logo from '../../assets/westRockLogo.png';
 import Location from '../Location';
 import UserName from '../UserName';
 import CollapsibleItems from '../CollapsibleItems/CollapsibleItems';
-
-import Layout from '../../layouts/Layout';
-
-import MillOne from '../../containers/MillOne';
-import ScenarioBuilder from '../../containers/ScenarioBuilder';
-import LoadPlanner from '../../containers/LoadPlanner';
-import MillPreferences from '../../containers/MillPreferences';
-import Reports from '../../containers/Reports';
-import SomTester from '../../containers/SomTester';
-
+import EasyAccessIcons from '../EasyAccessIcons/EasyAccessIcons';
 
 import './Header.scss';
 
-const drawerWidth = 390;
+const drawerWidth = 400;
 const useStyles = makeStyles(theme => ({
-    root: {
-      textAlign: "center",
-      display: "flex"
-    },
-    // flex: {
-    //     display: "flex"
-    // },
-    // logo:{
-    //     margin:"0",
-    //     height: "30px",
-    //     padding: "0",
-    //     marginLeft: "5vh"
-    // },
     appBar:{
         backgroundColor: "white",
         position: "fixed",
@@ -75,28 +51,6 @@ const useStyles = makeStyles(theme => ({
         easing: theme.transitions.easingOut,
         duration: theme.transitions.duration.leavingScreen,
         }),
-    },
-    button: {
-        color: "inherit"
-    },
-    rightContainer: {
-        alignItems: "center",
-        display: "flex",
-        justify: "center",
-        justifyContent: "flex-end"
-    },
-    centerContainer: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        marginTop: "2.5vh"
-    },
-    leftContainer:{
-        display: "flex",
-        justifyContent:"flex-Start",
-        flexDirection: "row",
-        justify: "center",
-        marginTop: "1vh"
     },
     appBarShift: {
         width: `calc(100% - ${drawerWidth}px)`,
@@ -112,15 +66,6 @@ const useStyles = makeStyles(theme => ({
     },
     hide: {
         display: "none",
-    },
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-        position: "absolute"
-    },
-    drawerPaper: {
-        width: drawerWidth,
-        height: "100%",
     },
     drawerHeader: {
         display: "flex",
@@ -145,16 +90,6 @@ const useStyles = makeStyles(theme => ({
             }),
         marginLeft: 0,
     },
-    quickAccessIconsContainer: {
-        paddingTop: "10vh",
-        borderRight: "2px"
-    },
-    quickAccessIcons: {
-        marginLeft: "2vh",
-        marginTop: "1vh",
-        color: "gray",
-        opacity: "60%"
-    }
 }));
 
 const Header = () => {
@@ -174,256 +109,171 @@ const Header = () => {
         setOpen(false);
       };
 
-    // eslint-disable-next-line no-unused-vars
-    const handleClickCollapsible = (e) => {
-        e.preventDefault();
-    }
-
     return (
         <Router>
-
-        <div className={classes.root}>
-            <AppBar
-              className={classes.appBar}
-             >
-                <Toolbar>
-                    
-                    <Grid
-                     container
-                    >
+            <div className={classes.root}>
+                <AppBar
+                className={classes.appBar}
+                >
+                    <Toolbar>
                         <Grid
-                         item
-                         xs={4}
-                         className={classes.leftContainer}
+                        container
                         >
+                            <Grid
+                            item
+                            xs={4}
+                            className="leftContainer"
+                            >
                                 <ClickAwayListener
-                                 onClickAway={outsideClickHandler}
+                                onClickAway={outsideClickHandler}
                                 >
-                          <div>
-                                    <IconButton
-                                     color="inherit"
-                                     aria-label="open drawer"
-                                     onMouseOver={drawerOpenHandler}
-                                     edge="start"
-                                     className={clsx(classes.menuButton, open && classes.hide)}
-                                    >
-                                      <MenuIcon
-                                       color="primary"
-                                      />
-                                    </IconButton>
-                                <Drawer
-                                  className={classes.drawer}
-                                  variant="persistent"
-                                  anchor="left"
-                                  open={open}
-                                  classes={{paper: classes.drawerPaper}}
-                                >
-                                    <div className='drawer-header'>
+                                    <div>
                                         <IconButton
-                                          onClick={drawerCloseHandler}
+                                        color="inherit"
+                                        aria-label="open drawer"
+                                        onClick={drawerOpenHandler}
+                                        edge="start"
+                                        className={clsx(classes.menuButton, open && classes.hide)}
                                         >
-                                          {theme.direction === "ltr" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                                            <MenuIcon
+                                            color="primary"
+                                            />
                                         </IconButton>
+                                        <Drawer
+                                        className={classes.drawer}
+                                        variant="persistent"
+                                        anchor="left"
+                                        open={open}
+                                        classes={{paper: classes.drawerPaper}}
+                                        >
+                                            <div className='drawer-header'>
+                                                <IconButton
+                                                onClick={drawerCloseHandler}
+                                                >
+                                                {theme.direction === "ltr" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                                                </IconButton>
+                                            </div>
+                                            <Divider />
+                                            <List>
+                                                <nav>
+                                                    <Link to="/load-planner">
+                                                        <ListItem button>
+                                                            <ListItemIcon>
+                                                                <AccountTreeIcon />
+                                                            </ListItemIcon>
+                                                            <ListItemText
+                                                            primary={"Load Planner"}
+                                                            />
+                                                        </ListItem>
+                                                    </Link>
+                                                    <Link to="/mill-preferences">
+                                                        <ListItem button>
+                                                            <ListItemIcon>
+                                                            <SettingsIcon />
+                                                            </ ListItemIcon>
+                                                            <ListItemText
+                                                            primary={"Mill Preferences"}
+                                                            />
+                                                        </ListItem>
+                                                    </Link>
+                                                    <Link to="/reports">
+                                                        <ListItem
+                                                        button
+                                                        >
+                                                        <ListItemIcon>
+                                                            <BarChartIcon />
+                                                        </ListItemIcon>
+                                                        <ListItemText
+                                                            primary={"Reports"}
+                                                        />
+                                                        </ListItem>
+                                                    </Link>
+                                                    <Link to="/scenario-builder">
+                                                        <ListItem button>
+                                                            <ListItemIcon>
+                                                                <ExtensionIcon />
+                                                            </ListItemIcon>
+                                                            <ListItemText
+                                                            primary={"Scenario Builder"}
+                                                            />
+                                                        </ListItem>
+                                                    </Link>
+                                                    <Link to="/som-tester">
+                                                        <ListItem
+                                                        button>
+                                                            <ListItemIcon>
+                                                                <ShutterSpeedIcon />
+                                                            </ListItemIcon>
+                                                            <ListItemText
+                                                            primary={"Som Tester"}
+                                                            />
+                                                        </ListItem>
+                                                    </Link>
+                                                </nav>
+                                                <Divider />
+                                                <CollapsibleItems/>
+                                            </List>
+                                        </Drawer>
                                     </div>
-                                    <Divider />
-                                    <List>
-
-                                            <nav>
-                                                <Link to="/load-planner">
-                                                    <ListItem button>
-                                                        <ListItemIcon>
-                                                            <AccountTreeIcon />
-                                                        </ListItemIcon>
-                                                        <ListItemText
-                                                        primary={"Load Planner"}
-                                                        />
-                                                    </ListItem>
-                                                </Link>
-                                                <Link to="/mill-preferences">
-                                                    <ListItem button>
-                                                        <ListItemIcon>
-                                                        <SettingsIcon />
-                                                        </ ListItemIcon>
-                                                        <ListItemText
-                                                        primary={"Mill Preferences"}
-                                                        />
-                                                    </ListItem>
-                                                </Link>
-                                                <Link to="/reports">
-
-                                                    <ListItem
-                                                    button
-                                                    >
-                                                    <ListItemIcon>
-                                                        <BarChartIcon />
-                                                    </ListItemIcon>
-                                                    <ListItemText
-                                                        primary={"Reports"}
-                                                    />
-                                                    </ListItem>
-                                                </Link>
-                                                <Link to="/scenario-builder">
-                                                    <ListItem button>
-                                                        <ListItemIcon>
-                                                        <ExtensionIcon />
-                                                        </ListItemIcon>
-                                                        <ListItemText
-                                                        primary={"Scenario Builder"}
-                                                        />
-                                                    </ ListItem>
-                                                </Link>
-                                                <Link to="/som-tester">
-                                                    <ListItem
-                                                    button>
-                                                        <ListItemIcon>
-                                                        <ShutterSpeedIcon />
-                                                        </ListItemIcon>
-                                                        <ListItemText
-                                                        primary={"Som Tester"}
-                                                        />
-                                                    </ListItem>
-                                                </Link>
-                                            </nav>
-
-                                    <Divider />
-                                    <CollapsibleItems />
-
-    
-                                    </List>
-                                </Drawer>
-                            </div>
                                 </ClickAwayListener>
 
-                            <Link to="/">
-                            <img
-                             src={logo}
-                             alt="West Rock Logo"
-                             className="logo"
-                           />
-                           </ Link>
+                                <Link to="/">
+                                    <img
+                                    src={logo}
+                                    alt="West Rock Logo"
+                                    className="logo"
+                                />
+                                </Link>
+                            </Grid>
 
-                        </Grid>
-
-{/* -------------------------------------------Center Container----------------------------------------*/}
-                        <Grid
-                          item
-                          xs={4}
-                          className={classes.centerContainer}
-                        >
-                            <Location
-                             className={classes.location}
-                            />
-                        </Grid>
-{/* -------------------------------------------Right Container---------------------------------------- */}
-                        <Grid
-                          item
-                          xs={4}
-                          className={classes.rightContainer}
-                        >
-                            <IconButton
-                             color="inherit"
-                             size="small"
-                             className={clsx(classes.menuButton)}
-                            />
-                            <UserName />
-                            <IconButton
-                             color="inherit"
-                             size="small"
-                             className={clsx(classes.menuButton)}
+    {/* -------------------------------------------Center Container----------------------------------------*/}
+                            <Grid
+                            item
+                            xs={4}
+                            className="centerContainer"
                             >
-                            <NotificationsIcon
-                             color="action"
-                            />
-                            </IconButton>
-                            <IconButton
-                             color="inherit"
-                             size="small"
-                             className={clsx(classes.menuButton)}
+                                <Location
+                                className={classes.location}
+                                />
+                            </Grid>
+    {/* -------------------------------------------Right Container---------------------------------------- */}
+                            <Grid
+                            item
+                            xs={4}
+                            className='rightContainer'
                             >
-                              <EmailIcon
-                                color="action"
-                              />
-                            </IconButton>
+                                <IconButton
+                                color="inherit"
+                                size="small"
+                                className={clsx(classes.menuButton)}
+                                />
+                                <UserName />
+                                <IconButton
+                                color="inherit"
+                                size="small"
+                                className={clsx(classes.menuButton)}
+                                >
+                                    <NotificationsIcon
+                                    color="action"
+                                    />
+                                </IconButton>
+                                <IconButton
+                                color="inherit"
+                                size="small"
+                                className={clsx(classes.menuButton)}
+                                >
+                                    <EmailIcon
+                                        color="action"
+                                    />
+                                </IconButton>
+                            </Grid>
                         </Grid>
-                    </Grid>
-   
-                </Toolbar>
-            </AppBar>
-            {/* ------------------------Icons below header (left) ------------ */}
-
-            <Grid
-             className={classes.quickAccessIconsContainer}
-            >
-                <Grid
-                 container
-                 spacing={1}
-                >
-                <Link to="/load-planner">
-                    <IconButton
-                     size="small"
-                     className={clsx(classes.quickAccessIcons)}
-                    >
-                      <AccountTreeIcon />
-                    </IconButton>
-                    </Link>
-                </Grid>
-                <Grid>
-                <Link to="/mill-preferences">
-                    <IconButton
-                     size="small"
-                     className={clsx(classes.quickAccessIcons)}
-                    >
-                      <SettingsIcon />
-                    </IconButton>
-                    </Link>
-                </Grid>
-                <Grid>
-                <Link to="/reports">
-                    <IconButton
-                        size="small"
-                        className={clsx(classes.quickAccessIcons)}
-                    >
-                        <BarChartIcon />
-                    </IconButton>
-                    </Link>
-                </Grid>
-                <Grid>
-                <Link to="/scenario-builder">
-                    <IconButton
-                        size="small"
-                        className={clsx(classes.quickAccessIcons)}
-                    >
-                     <ExtensionIcon />
-                    </IconButton>
-                    </Link>
-                </Grid>
-                <Grid>
-                <Link to="/som-tester">
-                    <IconButton
-                      size="small"
-                      className={clsx(classes.quickAccessIcons)}
-                    >
-                      <ShutterSpeedIcon />
-                    </IconButton>
-                 </Link>
-                </Grid>
-            </Grid>
-            <div>
-        <Layout>
-        <Switch>
-        <Route  exact path="/reports" component={Reports} />
-        <Route exact path="/mill-preferences" component={MillPreferences} />
-        <Route exact path="/mill-one" component={MillOne} />
-        <Route exact path="/load-planner" component={LoadPlanner} />
-        <Route exact path="/som-tester" component={SomTester} />
-        <Route exact path="/scenario-builder" component={ScenarioBuilder} />
-        <Route exact path="/" component={Reports} />
-        </Switch>
-        </Layout>
-        </div>
-        </div>
+                    </Toolbar>
+                </AppBar>
+                {/* ------------------------Icons below header (left) ------------ */}
+                <EasyAccessIcons />
+            </div>
         </Router>
-
     )
 }
 

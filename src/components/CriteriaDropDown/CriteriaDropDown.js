@@ -10,11 +10,10 @@ import {
 
 const useStyles = makeStyles(theme => ({
   formControl: {
-    margin: theme.spacing(3),
+    // margin: theme.spacing(3),
   },
 }));
 
-// eslint-disable-next-line no-unused-vars
 const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',

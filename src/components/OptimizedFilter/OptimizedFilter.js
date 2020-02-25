@@ -18,7 +18,7 @@ const OptimizedFilter = () => {
     };
 
     return(
-      <div className="root">
+      <div className="optimized-filter">
         <Menu
     elevation={0}
     getContentAnchorEl={null}
@@ -32,8 +32,16 @@ const OptimizedFilter = () => {
     }}
 
   />
-        <FormControl component="fieldset" className="form-control">
-          <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
+        <FormControl 
+          component="fieldset" 
+          className="form-control"
+        >
+          <RadioGroup 
+            aria-label="" 
+            name="" 
+            value={value} 
+            onChange={handleChange}
+          >
             <FormControlLabel 
               value="IncludeBoth" 
               control={<Radio />} 
