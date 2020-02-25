@@ -21,7 +21,7 @@ import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
-
+import WRLoader from '../../components/WRLoader';
 
 import './Reports.scss';
 
@@ -88,6 +88,7 @@ function EnhancedTableHead(props) {
     <div>
 
     <TableHead>
+    < WRLoader  />
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -164,6 +165,7 @@ const EnhancedTableToolbar = props => {
         [classes.highlight]: numSelected > 0,
       })}
     >
+
       {numSelected > 0 ? (
         <Typography className={classes.title} color="inherit" variant="subtitle1">
           {numSelected} selected

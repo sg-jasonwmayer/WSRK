@@ -21,6 +21,7 @@ import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
+import WRLoader from '../../components/WRLoader';
 
 import './SomTester.scss';
 
@@ -94,6 +95,7 @@ function EnhancedTableHead(props) {
 
   return (
     <TableHead>
+      < WRLoader  />
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox

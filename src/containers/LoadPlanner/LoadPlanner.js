@@ -13,6 +13,8 @@ import {WebAPIGetCall} from '../../actions/webapicalls';
 import MillContext from '../../contexts/mill-context';
 import {LoadPlanView} from './LoadPlanView';
 
+import WRLoader from '../../components/WRLoader';
+
 import './LoadPlanner.scss';
 
 
@@ -92,6 +94,7 @@ function LoadPlanner() {
   return (
     <div className="load-planner">
       <AppBar position="static" color="default">
+        <WRLoader />
         <Tabs
           value={value}
           onChange={handleChange} 
