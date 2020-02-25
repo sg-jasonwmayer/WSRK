@@ -1,0 +1,128 @@
+[{"MillName": "All Mills"}, 
+{"MillName": "Fernandina Beach Mill"},
+{"MillName": "Stevenson Mill"}, 
+{"MillName": "Florence Mill"}, 
+{
+    "MillName": "Solvay Mill"
+}, {
+
+    "MillName": "Tacoma Mill"
+}, {
+
+    "MillName": "Seminole Mill"
+}, {
+
+    "MillName": "Hodge Mill"
+}, {
+
+    "MillName": "ST. PAUL CORMED MILL"
+}, {
+ 
+    "MillName": "Panama City Mill"
+}, {
+
+    "MillName": "Mill For Modeling"
+}, {
+
+    "MillName": "West Point Mill"
+}, {
+
+    "MillName": "60FT_RAIL_STACK_EG"
+}, {
+
+    "MillName": "Dublin Mill"
+}, {
+
+    "MillName": "Demopolis Mill"
+}, {
+    "Id": 24,
+    "MillName": "Mahrt Mill"
+}, {
+    "Id": 41,
+    "MillName": "60FT_HIGH_CUBE_RAIL_EG"
+}, {
+    "Id": 36,
+    "MillName": "Cov Warehouses"
+}, {
+    "Id": 28,
+    "MillName": "Evadale Mill"
+}, {
+    "Id": 29,
+    "MillName": "ZZ Lofton Whse (SAP)"
+}, {
+    "Id": 32,
+    "MillName": "Covington Valley"
+}, {
+    "Id": 33,
+    "MillName": "Pointe-aux-Trembles Plant"
+}, {
+    "Id": 42,
+    "MillName": "ZZFernandina Beach Mil"
+}, {
+    "Id": 43,
+    "MillName": "Monroe Whse"
+}, {
+    "Id": 44,
+    "MillName": "XXMontebello Whse"
+}, {
+    "Id": 45,
+    "MillName": "ST. PAUL BB MILL"
+}, {
+    "Id": 46,
+    "MillName": "Montebello Whse"
+}, {
+    "Id": 50,
+    "MillName": "WMS Internal LX Test"
+}, {
+    "Id": 51,
+    "MillName": "RDC1"
+}, {
+    "Id": 52,
+    "MillName": "Lofton Whse"
+}, {
+    "Id": 53,
+    "MillName": "Charleston Mill DEV"
+}, {
+    "Id": 55,
+    "MillName": "IWS Whse"
+}, {
+
+    "MillName": "Tres Barras"
+}, {
+    "Id": 58,
+    "MillName": "CrossGlobe"
+}, {
+
+    "MillName": "Dallas Whse"
+}, {
+
+    "MillName": "Roanoke Rapids DEV"
+}, {
+
+    "MillName": "Fernandina Beach Mil"
+}, {
+
+    "MillName": "DSI Whse"
+}, {
+    "Id": 65,
+    "MillName": "Sunland Whse"
+}, {
+    "Id": 20,
+    "MillName": "Hopewell Mill"
+}, {
+    "Id": 67,
+    "MillName": "Cincinnati Whse"
+}, {
+    "Id": 21,
+    "MillName": "La Tuque Mill"
+}, {
+    "Id": 54,
+    "MillName": "Longview Mill"
+}, {
+    "Id": 56,
+    "MillName": "NorCal Whse"
+}, {
+    "Id": 66,
+    "MillName": "CLG Whse"
+}]
+

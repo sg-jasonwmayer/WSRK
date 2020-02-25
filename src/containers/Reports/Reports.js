@@ -22,6 +22,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
 
+
 import './Reports.scss';
 
 function createData(name, calories, fat, carbs, protein) {
@@ -83,6 +84,9 @@ function EnhancedTableHead(props) {
   };
 
   return (
+
+    <div>
+
     <TableHead>
       <TableRow>
         <TableCell padding="checkbox">
@@ -116,6 +120,7 @@ function EnhancedTableHead(props) {
         ))}
       </TableRow>
     </TableHead>
+    </div>
   );
 }
 
