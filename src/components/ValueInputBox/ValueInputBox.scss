@@ -1,18 +1,19 @@
+<<<<<<< HEAD
 .value-inputbox {
+=======
+.value-input-box {
+>>>>>>> 2e752a8ea34c8887e318c14d52b0a11ffd2f3fb5
   flex-direction: column;
   align-items: center;
   margin: 1em;
-  width: 200px;
+  width: 200px; 
 
-  
-}
-
-.value-button {
-   flex: auto;
-   padding-bottom: 5px;
-}
-
-.value-input{
-   text-align: center;
-   padding: 5px;
-}
+   .value-button {
+    flex: auto;
+    padding-bottom: 5px;
+   }
+   .value-input {
+     text-align: center;
+     padding: 5px;
+   }
+}  
