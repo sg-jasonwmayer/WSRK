@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
 const Location = props => {
     // let match = useRouteMatch();
     let resData = '';
-    let tempMill = '';
+    // let tempMill = '';
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const opens = Boolean(anchorEl);
@@ -70,9 +70,7 @@ const [ millState ] = useState({
     {MillName: 'Stevenson Mill'},
     {MillName: 'West Point Mill'},
     {MillName: 'Tacoma Mill'}
-    
   ]
-
 });
 
 const millName = '';
@@ -81,13 +79,10 @@ const millName = '';
       setAnchorEl(null);
     };
 
-  
-
     useEffect(() => {
       axios.get(url)
       .then(resData => {
-    
-          tempMill = resData.data.mills[2].millName;
+          // tempMill = resData.data.mills[2].millName;
           console.log(resData.data.mills[2].millName);
       })
 
@@ -95,37 +90,26 @@ const millName = '';
       // useName(() => {
 
       // })
- 
-
   }, 
   []);
 
     useEffect(() => {
         axios.get(url)
         .then(resData => {
-            tempMill = resData.data.mills[13].millName;
+            // tempMill = resData.data.mills[13].millName;
              console.log(resData.data.mills[13].millName);
-     
-    
         })
     }, 
     []);
 
-
     useEffect(() => {
       axios.get(url)
       .then(resData => {
-         tempMill = resData.data.mills[13].millName;
-     
-
-
+        //  tempMill = resData.data.mills[13].millName;
       })
-      
   }, 
   []);
 
- 
-    
     return(
         <div
           className={classes.root}
@@ -149,7 +133,6 @@ const millName = '';
                       className={classes.centerContainer}
                     >
                       Panama City Mill
-               
                     </ h4> 
                 </ IconButton>
             </ Grid>

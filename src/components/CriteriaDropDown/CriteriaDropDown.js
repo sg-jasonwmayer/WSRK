@@ -1,38 +1,13 @@
 import React from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Radio,
   RadioGroup,
   FormControlLabel,
   FormControl,
-  Menu
 } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
-  formControl: {
-    // margin: theme.spacing(3),
-  },
-}));
-
-const StyledMenu = withStyles({
-  paper: {
-    border: '1px solid #d3d4d5',
-  },
-})(props => (
-  <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: 'bottom',
-      horizontal: 'center',
-    }}
-    transformOrigin={{
-      vertical: 'top',
-      horizontal: 'center',
-    }}
-    {...props}
-  />
-));
+const useStyles = makeStyles();
 
 
 const CriteriaDropDown = () => {

@@ -16,12 +16,10 @@ const fhenao = 'http://ms00015080d:7050/api/userpreferences/mill/fhenao';
 
 let userName = '';
 let units = '';
-let language = '';
 
 axios.get(fhenao).then((res) => {
   userName = res.data.userName;
   units = res.data.units;
-  language = res.data.language;
 })
   .catch((err) => {
       console.log(err);
@@ -66,25 +64,21 @@ export default function UserName() {
           >
               <MenuItem 
                 onClick={handleClose}
-                // language={language}
               >
                 Language: English
                 </ MenuItem>
                 <MenuItem 
                 onClick={handleClose}
-                // language={language}
               >
                 Mill Group: Panther
                 </ MenuItem>
                 <MenuItem 
                 onClick={handleClose}
-                // language={language}
               >
                 Web Role: Admin
                 </ MenuItem>
                 <MenuItem 
                 onClick={handleClose}
-                // language={language}
               >
                 Units: Imperial
                 </ MenuItem>
@@ -97,13 +91,3 @@ export default function UserName() {
       </div>
   )
 }
-
-// "userName": "fhenao",
-// "lX_UserFullName": "fhenao",
-// "language": "English",
-// "units": "Imperial",
-// "mill_group": "Panther",
-// "web_role": "Admin",
-// "lx_role": "Admin",
-// "include_advisecase": false,
-// "lx_system": "Mill"
