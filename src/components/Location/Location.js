@@ -73,201 +73,167 @@ const [ millState ] = useState({
   ]
 });
 
-const millName = '';
-  
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
+const handleClose = () => {
+  setAnchorEl(null);
+};
 
-    useEffect(() => {
-      axios.get(url)
-      .then(resData => {
-          // tempMill = resData.data.mills[2].millName;
-          console.log(resData.data.mills[2].millName);
-      })
-
-      // const millName = '';
-      // useName(() => {
-
-      // })
-  }, 
-  []);
-
-    useEffect(() => {
-        axios.get(url)
-        .then(resData => {
-            // tempMill = resData.data.mills[13].millName;
-             console.log(resData.data.mills[13].millName);
-        })
-    }, 
-    []);
-
-    useEffect(() => {
-      axios.get(url)
-      .then(resData => {
-        //  tempMill = resData.data.mills[13].millName;
-      })
-  }, 
-  []);
-
-    return(
-        <div
-          className={classes.root}
-        >
-             <Grid 
-               item 
-               xs={4} 
-               className={classes.centerContainer}
-             > 
-                <IconButton
-                  size='small'
-                  className={clsx(classes.menuButton )}
-                  aria-controls="fade-menu" 
-                  aria-haspopup="true" 
-                  onClick={handleClick}
-                > 
-                    <ArrowDropDownIcon 
-                      color={'primary'}
-                    />
-                    <h4 
-                      className={classes.centerContainer}
-                    >
-                      Panama City Mill
-                    </ h4> 
-                </ IconButton>
-            </ Grid>
-            <Menu
-              id="fade-menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={opens}
-              onClose={handleClose}
-              TransitionComponent={Fade}
-            >
-             <Router>
-             <MenuItem 
-                onClick={handleClose}
-              >
-              <Link to={millState.millNames[0].MillName}>
-                <DropButton
-                name={millState.millNames[0].MillName}
-                 />
-    
-                </ Link>
-              </ MenuItem>
-             <MenuItem 
-                onClick={handleClose}
-              >
-              <Link to={millState.millNames[1].MillName}>
+  return(
+    <div
+      className={classes.root}
+    >
+      <Grid 
+        item 
+        xs={4} 
+        className={classes.centerContainer}
+      > 
+        <IconButton
+          size='small'
+          className={clsx(classes.menuButton )}
+          aria-controls="fade-menu" 
+          aria-haspopup="true" 
+          onClick={handleClick}
+        > 
+          <ArrowDropDownIcon 
+            color={'primary'}
+          />
+          <h4 
+            className={classes.centerContainer}
+          >
+            Panama City Mill
+          </ h4> 
+        </IconButton>
+      </ Grid>
+      <Menu
+        id="fade-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={opens}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+        <Router>
+          <MenuItem 
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[0].MillName}>
               <DropButton
-                name={millState.millNames[1].MillName}
+              name={millState.millNames[0].MillName}
               />
-                </ Link>
-              </ MenuItem>
-              <MenuItem 
-                onClick={handleClose}
-              >
-              <Link to={millState.millNames[2].MillName}>
+            </ Link>
+          </ MenuItem>
+          <MenuItem 
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[1].MillName}>
               <DropButton
-                name={millState.millNames[2].MillName}
+              name={millState.millNames[1].MillName}
               />
-              </ Link>
-              </ MenuItem>
-              <MenuItem 
-                onClick={handleClose}
-              >
-              <Link to={millState.millNames[3].MillName}>
-              <DropButton
-                name={millState.millNames[3].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[4].MillName}>
-                <DropButton
-                name={millState.millNames[4].MillName}
-              />
-              </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[5].MillName}>
-                <DropButton
-                name={millState.millNames[5].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[6].MillName}>
-                <DropButton
-                 name={millState.millNames[6].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[7].MillName}>
-                <DropButton
-                 name={millState.millNames[7].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[8].MillName}>
-                <DropButton
-                 name={millState.millNames[8].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[9].MillName}>
-                <DropButton
-                 name={millState.millNames[9].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[10].MillName}>
-                <DropButton
-                 name={millState.millNames[10].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[11].MillName}>
-                <DropButton
-                 name={millState.millNames[11].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[12].MillName}>
-                <DropButton
-                 name={millState.millNames[12].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              
-              </ Router>
-            </ Menu>
-        </ div>
-    )
+            </ Link>
+          </ MenuItem>
+          <MenuItem 
+            onClick={handleClose}
+          >
+          <Link to={millState.millNames[2].MillName}>
+          <DropButton
+            name={millState.millNames[2].MillName}
+          />
+          </ Link>
+          </ MenuItem>
+          <MenuItem 
+            onClick={handleClose}
+          >
+          <Link to={millState.millNames[3].MillName}>
+          <DropButton
+            name={millState.millNames[3].MillName}
+          />
+            </ Link>
+          </ MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[4].MillName}>
+            <DropButton
+            name={millState.millNames[4].MillName}
+          />
+          </ Link>
+          </ MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[5].MillName}>
+            <DropButton
+            name={millState.millNames[5].MillName}
+          />
+            </ Link>
+          </ MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[6].MillName}>
+            <DropButton
+              name={millState.millNames[6].MillName}
+          />
+            </ Link>
+          </ MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[7].MillName}>
+            <DropButton
+              name={millState.millNames[7].MillName}
+          />
+            </ Link>
+          </ MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[8].MillName}>
+            <DropButton
+              name={millState.millNames[8].MillName}
+          />
+            </ Link>
+          </ MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[9].MillName}>
+            <DropButton
+              name={millState.millNames[9].MillName}
+          />
+            </ Link>
+          </ MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[10].MillName}>
+            <DropButton
+              name={millState.millNames[10].MillName}
+          />
+            </ Link>
+          </ MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[11].MillName}>
+            <DropButton
+              name={millState.millNames[11].MillName}
+          />
+            </ Link>
+          </ MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link to={millState.millNames[12].MillName}>
+            <DropButton
+              name={millState.millNames[12].MillName}
+          />
+            </ Link>
+          </ MenuItem>
+          
+        </ Router>
+      </ Menu>
+    </ div>
+  )
 }
 
 export default Location;
