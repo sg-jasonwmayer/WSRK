@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 
 import { 
@@ -7,7 +8,6 @@ import {
 } from '@material-ui/core';
 
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-
 import axios from 'axios';
 
 import './UserName.scss'
