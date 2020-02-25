@@ -11,6 +11,8 @@ import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 
+import WRLoader from '../../components/WRLoader';
+
 import './MillPreferences.scss';
 
 const useStyles = makeStyles(theme => ({
@@ -59,6 +61,7 @@ function MillPreferences() {
   return (
     <div className={classes.root}>
       <ExpansionPanel defaultExpanded>
+      <WRLoader />
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1c-content"

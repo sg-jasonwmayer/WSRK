@@ -187,6 +187,7 @@ const Header = () => {
               className={classes.appBar}
              >
                 <Toolbar>
+                    
                     <Grid
                      container
                     >
@@ -202,7 +203,7 @@ const Header = () => {
                                     <IconButton
                                      color="inherit"
                                      aria-label="open drawer"
-                                     onClick={drawerOpenHandler}
+                                     onMouseOver={drawerOpenHandler}
                                      edge="start"
                                      className={clsx(classes.menuButton, open && classes.hide)}
                                     >
@@ -345,6 +346,7 @@ const Header = () => {
                             </IconButton>
                         </Grid>
                     </Grid>
+   
                 </Toolbar>
             </AppBar>
             {/* ------------------------Icons below header (left) ------------ */}
