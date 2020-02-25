@@ -1,4 +1,9 @@
 WESTROCK * LOADXPERT
+
+current version:
+LoadXpert Beta.v00.35
+
+
 ## Available Scripts
 
 In the project directory, you can run:
