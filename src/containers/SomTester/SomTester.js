@@ -215,9 +215,9 @@ const useStyles = makeStyles(theme => ({
   table: {
     minWidth: 750,
   },
-  tableWrapper: {
-    overflowX: 'auto',
-  },
+  // tableWrapper: {
+  //   overflowX: 'auto',
+  // },
   visuallyHidden: {
     border: 0,
     clip: 'rect(0 0 0 0)',

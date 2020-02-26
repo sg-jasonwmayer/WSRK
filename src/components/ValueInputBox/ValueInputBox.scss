@@ -1,14 +1,11 @@
 .root {
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-}
-
-.value-button {
-   flex: auto;
-   padding-bottom: 5px;
 }
 
 .value-input{
    text-align: center;
    padding: 5px;
 }
+
