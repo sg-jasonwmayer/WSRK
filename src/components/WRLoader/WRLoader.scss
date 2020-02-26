@@ -1,5 +1,8 @@
 .wrlogo-container {
-  padding-left: 700px;
+  position: absolute;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  transform: translate(-50%, -50%);
   align-items: center;
   z-index: 1000;
   width: 50px;
