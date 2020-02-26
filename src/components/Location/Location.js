@@ -20,6 +20,8 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 import DropButton from '../DropButton/DropButton';
 
+import MillName from '../MillName/MillName';
+
 import { translate } from 'react-polyglot';
 import messages from './messages/en_us.json';
 
@@ -54,44 +56,25 @@ const Location = props => {
     const handleClick = event => {
       setAnchorEl(event.currentTarget);
     };
+
+   
     
-const [ millState ] = useState({
+const [ millState, setMillState ] = useState({
   millNames: [{"MillName": "All Mills"}, 
   {"MillName": "Fernandina Beach Mill"},
   {"MillName": "Stevenson Mill"}, 
   {"MillName": "Florence Mill"}, 
-  {
-      "MillName": "Solvay Mill"
-  }, {
-  
-      "MillName": "Tacoma Mill"
-  }, {
-  
-      "MillName": "Seminole Mill"
-  }, {
-  
-      "MillName": "Hodge Mill"
-  }, {
-  
-      "MillName": "ST. PAUL CORMED MILL"
-  }, {
-   
-      "MillName": "Panama City Mill"
-  }, {
-  
-      "MillName": "Mill For Modeling"
-  }, {
-  
-      "MillName": "West Point Mill"
-  }, {
-  
-      "MillName": "60FT_RAIL_STACK_EG"
-  }, {
-  
-      "MillName": "Dublin Mill"
-  }, {
-  
-      "MillName": "Demopolis Mill"
+  {"MillName": "Solvay Mill"}, 
+  {"MillName": "Tacoma Mill"}, 
+  {"MillName": "Seminole Mill"}, 
+  {"MillName": "Hodge Mill"}, 
+  {"MillName": "ST. PAUL CORMED MILL"}, 
+  {"MillName": "Panama City Mill"}, 
+  {"MillName": "Mill For Modeling"}, 
+  {"MillName": "West Point Mill"}, 
+  {"MillName": "60FT_RAIL_STACK_EG"}, 
+  {"MillName": "Dublin Mill"}, 
+  {"MillName": "Demopolis Mill"
   }, {
       "Id": 24,
       "MillName": "Mahrt Mill"
@@ -185,11 +168,20 @@ const [ millState ] = useState({
   }]
 });
 
+
+
 const millName = '';
   
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
+const handleClose = () => {
+  setAnchorEl(null);
+};
+
+
+
+const switchMillNameHandler = () => {
+  console.log('was clicked!');
+
+}
 
   
 
@@ -205,10 +197,8 @@ const millName = '';
   }, 
   []);
 
-   
 
- 
-    
+
     return(
         <div
           className={classes.root}
@@ -246,12 +236,13 @@ const millName = '';
             >
              <Router>
              <MenuItem 
-                onClick={handleClose}
+              
               >
               <Link to={millState.millNames[0].MillName}>
-                <DropButton
-                name={millState.millNames[0].MillName}
-                 />
+              <MillName 
+                onClick={switchMillNameHandler}
+                millName={millState.millNames[0].MillName}
+              />
     
                 </ Link>
               </ MenuItem>
