@@ -236,17 +236,16 @@ const switchMillNameHandler = () => {
             >
              <Router>
              <MenuItem 
-              
+                onClick={switchMillNameHandler}
               >
               <Link to={millState.millNames[0].MillName}>
               <MillName 
-                onClick={switchMillNameHandler}
                 millName={millState.millNames[0].MillName}
               />
     
                 </ Link>
               </ MenuItem>
-             <MenuItem 
+             <MenuItem
                 onClick={handleClose}
               >
               <Link to={millState.millNames[1].MillName}>
@@ -451,12 +450,193 @@ const switchMillNameHandler = () => {
                  name={millState.millNames[23].MillName}
               />
                 </ Link>
-              </ MenuItem>  <MenuItem
+              </ MenuItem> 
+               <MenuItem
                 onClick={handleClose}
               >
                 <Link to={millState.millNames[18].MillName}>
                 <DropButton
                  name={millState.millNames[24].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[25].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[26].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[27].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[28].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[29].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[30].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[31].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[32].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[35].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[34].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[36].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[37].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[38].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[39].MillName}>
+                <DropButton
+                 name={millState.millNames[24].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[40].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[24].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[41].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[42].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[43].MillName}
+              />
+                </ Link>
+              </ MenuItem>
+              <MenuItem
+                onClick={handleClose}
+              >
+                <Link to={millState.millNames[18].MillName}>
+                <DropButton
+                 name={millState.millNames[44].MillName}
               />
                 </ Link>
               </ MenuItem>

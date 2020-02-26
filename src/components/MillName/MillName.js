@@ -10,7 +10,6 @@ const MillName = (props) => {
     className="mill-name"  
     >
       {props.millName}
-
     </div>
      );
     }
