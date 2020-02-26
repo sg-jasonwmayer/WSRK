@@ -1,12 +1,15 @@
 .wrlogo-container {
-  position: absolute;
-  background-position-x: 50%;
-  background-position-y: 50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // background-position-x: 50%;
+  // background-position-y: 50%;
+  // transform: translate(-50%, -50%);
+  // align-items: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   z-index: 1000;
-  width: 50px;
-
+  // width: 50px;
   display: flex;
   flex-direction: column;
   text-align: center;

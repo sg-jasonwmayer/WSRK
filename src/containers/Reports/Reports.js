@@ -1,8 +1,8 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { lighten, makeStyles } from '@material-ui/core/styles';
+
+import {  makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -88,7 +88,7 @@ function EnhancedTableHead(props) {
     <div>
 
     <TableHead>
-    < WRLoader className="wr-loader" />
+    < WRLoader />
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -135,43 +135,23 @@ EnhancedTableHead.propTypes = {
   rowCount: PropTypes.number.isRequired,
 };
 
-const useToolbarStyles = makeStyles(theme => ({
-  root: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(1),
-  },
-  highlight:
-    theme.palette.type === 'light'
-      ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
-      : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
-  title: {
-    flex: '1 1 100%',
-  },
-}));
 
 const EnhancedTableToolbar = props => {
-  const classes = useToolbarStyles();
+
   const { numSelected } = props;
 
   return (
     <Toolbar
-      className={clsx(classes.root, {
-        [classes.highlight]: numSelected > 0,
-      })}
+      className="reports-toolbar-root"
+      
     >
 
       {numSelected > 0 ? (
-        <Typography className={classes.title} color="inherit" variant="subtitle1">
+        <Typography className="reports-toolbar-title" color="inherit" variant="subtitle1">
           {numSelected} selected
         </Typography>
       ) : (
-        <Typography className={classes.title} variant="h6" id="tableTitle">
+        <Typography className="reports-toolbar-title" variant="h6" id="tableTitle">
           LoadPlans
         </Typography>
       )}
@@ -289,14 +269,14 @@ function Reports() {
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   return (
-    <div className={classes.root}>
+    <div className="reports">
       <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <div className={classes.tableWrapper}>
           <Table
-            className={classes.table}
+            className="table"
             aria-labelledby="tableTitle"
-            size={dense ? 'small' : 'medium'}
+            size='medium'
             aria-label="enhanced table"
           >
             <EnhancedTableHead
