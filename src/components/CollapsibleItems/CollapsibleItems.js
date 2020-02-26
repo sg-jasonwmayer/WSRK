@@ -3,7 +3,7 @@ import React from 'react';
 import './CollapsibleItems.scss';
 
 import { Divider } from '@material-ui/core';
-
+                     
 // import { translate } from 'react-polyglot';
 
 import OptimizedFilter from '../OptimizedFilter/OptimizedFilter.js';

@@ -178,22 +178,39 @@ const handleClose = () => {
 
 
 
-const switchMillNameHandler = () => {
-  console.log('was clicked!');
+// const switchMillNameHandler = () => {
+//   setMillState({
+//     millNames: [{
+//       MillName: event.target.value
+//     }]
+    
+//   })
 
+//   }
+
+  const [millSelectedState, setMillSelectedState] = React.useState(null)
+
+  const setMillSelectedStateHandler = (event) => {
+    setMillSelectedState({
+          millNames: [{
+            MillName: event.target.value
+          }]
+  })
 }
-
-  
+ 
 
     useEffect(() => {
       axios.get(url)
       .then(resData => {
-    
-          tempMill = resData.data.mills[2].millName;
+          tempMill = resData.data.mills.millName;
           console.log(resData.data.mills[2].millName);
       })
+          
+      // const [ millListState, setMillListState ] = useState({
+      //   ...tempMill
+      //   millNames: 
 
-
+      
   }, 
   []);
 
@@ -221,8 +238,10 @@ const switchMillNameHandler = () => {
                     <h4 
                       className={classes.centerContainer}
                     >
-                      Panama City Mill
-               
+                     <MillName
+                       millName={setMillSelectedStateHandler}
+                     />
+                
                     </ h4> 
                 </ IconButton>
             </ Grid>
@@ -236,7 +255,7 @@ const switchMillNameHandler = () => {
             >
              <Router>
              <MenuItem 
-                onClick={switchMillNameHandler}
+                onClick={setMillSelectedStateHandler}
               >
               <Link to={millState.millNames[0].MillName}>
               <MillName 

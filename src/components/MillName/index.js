@@ -1,1 +1,1 @@
-export { default } from './WRLogo';
+export { default } from './MillName';
