@@ -3,55 +3,52 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
   FormControl,
   InputLabel,
-  MenuItem,
-  Select,
+  NativeSelect,
 } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 190,
   },
 }));
 
 const FilterByMode = () => {
   const classes = useStyles();
-  const [mode, setMode] = React.useState('');
-  const [openDropDown, setOpenDropDown] = React.useState(false);
 
-  const handleChange = event => {
-    setMode(event.target.value);
-  };
+  const [state, setState] = React.useState({
+    mode: 'hai',
+  });
 
-  const handleClose = () => {
-    setOpenDropDown(false);
-  };
-
-  const handleOpen = () => {
-    setOpenDropDown(true);
+  const handleChange = mode => event => {
+    setState({
+      ...state,
+      [mode]: event.target.value,
+    });
   };
 
   return(
     <div className='classes.root'>
-      <FormControl className={classes.formControl}>
-        <InputLabel>Filter By Mode</InputLabel>
-        <Select
-          open={openDropDown}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={mode}
-          onChange={handleChange}
+      <FormControl className={classes.formControl} error>
+        <InputLabel htmlFor="name-native-error">Filter By Mode</InputLabel>
+        <NativeSelect
+          value={state.mode}
+          onChange={handleChange('mode')}
+          name="name"
+          inputProps={{
+            id: 'name-native-error',
+          }}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value="All">All</MenuItem>
-          <MenuItem value="Truck">Truck</MenuItem>
-          <MenuItem value="Rail">Rail</MenuItem>
-          <MenuItem value="Container">Container</MenuItem>
-          <MenuItem value="Container On Chasis">Container On Chasis</MenuItem>
-        </Select>
+          <option value="" />
+          <option value="All">All</option>
+          <option value="Truck">Truck</option>
+          <option value="Rail">Rail</option>
+          <option value="Container">Container</option>
+          <option value="Container On Chasis">Container On Chasis</option>
+      
+        </NativeSelect>
       </FormControl>
+
     </div>   
   )
 }

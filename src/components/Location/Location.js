@@ -99,7 +99,7 @@ const handleClose = () => {
           <h4 
             className={classes.centerContainer}
           >
-            Panama City Mill
+            {millState.millNames[3].MillName}
           </ h4> 
         </IconButton>
       </ Grid>
