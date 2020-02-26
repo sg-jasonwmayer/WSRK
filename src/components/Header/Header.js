@@ -60,7 +60,7 @@ const Header = () => {
                                 color="inherit"
                                 size="small"
                                 />
-                                <UserName />
+                                    <UserName />
                                 <IconButton
                                 color="inherit"
                                 size="small"

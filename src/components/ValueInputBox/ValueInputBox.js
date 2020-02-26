@@ -13,7 +13,7 @@ const ValueInputBox = () => {
   return(
     <div className="root" >
       <form className='value-input' noValidate autoComplete="off">
-          <TextField id="outlined-basic" label="Value" variant="outlined" />
+        <TextField id="outlined-basic" label="Value" variant="outlined" />
       </form>
       <Button className="value-button" variant="contained" href="#contained-buttons">
         Search

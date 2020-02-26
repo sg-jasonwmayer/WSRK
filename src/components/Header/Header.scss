@@ -21,6 +21,7 @@
 }
 
 .rightContainer {
+  margin-left: 10vh;
   align-items: center;
   display: flex;
   justify-content: flex-end;
@@ -82,9 +83,6 @@ a:active {
   color: white;
 }
 
-.value-input {
-  margin-top: 10px;
-}
 
 // .Collapsible__contentInner {
 //   padding: 10px;
