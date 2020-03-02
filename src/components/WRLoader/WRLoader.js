@@ -2,8 +2,8 @@
 import React from 'react';
 import Loader from 'react-loader-spinner'
 import Box from '@material-ui/core/Box';
-import Fade from '@material-ui/core/Fade';
-import WRlogo from '../WRLogo'
+// import Fade from '@material-ui/core/Fade';
+// import WRlogo from '../WRLogo'
 
 import './WRLoader.scss'
 
@@ -14,7 +14,7 @@ const WRLoader = () => {
    
   return(
     <div 
-    className="wrlogo-container"  
+      className="wr-logo-container"  
     >
     <Box>
     {props => 
@@ -30,7 +30,7 @@ const WRLoader = () => {
     }
       </Box>
   
-      </div>
+    </div>
      );
     }
  

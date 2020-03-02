@@ -1,8 +1,10 @@
-.root {
+.optimized-fliter {
   text-align: center;
   display: flex;
+
+  .form-control {
+    margin: 2em;
+  }
+  
 }
 
-.form-control {
-  margin: 2em;
-}
