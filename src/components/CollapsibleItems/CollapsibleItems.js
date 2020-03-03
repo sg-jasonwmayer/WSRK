@@ -6,7 +6,7 @@ import { Divider } from '@material-ui/core';
                      
 // import { translate } from 'react-polyglot';
 
-import OptimizedFilter from '../OptimizedFilter/OptimizedFilter.js';
+// import OptimizedFilter from '../OptimizedFilter/OptimizedFilter.js';
 import FilterByMode from '../FilterByMode';
 import ColumnsToInclude from '../ColumnsToInclude';
 import FilterSearchBy from '../FilterSearchBy/FilterSearchBy.js';
@@ -53,7 +53,7 @@ const translate = {
                   </ Collapsible>
                   <Divider />
                   <Collapsible trigger="Optimized Filters">
-                       <OptimizedFilter />
+                       {/* <OptimizedFilter /> */}
                         </ Collapsible> 
                         <Collapsible trigger="Columns to Include in Selection Data Grid"> 
                         <ColumnsToInclude /> 
