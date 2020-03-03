@@ -1,6 +1,5 @@
 import 'whatwg-fetch';
 
-
 const HOST = 'localhost' || 'http://ms00015080d';
 const BASE = `http://${HOST}:3000/api`;
 
@@ -59,8 +58,8 @@ const get = (url, body) => request('GET', url, body);
 
 // API CALLS
 
-export const fetchMillsList = () => get(`/userpreferences/mill/`);
-
+export const fetchMillsList = () => get(`/userpreferences/mill/fhenao`);
+export const fetchLoadPlanDetails = (loadplanid) => get(`/LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`)
 // export const postLoadPlannerViews = () => post(`/userpreferences/mill/`);
 
 
