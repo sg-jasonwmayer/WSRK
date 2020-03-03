@@ -19,6 +19,8 @@ import MillName from '../MillName/MillName';
 
 import axios from 'axios';
 
+import { fetchMillsList } from '../../api.js'
+
 import './Location.scss'
 
 
@@ -37,7 +39,7 @@ const handleClose = () => {
 
 
 
-let [millListState, setMillListState] = useState([]);
+let [millListState, setMillListState] = useState([{fetchMillsList}]);
   // useEffect() hook fires any time that the component is rendered.
   // An empty array is passed as the second argument so that the effect only fires once.
   useEffect(() => {
@@ -61,7 +63,9 @@ const [ millState, setMillState ] = useState({
 
 });
 
-let [millTitleState, setMillTitleState] = useState([]);
+let [millTitleState, setMillTitleState] = useState({
+  millNames: [{"Id":1,"MillName":"All Mills"}]
+});
 
 
 const showMillNameHandler = (event) => {
@@ -96,7 +100,7 @@ showMillName: true
                       className="center-container"
                     >
                     <MillName
-                      millName="All Mills"
+                      millName={millTitleState.millNames[0].MillName}
                     /> 
                     </ h4> 
                 </ IconButton>
