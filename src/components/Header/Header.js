@@ -43,7 +43,7 @@ import Layout from '../../layouts/Layout';
 
 import MillOne from '../../containers/MillOne';
 import ScenarioBuilder from '../../containers/ScenarioBuilder';
-import LoadPlanner from '../../containers/LoadPlanner';
+// import LoadPlanner from '../../containers/LoadPlanner';
 import MillPreferences from '../../containers/MillPreferences';
 import Reports from '../../containers/Reports';
 import SomTester from '../../containers/SomTester';
@@ -234,9 +234,9 @@ const Header = () => {
                                                         <ListItemIcon>
                                                             <AccountTreeIcon />
                                                         </ListItemIcon>
-                                                        <ListItemText
+                                                        {/* <ListItemText
                                                         primary={"Load Planner"}
-                                                        />
+                                                        /> */}
                                                     </ListItem>
                                                 </Link>
                                                 <Link to="/mill-preferences">
@@ -414,7 +414,7 @@ const Header = () => {
         <Route  exact path="/reports" component={Reports} />
         <Route exact path="/mill-preferences" component={MillPreferences} />
         <Route exact path="/mill-one" component={MillOne} />
-        <Route exact path="/load-planner" component={LoadPlanner} />
+        {/* <Route exact path="/load-planner" component={LoadPlanner} /> */}
         <Route exact path="/som-tester" component={SomTester} />
         <Route exact path="/scenario-builder" component={ScenarioBuilder} />
         <Route exact path="/" component={Reports} />
