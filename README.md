@@ -1,7 +1,7 @@
 WESTROCK * LOADXPERT
 
 current version:
-LoadXpert Beta.v00.35
+LoadXpert Beta.v00.39
 
 
 ## Available Scripts
