@@ -84,7 +84,7 @@ showMillName: true
           <Grid 
             item 
             xs={4} 
-            className="center-container"
+            className="center-container-grid"
           > 
                 <IconButton
                   size="small"
@@ -100,6 +100,7 @@ showMillName: true
                       className="center-container"
                     >
                     <MillName
+                      className="mill-name-header"
                       millName={millTitleState.millNames[0].MillName}
                     /> 
                     </ h4> 
@@ -110,193 +111,195 @@ showMillName: true
               anchorEl={anchorEl}
               keepMounted
               open={opens}
-              // onClose={handleClose} 
+              onClose={handleClose} 
               TransitionComponent={Fade}
             >
      
                {millListDropDown}
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[0].MillName}
               /> 
                 <MillName 
-               click={handleClose}  
+               click={showMillNameHandler}  
                 millName={millState.millNames[1].MillName}
+                value={MillName.millName}
               />
               <MillName 
-               click={handleClose}
+               click={showMillNameHandler}
                 millName={millState.millNames[2].MillName}
+                value={MillName.millName}
               />
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[3].MillName}
               />
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[4].MillName}
               />
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[5].MillName}
               />
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[6].MillName}
               />
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[7].MillName}
               />
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[8].MillName}
               />
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[9].MillName}
               /> 
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[10].MillName}
               />  
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[11].MillName}
               />
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[12].MillName}
               /> 
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[13].MillName}
               /> 
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[14].MillName}
               /> 
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[15].MillName}
               /> 
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[16].MillName}
               /> 
                <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[17].MillName}
               /> 
               <MillName 
-                click={handleClose}
+                click={showMillNameHandler}
                 millName={millState.millNames[18].MillName}
               /> 
-              <MillName 
-                click={handleClose}
+                  <MillName 
+                click={showMillNameHandler}
                 millName={millState.millNames[19].MillName}
               />  
-              <MillName 
-                click={handleClose}
+                  <MillName 
+                click={showMillNameHandler}
                 millName={millState.millNames[20].MillName}
               />  
-              <MillName 
-                click={handleClose}
+                  <MillName 
+                click={showMillNameHandler}
                 millName={millState.millNames[21].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[22].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[23].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[24].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[25].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[26].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[27].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[28].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[29].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[30].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[31].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[32].MillName}
               /> 
-                <MillName 
-               click={handleClose}             
+                    <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[19].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[33].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[34].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[35].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[36].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[37].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[38].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[39].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[40].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[41].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[42].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[43].MillName}
               /> 
-              <MillName 
-               click={handleClose}             
+                  <MillName 
+                click={showMillNameHandler}            
                 millName={millState.millNames[44].MillName}
               /> 
              </ Menu>

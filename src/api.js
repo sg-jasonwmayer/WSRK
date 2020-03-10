@@ -51,15 +51,15 @@ const request = (method, url) => {
 
 // HELPER FUNCTIONS
 const get = (url, body) => request('GET', url, body);
-// const post = (url, body) => {
-//   return request('POST', url, body);
-// };
+const post = (url, body) => {
+  return request('POST', url, body);
+};
 
 
 // API CALLS
 
 export const fetchMillsList = () => get(`/userpreferences/mill/fhenao`);
 export const fetchLoadPlanDetails = (loadplanid) => get(`/LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`)
-// export const postLoadPlannerViews = () => post(`/userpreferences/mill/`);
+export const postLoadPlannerViews = () => post(`/userpreferences/mill/`);
 
 

@@ -1,8 +1,6 @@
-.root {
-
+.app-header {
   text-align: center;
   display: flex;
-
 
 .logo {
     margin: 0;
@@ -14,12 +12,12 @@
   .flex {
     display: flex;
 
-    .app-bar {
-      padding-top: 205px;
-      background-color: white;
-      position: fixed;
-      border-bottom: 5px solid #ff8200;
-      height: 7vh;
+  .app-bar {
+    padding-top: 205px;
+    background-color: white;
+    position: fixed;
+    border-bottom: 5px solid #ff8200;
+    height: 7vh;
 
     .button {
       color: inherit;
@@ -35,28 +33,6 @@
 }
 .MuiButtonBase-root {
  margin-top: 5em;
-}
-
-.logo {
-    margin: 0;
-    height: 30px;
-    padding-top: 5px;
-    margin-left: 5vh;
-}
-
-.app-bar {
-  padding-top: 205px;
-  background-color: white;
-  position: fixed;
-  border-bottom: 5px solid #ff8200;
-  height: 7vh;
-}
-
-.rightContainer {
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  justify-items: center;
 }
 
 .button {
@@ -125,27 +101,12 @@ a:active {
   background: #004B87;
   color: white;
  }
-  // .Collapsible__trigger:after {
-  //   font-family: 'Roboto';
-  //   // content: '\f107';
-  //   position: absolute;
-  //   right: 10px;
-  //   top: 10px;
-  //   display: block;
-  //   transition: transform 300ms; }
-  // .Collapsible__trigger.is-open:after {
-  //   transform: rotateZ(180deg); }
-  // .Collapsible__trigger.is-disabled {
-  //   opacity: 0.5;
-  //   background-color: grey; }
-
+ 
 
 .CustomTriggerCSS {
   background-color: lightcoral;
-  transition: background-color 200ms ease; }
-
-// .CustomTriggerCSS--open {
-//   background-color: darkslateblue; }
+  transition: background-color 200ms ease; 
+}
 
 .Collapsible__custom-sibling {
   padding: 5px;

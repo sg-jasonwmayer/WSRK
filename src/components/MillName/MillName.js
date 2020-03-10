@@ -16,8 +16,11 @@ return(
 
   <MenuItem key={props.Id} onClick={props.click} >
     <Router>
-      <Link to={props.value}>
-        <div onClick={props.click} className="mill-name">
+      <Link to={props.millName}>
+        <div 
+          onClick={props.click} 
+          className="mill-name"
+        >
           {props.id}
           {props.value}
           {props.millName}

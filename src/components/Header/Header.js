@@ -43,7 +43,7 @@ import Layout from '../../layouts/Layout';
 
 import MillOne from '../../containers/MillOne';
 import ScenarioBuilder from '../../containers/ScenarioBuilder';
-// import LoadPlanner from '../../containers/LoadPlanner';
+import LoadPlanner from '../../containers/LoadPlanner';
 import MillPreferences from '../../containers/MillPreferences';
 import Reports from '../../containers/Reports';
 import SomTester from '../../containers/SomTester';
@@ -57,15 +57,7 @@ const useStyles = makeStyles(theme => ({
       textAlign: "center",
       display: "flex"
     },
-    // flex: {
-    //     display: "flex"
-    // },
-    // logo:{
-    //     margin:"0",
-    //     height: "30px",
-    //     padding: "0",
-    //     marginLeft: "5vh"
-    // },
+    
     appBar:{
         backgroundColor: "white",
         position: "fixed",
@@ -158,73 +150,67 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Header = () => {
-    const classes = useStyles();
-    const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
-
-    const drawerOpenHandler = () => {
-        setOpen(true);
-    };
-
-    const drawerCloseHandler = () => {
-        setOpen(false);
-    };
-
-    const outsideClickHandler = () => {
-        setOpen(false);
-      };
-
+const classes = useStyles();
+const theme = useTheme();
+const [open, setOpen] = React.useState(false);
+const drawerOpenHandler = () => {
+  setOpen(true);
+};
+const drawerCloseHandler = () => {
+  setOpen(false);
+};
+const outsideClickHandler = () => {
+  setOpen(false);
+};
     // eslint-disable-next-line no-unused-vars
-    const handleClickCollapsible = (e) => {
-        e.preventDefault();
-    }
+const handleClickCollapsible = (e) => {
+  e.preventDefault();
+}
 
     return (
         <Router>
-
-        <div className={classes.root}>
+          <div className="app-header">
             <AppBar
               className={classes.appBar}
              >
-                <Toolbar>
-                    
-                    <Grid
-                     container
-                    >
-                        <Grid
-                         item
-                         xs={4}
-                         className={classes.leftContainer}
-                        >
-                                <ClickAwayListener
-                                 onClickAway={outsideClickHandler}
-                                >
-                          <div>
-                                    <IconButton
-                                     color="inherit"
-                                     aria-label="open drawer"
-                                     onMouseOver={drawerOpenHandler}
-                                     edge="start"
-                                     className={clsx(classes.menuButton, open && classes.hide)}
-                                    >
-                                      <MenuIcon
-                                       color="primary"
-                                      />
-                                    </IconButton>
-                                <Drawer
-                                  className={classes.drawer}
-                                  variant="persistent"
-                                  anchor="left"
-                                  open={open}
-                                  classes={{paper: classes.drawerPaper}}
-                                >
-                                    <div className='drawer-header'>
-                                        <IconButton
-                                          onClick={drawerCloseHandler}
-                                        >
-                                          {theme.direction === "ltr" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                                        </IconButton>
-                                    </div>
+              <Toolbar>
+                <Grid
+                  container
+                >
+                  <Grid
+                    item
+                    xs={4}
+                    className={classes.leftContainer}
+                  >
+                 <ClickAwayListener
+                    onClickAway={outsideClickHandler}
+                 >
+                 <div>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  onMouseOver={drawerOpenHandler}
+                  edge="start"
+                  className={clsx(classes.menuButton, open && classes.hide)}
+                >
+                <MenuIcon
+                  color="primary"
+                />
+                </IconButton>
+                <Drawer
+                  className={classes.drawer}
+                  variant="persistent"
+                  anchor="left"
+                  open={open}
+                  classes={{paper: classes.drawerPaper}}
+                >
+                  <div className='drawer-header'>
+                <IconButton
+                  onClick={drawerCloseHandler}
+                >
+                  {theme.direction === "ltr" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                </IconButton>
+                </div>
                                     <Divider />
                                     <List>
 
@@ -234,9 +220,9 @@ const Header = () => {
                                                         <ListItemIcon>
                                                             <AccountTreeIcon />
                                                         </ListItemIcon>
-                                                        {/* <ListItemText
+                                                        <ListItemText
                                                         primary={"Load Planner"}
-                                                        /> */}
+                                                        />
                                                     </ListItem>
                                                 </Link>
                                                 <Link to="/mill-preferences">
@@ -249,16 +235,18 @@ const Header = () => {
                                                         />
                                                     </ListItem>
                                                 </Link>
-                                                <Link to="/reports">
+                                                <Link 
+                                                  to="/reports"
+                                                >
 
-                                                    <ListItem
+                                                  <ListItem
                                                     button
-                                                    >
-                                                    <ListItemIcon>
-                                                        <BarChartIcon />
+                                                  >
+                                                  <ListItemIcon>
+                                                      <BarChartIcon />
                                                     </ListItemIcon>
                                                     <ListItemText
-                                                        primary={"Reports"}
+                                                      primary={"Reports"}
                                                     />
                                                     </ListItem>
                                                 </Link>
@@ -414,7 +402,7 @@ const Header = () => {
         <Route  exact path="/reports" component={Reports} />
         <Route exact path="/mill-preferences" component={MillPreferences} />
         <Route exact path="/mill-one" component={MillOne} />
-        {/* <Route exact path="/load-planner" component={LoadPlanner} /> */}
+        <Route exact path="/load-planner" component={LoadPlanner} />
         <Route exact path="/som-tester" component={SomTester} />
         <Route exact path="/scenario-builder" component={ScenarioBuilder} />
         <Route exact path="/" component={Reports} />
