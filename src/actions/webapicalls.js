@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 import {ShowBusy,HideBusy} from '../actions/activityindicator';
 
 export const SERVER_URL = "http://MS00015080D:9000/";
@@ -18,7 +19,7 @@ export const WebAPIGetCall = (apicall,dispatch)=>{
             dispatch(HideBusy())
             return jsonResponse;
         }catch(e){
-            return '';
+            return '404';
         }finally{
         }
     }

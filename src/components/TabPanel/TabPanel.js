@@ -10,9 +10,12 @@ import './TabPanel.scss'
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
+
+  const [tabsState, setTabsState] = React.useState([]);
   
     return (
       <Typography
+        className="tab-panel"
         component="div"
         role="tabpanel"
         hidden={value !== index}

@@ -1,4 +1,6 @@
-const drawerWidth = 240;
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+const drawerWidth = 180;
 
 const useStyles = makeStyles(theme => ({
   root: {

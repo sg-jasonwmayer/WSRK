@@ -11,28 +11,29 @@ import './OptimizedFilter.scss';
 
 
 const OptimizedFilter = () => {
+   
     const [value, setValue] = React.useState('');  
     const handleChange = event => {   
       setValue(event.target.value);
     };
 
     return(
-      <div 
-        className="optimized-fliter"
-      >
+      <div className="root">
         <Menu
-         open={setValue}
-        />
-        <FormControl 
-          component="fieldset" 
-          className="form-control"
-        >
-          <RadioGroup 
-            aria-label="" 
-            name="" 
-            value={value} 
-            onChange={handleChange}
-          >
+    elevation={0}
+    getContentAnchorEl={null}
+    anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'center',
+    }}
+    transformOrigin={{
+      vertical: 'top',
+      horizontal: 'center',
+    }}
+
+  />
+        <FormControl component="fieldset" className="form-control">
+          <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
             <FormControlLabel 
               value="IncludeBoth" 
               control={<Radio />} 

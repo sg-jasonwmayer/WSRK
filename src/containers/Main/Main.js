@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 
-import logo from '../../assets/westRockLogo.png';
+// import logo from '../../assets/westRockLogo.png';
 
 
 import Logout from '../Logout';
@@ -27,7 +27,6 @@ const Main = () => {
     return (
         <main role="main" className="main-content">
           <Switch>
-         
               <Route
                 path="/reports"
                 exact
@@ -72,9 +71,7 @@ const Main = () => {
             <Redirect path="*" to="/" />
           </Switch>
         </main>
-     
     );
-  
 }
 
 export default Main;

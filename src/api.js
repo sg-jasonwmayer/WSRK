@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 
-const HOST = 'localhost' || 'http://ms00015080d';
+const HOST =  'http://ms00015080d';
 const BASE = `http://${HOST}:3000/api`;
 
 const request = (method, url) => {
@@ -57,9 +57,9 @@ const post = (url, body) => {
 
 
 // API CALLS
-
 export const fetchMillsList = () => get(`/userpreferences/mill/fhenao`);
 export const fetchLoadPlanDetails = (loadplanid) => get(`/LoadPlanViewer/GetLoadPlanDetails/${loadplanid}`)
-export const postLoadPlannerViews = () => post(`/userpreferences/mill/`);
+export const postUserPreferences = () => post(`/userpreferences/mill/`);
+export const populateSearchResults = (mode, mill, searchcondition, loadplanname) => get(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`) 
 
 

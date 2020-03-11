@@ -10,8 +10,6 @@ import './WRLoader.scss'
 const WRLoader = () => {
   const checked = React.useState(false);
 
-
-   
   return(
     <div 
       className="wr-logo-container"  
@@ -23,7 +21,6 @@ const WRLoader = () => {
       className="loader-dots"
       type="Grid"
       color="#ff8200"
-      height={40}
       width={40}
       timeout={3000}
       />
@@ -33,7 +30,6 @@ const WRLoader = () => {
     </div>
      );
     }
- 
 
 export default WRLoader;
 
