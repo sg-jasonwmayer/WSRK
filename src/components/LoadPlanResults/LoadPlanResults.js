@@ -27,16 +27,25 @@ function createData(name, BatchId, ShipTo, carbs, protein) {
 }
 
 const rows = [
-  createData('27444 FTWOR 01_Rail', 305, 'Rail', 67, 4.3),
-  createData('27444 CPARK 01_Rail', 452, 'Rail', 51, 4.9),
-  createData('27444 JSCHPK01_Piggyback', 49, 'Piggyback', 24, 6.0),
-  createData('27443 APEX 14_Truck', 159, 'Rail', 24, 4.0),
-  createData('27443 APEX 13_Truck', 356, 'Truck', 49, 3.9),
-  createData('27443 INTFORI3_Railb', 408, 'Piggyback', 87, 6.5),
-  createData('27443 INTFORG6_Rail', 237, 'Truck', 37, 4.3),
-  createData('27443 GAPAP 76_Truck', 375, 'Rail', 94, 0.0),
-  createData('27443 GAPAP 76_Rai', 518, 'Truck', 65, 7.0),
-  createData('27438 NORCR 01_Truck', 392, 'Rail', 98, 0.0)
+
+  createData('27444 JSCHPK01_Piggyback', 584998, 'Piggyback', '2020-01-27T15:22:37.637', 'LoadX'),
+  createData('27443 APEX 14_Truck', 584788, 'Rail', '2020-01-27T13:22:07.24', 'LoadX'),
+  createData('27443 APEX 13_Truck', 584887, 'Truck', '2020-01-27T13:22:00.193', 'LoadX'),
+  createData('27443 INTFORI3_Rail', 584886, 'Piggyback','2020-01-27T13:20:24.44', 'LoadX'),
+  createData('27443 INTFORG6_Rail', 584885, 'Truck', '2020-01-24T17:26:41.45', 'LoadX'),
+  createData('27443 GAPAP 76_Truck', 584884, 'Rail', '2020-01-24T17:26:29.687', 'LoadX'),
+  createData('27443 GAPAP 76_Rail', 584883, 'Truck', '2020-01-24T17:26:17.157','LoadX'),
+  createData('27438 NORCR 01_Truck', 584665, 'Rail', '2020-01-24T17:26:06.747', 'LoadX'),
+  createData('27438 ATLSF 01_Truck', 584664, 'Rail', '2020-01-24T17:24:36.61', 'LoadX'),
+  createData('27438 ATLANT02_Truck', 584663, 'Rail', '2020-01-24T17:26:41.45','LoadX'),
+  createData('27438 SIU 07_Rail', 584662, 'Rail','2020-03-24T17:25:02.23','LoadX'),
+  createData('27438 RDCNOR01_Rail', 584661, 'Rail', '2020-01-24T17:26:02.27','LoadX'),
+  createData('27438 SCL 01_Piggyback', 584659, 'Piggyback', '2020-01-24T17:25:30.847', 'LoadX'),
+  createData('27438 NCG 01_Piggyback', 584658, 'Piggyback', '2020-01-24T17:25:24.82', 'LoadX'),
+  createData('27444 FTWOR 01_Rail', 585000, 'Rail', '2020-01-24T17:23:39.897', 'LoadX'), 
+  createData('27444 CPARK 01_Rail', 584999, 'Rail', '2020-01-24T17:26:02.27', 'LoadX'),
+  createData('27438 FERNX 01_Mule', 584998, 'Mule', '2020-01-24T17:25:14.577', 'LoadX')
+
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -67,10 +76,10 @@ function stableSort(array, comparator) {
 
 const headCells = [
   { id: 'LoadPlan Name', numeric: false, disablePadding: true, label: 'LoadPlan Name' },
-  { id: 'BatchId', numeric: true, disablePadding: false, label: 'BatchId' },
+  { id: 'BatchId', numeric: true, disablePadding: false, label: 'Batch Id' },
   { id: 'ShipTo', numeric: true, disablePadding: false, label: 'Ship To' },
-  { id: 'carbs', numeric: true, disablePadding: false, label: 'Mode' },
-  { id: 'protein', numeric: true, disablePadding: false, label: 'Submitted By' },
+  { id: 'CreationDate', numeric: true, disablePadding: false, label: 'Creation Date'},
+  { id: 'SubmittedBy', numeric: true, disablePadding: false, label: 'Submitted By'},
 ];
 
 function EnhancedTableHead(props) {

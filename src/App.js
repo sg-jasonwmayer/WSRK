@@ -6,7 +6,7 @@ import 'typeface-roboto';
 
 const App = () => {
   return (
-    <div>
+    <div className="load-x-pert">
       <Header />
     </div>
   );

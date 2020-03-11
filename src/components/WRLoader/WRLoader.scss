@@ -1,12 +1,13 @@
-.wrlogo-container {
+.wr-logo-container {
   width: 50px;
-  padding-left: 10px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
 
-  .loader-logo {
+  .loader-logo {  
   visibility: visible;
   width: 100%;
   }
+
 }

@@ -1,41 +1,82 @@
-import React,{useContext,useEffect} from 'react';
-import MillContext from '../../contexts/mill-context';
-import { WebAPIGetCall } from '../../actions/webapicalls';
-import {populateSearchResults} from '../../actions/loadplanner/SearchResults';
+import React from 'react';
+// import MillContext from '../../contexts/mill-context';
+// import { WebAPIGetCall } from '../../actions/webapicalls';
+// import {populateSearchResults} from '../../actions/loadplanner/SearchResults';
 
 
 
+
+// import TextField from '@material-ui/core/TextField';
+// import { makeStyles } from '@material-ui/core/styles';
+// import InputLabel from '@material-ui/core/InputLabel';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import FormHelperText from '@material-ui/core/FormHelperText';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
+// import Button from '@material-ui/core/Button';
+// import DeleteIcon from '@material-ui/icons/Delete';
+// import SearchIcon from '@material-ui/icons/Search';
+// import MillContext from '../../contexts/mill-context';
+
+
+// import {WebAPIGetCall} from '../../actions/webapicalls';
+// import {populateSearchResults} from '../../actions/loadplanner/SearchResults';
+
+// import Location from '../../components/Location';
+
+// const useStyles = makeStyles(theme => ({
+//     container: {
+//         display: 'flex',
+//         flexWrap: 'wrap',
+//     },
+//     textField: {
+//         marginLeft: theme.spacing(1),
+//         marginRight: theme.spacing(1),
+//         width: 300,
+//     },
+//     formControl: {
+//         margin: theme.spacing(2),
+//         minWidth: 120,
+//     },
+//     selectEmpty: {
+//         marginTop: theme.spacing(0)
+//     },
+//     button: {
+//         marginTop:theme.spacing(3),
+//         marginLeft: theme.spacing(2),
+//       },
+// }));
 
 
 export default function UncontrolledTextField() {
     // const classes = useStyles();
-    const [loadplanname, setLoadPlanName] = React.useState('');
-    const [mode, setMode] = React.useState('AllModes');
-    const [mill, setMill] = React.useState('2');
-    const [searchcondition, setSearchCondition] = React.useState('contains');
+    // const [loadplanname, setLoadPlanName] = React.useState('');
+    // const [mode, setMode] = React.useState('AllModes');
+    // const [mill, setMill] = React.useState('2');
+    // const [searchcondition, setSearchCondition] = React.useState('contains');
     
-    const { loadplans, loadplanDispatch } = useContext(MillContext);
+    // const { loadplans, loadplanDispatch} = useContext(MillContext);
   
-    useEffect(()=>{
-        if(!loadplans) return;
-        if(loadplans.loadplanname)
-            setLoadPlanName(loadplans.loadplanname)
-        if(loadplans.mode)
-            setMode(loadplans.mode)
-        if(loadplans.mill)
-            setMill(loadplans.mill)
-        if(loadplans.searchcondition)
-            setSearchCondition(loadplans.searchcondition)
+    // useEffect(()=>{
+    //     if(!loadplans) return;
+    //     if(loadplans.loadplanname)
+    //         setLoadPlanName(loadplans.loadplanname)
+    //     if(loadplans.mode)
+    //         setMode(loadplans.mode)
+    //     if(loadplans.mill)
+    //         setMill(loadplans.mill)
+    //     if(loadplans.searchcondition)
+    //         setSearchCondition(loadplans.searchcondition)
 
-        async function InvokeAsync(){
-            const jsonResponse = await WebAPIGetCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,[])
-            loadplanDispatch(populateSearchResults(jsonResponse))
-      }
+    //     async function InvokeAsync(){
+    //         const jsonResponse = await WebAPIGetCall(`Query/SearchLoadPlans/${mode}/${mill}/${searchcondition}/${loadplanname}`,[])
+    //         loadplanDispatch(populateSearchResults(jsonResponse))
+    //   }
 
-        InvokeAsync();
+    //     InvokeAsync();
             
 
-    },[]);
+    // },[]);
 
     // const progressDispatch = [];
 
@@ -65,7 +106,7 @@ export default function UncontrolledTextField() {
     //         loadplanDispatch(populateSearchResults(jsonResponse))
     //     }
     //     InvokeAsync();
-    //     // loadplanDispatch(populateSearchCriteria({loadplanname,mode,mill,searchcondition}));
+        // loadplanDispatch(populateSearchCriteria({loadplanname,mode,mill,searchcondition}));
     // }
 
     return (

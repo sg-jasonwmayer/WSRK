@@ -3,290 +3,327 @@ import React, { useState, useEffect } from 'react';
 
 import { 
   Menu, 
-  MenuItem, 
   Fade, 
   Grid, 
   IconButton 
 } from '@material-ui/core';
-import {
-  BrowserRouter as Router,
-  Link,
-  Route
-  //useRouteMatch
-  // withRouter
-} from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
+
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import MillName from '../MillName/MillName';
 
-import DropButton from '../DropButton/DropButton';
-
-import { translate } from 'react-polyglot';
-import messages from './messages/en_us.json';
-
-import clsx from 'clsx';
 import axios from 'axios';
 
-import './Location.scss'
+import { fetchMillsList } from '../../api.js'
 
-const url = 'http://ms00015080d:7050/api/userpreferences/mill/fhenao';
+import './Location.scss';
 
-const useStyles = makeStyles(theme => ({
-    centerContainer: {
-        display: 'flex',
-        justify: 'center',
-        justifyContent: 'right',
-        color: '#004B87', 
-        margin: '0', 
-    },
-    menuButton: {
-        margin: '0',
-        padding: '0'
-    },
-}));
+const Location = (props) => {
 
-const Location = props => {
-    // let match = useRouteMatch();
-    let resData = '';
-    let tempMill = '';
-    const classes = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const opens = Boolean(anchorEl);
-    const handleClick = event => {
-      setAnchorEl(event.currentTarget);
-    };
-    
-const [ millState ] = useState({
-  millNames: [
-    {MillName: 'Hopewell Mill'},
-    {MillName: 'Hodge Mill'},
-    {MillName: 'Dublin Mill'},
-    {MillName: 'Ferdnadina Beach Mill'},
-    {MillName: 'Florence Mill'},
-    {MillName: 'La Tuque Mill'},
-    {MillName: 'Panama City Mill'},
-    {MillName: 'Solvay Mill'},
-    {MillName: 'Seminole Mill'},
-    {MillName: 'Roanoke Rapids DEV'},
-    {MillName: 'Stevenson Mill'},
-    {MillName: 'West Point Mill'},
-    {MillName: 'Tacoma Mill'}
-    
-  ]
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const opens = Boolean(anchorEl);
 
-});
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget); 
+    }  
 
-const millName = '';
-  
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-  
-
+  let [millListState, setMillListState] = useState([{fetchMillsList}]);
+    // useEffect() hook fires any time that the component is rendered.
+    // An empty array is passed as the second argument so that the effect only fires once.
     useEffect(() => {
-      axios.get(url)
-      .then(resData => {
-    
-          tempMill = resData.data.mills[2].millName;
-          console.log(resData.data.mills[2].millName);
-      })
+      axios
+        .get('http://ms00015080d:7050/api/userpreferences/mill/fhenao')
+        .then(response => setMillListState(response.data));
+    }, []);
 
-      // const millName = '';
-      // useName(() => {
+  const millListDropDown = () => {
+    return (
+      <div className="location-list">
+        <code>{JSON.stringify(millListState)}</code>
+      </div>
+    );
+  }
 
-      // })
- 
+  const [ millState, setMillState ] = useState({
+    millNames: [
+    {"Id":0,"MillName":"All Mills"},
+    {"Id":1,"MillName":"Cincinnati Whse"},
+    {"Id":2,"MillName":"Charleston Mill DEV"},
+    {"Id":3,"MillName":"CLG Whse"},
+    {"Id":4,"MillName":"Cov Warehouses"},
+    {"Id":5,"MillName":"Covington Valley"},
+    {"Id":6,"MillName":"CrossGlobe"},
+    {"Id":7,"MillName":"Dallas Whse"}, 
+    {"Id":8,"MillName":"Demopolis Mill"},
+    {"Id":9,"MillName":"DSI Whse"},
+    {"Id":10,"MillName":"Dublin Mill"},
+    {"Id":11,"MillName":"Evadale Mill"},
+    {"Id":12,"MillName":"Fernandina Beach Mill"}, 
+    {"Id":13,"MillName":"Florence Mill"},
+    {"Id":14,"MillName":"Hodge Mill"},
+    {"Id":15,"MillName":"Hopewell Mill"},
+    {"Id":16,"MillName":"IWS Whse"},
+    {"Id":17,"MillName":"La Tuque Mill"},
+    {"Id":18,"MillName":"Lofton Whse"},
+    {"Id":19,"MillName":"Longview Mill"},
+    {"Id":20,"MillName":"Mahrt Mill"},
+    {"Id":21,"MillName":"Mill For Modeling"},
+    {"Id":22,"MillName":"Monroe Whse"},
+    {"Id":23,"MillName":"Montebello Whse"},
+    {"Id":24,"MillName":"NorCal Whse"},
+    {"Id":25,"MillName":"Panama City Mill"},  
+    {"Id":26,"MillName":"Pointe-aux-Trembles Plant"},
+    {"Id":27,"MillName":"RDC1"},
+    {"Id":28,"MillName":"Roanoke Rapids DEV"},
+    {"Id":29,"MillName":"Seminole Mill"}, 
+    {"Id":30,"MillName":"Solvay Mill"},
+    {"Id":31,"MillName":"ST. PAUL CORMED MILL"},
+    {"Id":32,"MillName":"Stevenson Mill"},
+    {"Id":33,"MillName":"Sunland Whse"},
+    {"Id":34,"MillName":"Tacoma Mill"},
+    {"Id":35,"MillName":"West Point Mill"},
+    {"Id":36,"MillName":"ST. PAUL BB MILL"},
+    {"Id":37,"MillName":"WMS Internal LX Test"},
+    {"Id":38,"MillName":"Tres Barras"},
+    {"Id":39,"MillName":"XXMontebello Whse"},
+    {"Id":40,"MillName":"ZZ Lofton Whse (SAP)"},
+    {"Id":41,"MillName":"ZZFernandina Beach Mil"},
+    {"Id":42,"MillName":"60FT_RAIL_STACK_EG"}
+  ],
+    showMillName: true
 
-  }, 
-  []);
+  });
 
-    useEffect(() => {
-        axios.get(url)
-        .then(resData => {
-            tempMill = resData.data.mills[13].millName;
-             console.log(resData.data.mills[13].millName);
-     
-    
-        })
-    }, 
-    []);
+  let [millTitleState, setMillTitleState] = useState({
+    millNames: [{"Id":1,"MillName":"All Mills"}]
+  });
 
 
-    useEffect(() => {
-      axios.get(url)
-      .then(resData => {
-         tempMill = resData.data.mills[13].millName;
-     
+  const showMillNameHandler = (event) => {
+    setMillTitleState({
+      millNames: [{"Id":1,"MillName":"All Mills"}]
+    });
+    setAnchorEl(null);
+  }
 
+  return (
+    <div
+      className='location'
+      >
+      <Grid 
+        item 
+        xs={4} 
+        className="center-container-grid"
+        > 
+        <IconButton
+          size="small"
+          className="menu-Button" 
+          aria-controls="fade-menu" 
+          aria-haspopup="true" 
+          onClick={handleClick}
+        > 
+        <ArrowDropDownIcon 
+          color={'primary'}
+        />
+        <h4 
+          className="center-container"
+                >
+          <MillName
+            className="mill-name-header"
+            millName="All Mills"
+          /> 
+        </ h4> 
+        </ IconButton>
+      </ Grid>
 
-      })
-      
-  }, 
-  []);
+      <Menu
+        id="fade-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={opens}
+        onClose={handleClick} 
+        TransitionComponent={Fade}
+      >
 
- 
-    
-    return(
-        <div
-          className={classes.root}
-        >
-             <Grid 
-               item 
-               xs={4} 
-               className={classes.centerContainer}
-             > 
-                <IconButton
-                  size='small'
-                  className={clsx(classes.menuButton )}
-                  aria-controls="fade-menu" 
-                  aria-haspopup="true" 
-                  onClick={handleClick}
-                > 
-                    <ArrowDropDownIcon 
-                      color={'primary'}
-                    />
-                    <h4 
-                      className={classes.centerContainer}
-                    >
-                      Panama City Mill
-               
-                    </ h4> 
-                </ IconButton>
-            </ Grid>
-            <Menu
-              id="fade-menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={opens}
-              onClose={handleClose}
-              TransitionComponent={Fade}
-            >
-             <Router>
-             <MenuItem 
-                onClick={handleClose}
-              >
-              <Link to={millState.millNames[0].MillName}>
-                <DropButton
-                name={millState.millNames[0].MillName}
-                 />
-    
-                </ Link>
-              </ MenuItem>
-             <MenuItem 
-                onClick={handleClose}
-              >
-              <Link to={millState.millNames[1].MillName}>
-              <DropButton
-                name={millState.millNames[1].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem 
-                onClick={handleClose}
-              >
-              <Link to={millState.millNames[2].MillName}>
-              <DropButton
-                name={millState.millNames[2].MillName}
-              />
-              </ Link>
-              </ MenuItem>
-              <MenuItem 
-                onClick={handleClose}
-              >
-              <Link to={millState.millNames[3].MillName}>
-              <DropButton
-                name={millState.millNames[3].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[4].MillName}>
-                <DropButton
-                name={millState.millNames[4].MillName}
-              />
-              </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[5].MillName}>
-                <DropButton
-                name={millState.millNames[5].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[6].MillName}>
-                <DropButton
-                 name={millState.millNames[6].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[7].MillName}>
-                <DropButton
-                 name={millState.millNames[7].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[8].MillName}>
-                <DropButton
-                 name={millState.millNames[8].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[9].MillName}>
-                <DropButton
-                 name={millState.millNames[9].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[10].MillName}>
-                <DropButton
-                 name={millState.millNames[10].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[11].MillName}>
-                <DropButton
-                 name={millState.millNames[11].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              <MenuItem
-                onClick={handleClose}
-              >
-                <Link to={millState.millNames[12].MillName}>
-                <DropButton
-                 name={millState.millNames[12].MillName}
-              />
-                </ Link>
-              </ MenuItem>
-              
-              </ Router>
-            </ Menu>
-        </ div>
-    )
+          {millListDropDown}
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[0].MillName}
+        /> 
+          <MillName 
+          click={showMillNameHandler}  
+          millName={millState.millNames[1].MillName}
+        />
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[2].MillName}
+        />
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[3].MillName}
+        />
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[4].MillName}
+        />
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[5].MillName}
+        />
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[6].MillName}
+        />
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[7].MillName}
+        />
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[8].MillName}
+        />
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[9].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[10].MillName}
+        />  
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[11].MillName}
+        />
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[12].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[13].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[14].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[15].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[16].MillName}
+        /> 
+          <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[17].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[18].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[19].MillName}
+        />  
+            <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[20].MillName}
+        />  
+            <MillName 
+          click={showMillNameHandler}
+          millName={millState.millNames[21].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[22].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[23].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[24].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[25].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[26].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[27].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[28].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[29].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[30].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[31].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[32].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[33].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[34].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[35].MillName}
+        /> 
+            <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[36].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[37].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[38].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[39].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[40].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[41].MillName}
+        /> 
+        <MillName 
+          click={showMillNameHandler}            
+          millName={millState.millNames[42].MillName}
+        /> 
+      </ Menu>
+    </ div>
+  )
 }
 
 export default Location;
-
-
