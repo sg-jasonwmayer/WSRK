@@ -1,4 +1,4 @@
-LWESTROCK * LOADXPERT
+ LOADXPERT APP POC
 
 current version:
 LoadXpert Beta.v00.39
