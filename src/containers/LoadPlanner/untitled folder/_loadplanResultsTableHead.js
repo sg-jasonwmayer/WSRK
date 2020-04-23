@@ -7,8 +7,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
-
-
 const headCells = [
     { id: 'name', numeric: false, disablePadding: true, label: 'LoadPlan Name' },
     { id: 'batchid', numeric: true, disablePadding: false, label: 'Batch Id' },
@@ -24,9 +22,7 @@ const StyledTableCell = withStyles(theme => ({
       backgroundColor: 'darkgrey',
       color: theme.palette.common.white,
     },
-    body: {
-      fontSize: 14,
-    },
+   
   }))(TableCell);
 
 function LoadPlanResultsTableHead(props) {
