@@ -21,9 +21,7 @@ import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
-
 import WRLoader from '../../components/WRLoader';
-
 
 
 import './ScenarioBuilder.scss';
@@ -33,20 +31,26 @@ function createData(scenarioBuilder, BatchID, shipTo, orderNo, protein) {
 }
 
 const rows = [
-  createData('90382381', 305, 3.7, 67, 4.3),
-  createData('90382381', 452, 25.0, 51, 4.9),
-  createData('26872394', 262, 16.0, 24, 6.0),
-  createData('12879421', 159, 6.0, 24, 4.0),
-  createData('35672938', 356, 16.0, 49, 3.9),
-  createData('87639234', 408, 3.2, 87, 6.5),
-  createData('98273042', 237, 9.0, 37, 4.3),
-  createData('67820234', 375, 0.0, 94, 0.0),
-  createData('37231094', 518, 26.0, 65, 7.0),
-  createData('10197682', 392, 0.2, 98, 0.0),
-  createData('78623421', 318, 0, 81, 2.0),
-  createData('36029831', 360, 19.0, 9, 37.0),
-  createData('43789276', 437, 18.0, 63, 4.0),
+  createData('27444 JSCHPK01_Piggyback', 584998, 'Piggyback', '2020-01-27T15:22:37.637', 'LoadX'),
+  createData('27443 APEX 14_Truck', 584788, 'Rail', '2020-01-27T13:22:07.24', 'LoadX'),
+  createData('27443 APEX 13_Truck', 584887, 'Truck', '2020-01-27T13:22:00.193', 'LoadX'),
+  createData('27443 INTFORI3_Rail', 584886, 'Piggyback','2020-01-27T13:20:24.44', 'LoadX'),
+  createData('27443 INTFORG6_Rail', 584885, 'Truck', '2020-01-24T17:26:41.45', 'LoadX'),
+  createData('27443 GAPAP 76_Truck', 584884, 'Rail', '2020-01-24T17:26:29.687', 'LoadX'),
+  createData('27443 GAPAP 76_Rail', 584883, 'Truck', '2020-01-24T17:26:17.157','LoadX'),
+  createData('27438 NORCR 01_Truck', 584665, 'Rail', '2020-01-24T17:26:06.747', 'LoadX'),
+  createData('27438 ATLSF 01_Truck', 584664, 'Rail', '2020-01-24T17:24:36.61', 'LoadX'),
+  createData('27438 ATLANT02_Truck', 584663, 'Rail', '2020-01-24T17:26:41.45','LoadX'),
+  createData('27438 SIU 07_Rail', 584662, 'Rail','2020-03-24T17:25:02.23','LoadX'),
+  createData('27438 RDCNOR01_Rail', 584661, 'Rail', '2020-01-24T17:26:02.27','LoadX'),
+  createData('27438 SCL 01_Piggyback', 584659, 'Piggyback', '2020-01-24T17:25:30.847', 'LoadX'),
+  createData('27438 NCG 01_Piggyback', 584658, 'Piggyback', '2020-01-24T17:25:24.82', 'LoadX'),
+  createData('27444 FTWOR 01_Rail', 585000, 'Rail', '2020-01-24T17:23:39.897', 'LoadX'), 
+  createData('27444 CPARK 01_Rail', 584999, 'Rail', '2020-01-24T17:26:02.27', 'LoadX'),
+  createData('27438 FERNX 01_Mule', 584998, 'Mule', '2020-01-24T17:25:14.577', 'LoadX')
+
 ];
+
 
 function desc(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -197,11 +201,9 @@ EnhancedTableToolbar.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: theme.spacing(1),
-    paddingLeft: theme.spacing(3),
-    paddingRight: theme.spacing(1),
-    width: 2380,
-    marginTop: theme.spacing(3),
+    paddingTop: theme.spacing(10),
+    paddingLeft: theme.spacing(8),
+    paddingRight: theme.spacing(2)
   },
   paper: {
     width: '100%',

@@ -12,7 +12,10 @@ const WRLogo = (props) => {
     {...props}
     className="wrlogo-container"  
     >
-      <img src={logo} />
+      <img 
+        src={logo} 
+        alt="WestRock Logo"
+      />
     </div>
      );
     }

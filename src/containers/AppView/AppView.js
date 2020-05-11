@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 
-
 import {
   BrowserRouter as Router,
   Redirect,
@@ -24,64 +23,57 @@ const AppView = () => {
   return (
     <div> 
       <Header />
-      <div>
-       {<div className="app-view">
-         hello world
       <Router>
-      <Switch> 
-      <Route exact path="/reports" component={Reports} />
-         {/* <Route
-           path="/reports"
-           exact
-           render={(props) => (
-             <Reports
-             {...props} 
-              > 
-              reports        
-             </Reports>
-           )}
-         /> */}
-         <Route
-           exact
-           path="/load-planner"
-           render={(props) => (
-             <LoadPlanner
-               {...props} 
-             />
-           )}
-         />
+        <Switch> 
+        <Route exact path="/reports" component={Reports} />
+          {/* <Route
+            path="/reports"
+            exact
+            render={(props) => (
+              <Reports
+              {...props} 
+                > 
+                reports        
+              </Reports>
+            )}
+          /> */}
+          <Route
+            exact
+            path="/load-planner"
+            render={(props) => (
+              <LoadPlanner
+                {...props} 
+              />
+            )}
+          />
 
-         <Route
-           path="/mill-plan"
-           render={(props) => (
-             <MillPreferences
-               {...props} 
-              millName={this.props.millName} 
-             />
-           )}
-         />
-         <Route
-           path="/som-tester"
-           render={(props) => (
-             <SomTester 
-               {...props} 
-               userID={this.props.userID} 
-             />
-           )}
-         />
-       <Route
-         path="/logout"
-         render={(props) => (
-           <Logout {...props} />
-         )}
-       />
-       <Redirect path="*" to="/" />
-     </Switch>
+          <Route
+            path="/mill-plan"
+            render={(props) => (
+              <MillPreferences
+                {...props} 
+                millName={this.props.millName} 
+              />
+            )}
+          />
+          <Route
+            path="/som-tester"
+            render={(props) => (
+              <SomTester 
+                {...props} 
+                userID={this.props.userID} 
+              />
+            )}
+          />
+        <Route
+          path="/logout"
+          render={(props) => (
+            <Logout {...props} />
+          )}
+        />
+        <Redirect path="*" to="/" />
+      </Switch>
      </Router>
-     </div>
-
-         }
-    </div>
     </div>
   );
 }

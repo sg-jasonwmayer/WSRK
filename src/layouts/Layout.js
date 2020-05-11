@@ -1,26 +1,18 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React,{useReducer,useEffect} from 'react';
 import clsx from 'clsx';
-import {
-  useTheme,
-  makeStyles
-} from '@material-ui/core/styles';
+import { useTheme,makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import MillReducer from '../reducers/MillReducer';
 import LoadPlanReducer from '../reducers/LoadPlanReducer';
-import ActivityIndicatorReducer from '../reducers/ActivityIndicatorReducer';
-
 import MillContext from '../contexts/mill-context';
-import {
-  addMill,
-  populateMills
-} from '../actions/Mills';
-
-import { WebAPIGetCall } from '../actions/webapicalls';
-import ActivityIndicator from '../components/ActivityIndicator/';
+import {addMill,populateMills} from '../actions/Mills';
+import {WebAPIGetCall} from '../actions/webapicalls';
+import ActivityIndicator from '../components/ActivityIndicator';
+import ActivityIndicatorReducer from '../reducers/ActivityIndicatorReducer';
 
 const drawerWidth = 240;
 
@@ -38,7 +30,21 @@ const useStyles = makeStyles(theme => ({
       display: 'block',
     },
   },
-
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
   menuButton: {
     marginRight: 36,
   },
@@ -49,6 +55,24 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
+  },
+  drawerOpen: {
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  drawerClose: {
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    overflowX: 'hidden',
+    width: theme.spacing(7) + 1,
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(9) + 1,
+    },
   },
   toolbar: {
     display: 'flex',
@@ -73,7 +97,7 @@ const useStyles = makeStyles(theme => ({
 
 function Layout(props) {
     const [busy,progressDispatch] = useReducer(ActivityIndicatorReducer,false);
-    const [mills,millDispatch] = useReducer(MillReducer,[]);
+    const [mills, millDispatch] = useReducer(MillReducer,[]);
     const [loadplans,loadplanDispatch] = useReducer(LoadPlanReducer,[]);
 
     const {children} = props;
@@ -83,19 +107,20 @@ function Layout(props) {
     const [selectedIndex, setSelectedIndex] = React.useState(false);
 
 
+   
      useEffect(()=>{
        (async function InvokeAsync(){
-         const jsonResponse = await WebAPIGetCall('Query/AllMills', progressDispatch)
+         const jsonResponse = await WebAPIGetCall('Query/AllMills',progressDispatch)
          millDispatch(populateMills(jsonResponse))
        })()
-
+       
       },[]);
 
     const handleDrawerOpen = () => {
-      millDispatch(populateMills(['Fernandina Beach Mill', 'Stevenson Mill','Dublin Mill']));
+      millDispatch(populateMills(['Fernandina Beach Mill','Stevenson Mill','Dublin Mill']));
       setOpen(true);
       };
-
+    
       const handleDrawerClose = () => {
         millDispatch(addMill('Dhiru Beach Mill'));
         setOpen(false);
@@ -105,32 +130,35 @@ function Layout(props) {
         setOpen(false);
         console.log(e);
       }
-
+  
     return (
 
-      <MillContext.Provider value={{mills, millDispatch, loadplans, loadplanDispatch, busy, progressDispatch}}>
+      <MillContext.Provider value={{mills,millDispatch,loadplans,loadplanDispatch,busy,progressDispatch}}>
         <div className={classes.root}>
-        <CssBaseline />
-         <AppBar
+          <CssBaseline />
+          <AppBar
             position="fixed"
             className={clsx(classes.appBar, {
               [classes.appBarShift]: open,
             })}
           >
-
+          {
+  
+         
+          }
           </AppBar>
-
+        
           <main className={classes.content}>
             <div className={classes.toolbar} />
             <ActivityIndicator/>
             {children}
           </main>
-
+        
         </div>
       </MillContext.Provider>
-
+     
     );
   }
 
 
-  export default Layout;
+export default Layout;

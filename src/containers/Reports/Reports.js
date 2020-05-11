@@ -21,8 +21,6 @@ import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
-
-
 import './Reports.scss';
 
 function createData(name, calories, fat, carbs, protein) {
@@ -84,9 +82,6 @@ function EnhancedTableHead(props) {
   };
 
   return (
-
-    <div>
-
     <TableHead>
       <TableRow>
         <TableCell padding="checkbox">
@@ -120,7 +115,6 @@ function EnhancedTableHead(props) {
         ))}
       </TableRow>
     </TableHead>
-    </div>
   );
 }
 
@@ -170,7 +164,7 @@ const EnhancedTableToolbar = props => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle">
-          LoadPlans
+        Reports : Print your load plan Reports for the below listed load plans.
         </Typography>
       )}
 
@@ -197,10 +191,9 @@ EnhancedTableToolbar.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: theme.spacing(1),
-    paddingLeft: theme.spacing(3),
-    paddingRight: theme.spacing(1),
-    width: 2380,
+    paddingTop: theme.spacing(10),
+    paddingLeft: theme.spacing(8),
+    paddingRight: theme.spacing(2),
   },
   paper: {
     width: '100%',

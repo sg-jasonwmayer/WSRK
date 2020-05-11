@@ -1,6 +1,12 @@
-.root {
-
+.location {
   text-align: center;
   display: flex;
+
+  .center-container {
+    display: flex;
+    justify-content: right;
+    color: #004B87;
+    margin: 0; 
+  }
 
 }

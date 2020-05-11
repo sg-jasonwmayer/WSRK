@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -19,6 +18,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import {SERVER_URL} from '../../actions/webapicalls';
 import Snackbar from '@material-ui/core/Snackbar';
 import Slide from '@material-ui/core/Slide';
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -49,6 +49,8 @@ const useStyles = makeStyles(theme => ({
   }))(Chip); // TypeScript only: need a type cast here because https://github.com/Microsoft/TypeScript/issues/26591
   
 
+
+
   function TransitionLeft(props) {
     return <Slide {...props} direction="left" />;
   }
@@ -69,10 +71,10 @@ const useStyles = makeStyles(theme => ({
   const serverURL = SERVER_URL;
 
 
-export const LoadPlanView = ({tabData, handleTabClose,label})=>{
+export const LoadPlanView = ({tabData,handleTabClose,label})=>{
     const classes = useStyles();
   
-    const {loadPlanName, reference, lastUpdateDate, submittedBy} = tabData;
+    const {loadPlanName,reference,lastUpdateDate,submittedBy} = tabData;
     const [selectedVehicleIndex,setSelectedVehicleIndex] = useState(0);
     const [view,setSelectedView] = useState("threeDimensionalView");
     const [viewImagePath,setViewImagePath] = useState(serverURL+tabData.vehicles[0].images.threeDimensionalView);
@@ -121,7 +123,7 @@ export const LoadPlanView = ({tabData, handleTabClose,label})=>{
     const handleClose = () => {
       setOpen(false);
     };
-   
+
     return (
 
 <div className={classes.root}>

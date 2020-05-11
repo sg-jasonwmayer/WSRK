@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+
 import { 
     Radio,
     RadioGroup,
@@ -9,14 +9,10 @@ import {
 
 import './ColumnsToInclude.scss';
 
-const useStyles = makeStyles(theme => ({
-  formControl: {
-    margin: theme.spacing(3),
-  },
-}));
+
 
 const ColumnsToInclude = () => {
-    const classes = useStyles();
+
     const [value, setValue] = React.useState('female');
     const handleChange = event => {
       setValue(event.target.value);
@@ -24,8 +20,7 @@ const ColumnsToInclude = () => {
 
     return(
         <div className='classes.root'>
-            <FormControl component="fieldset" className={classes.formControl}>
-                {/* <FormLabel component="legend">Columns to Include in Selection Data Grid</FormLabel> */}
+            <FormControl component="fieldset" className='form-control'>
                 <RadioGroup aria-label="" name="" value={value} onChange={handleChange}>
                     <FormControlLabel  value="IncludeBoth" control={<Radio />} label="Interfaced Date" />
                     <FormControlLabel  value="OptimizedOnly" control={<Radio />} label="Interfaced User" />

@@ -1,118 +1,80 @@
-.root {
+ // .header-appbar {
+//   flex-direction: row;
+// }
 
-  text-align: center;
-  display: flex;
+// .button {
+//   color: inherit;
+// }
 
+// .MuiButtonBase-root {
+//  margin-top: 5em;
+// }
 
-.logo {
-    margin: 0;
-    height: 30px;
-    padding-top: 5em;
-    margin-left: 5vh;
-}
+// .appBar {
+//   background-color: white;
+//   position: fixed;
+//   border-bottom: 5px solid #ff8200;
+//   height: 7vh;
+// }
 
-  .flex {
-    display: flex;
+// .centerContainer {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// }
 
-    .app-bar {
-      padding-top: 205px;
-      background-color: white;
-      position: fixed;
-      border-bottom: 5px solid #ff8200;
-      height: 7vh;
+// .rightContainer {
+//   margin-left: 10vh;
+//   align-items: center;
+//   display: flex;
+//   justify-content: flex-end;
+// }
 
-    .button {
-      color: inherit;
-    }
+// .button {
+//   color: inherit;
+// }
 
-    rightContainer {
-      align-items: center;
-      display: flex;
-    }
+// .drawer-header {
+//   display: flex;
+//   align-items: center;
+//   padding: 0 1;
+//   justify-content: flex-end;
+// }
 
-    }
-    }
-}
-.MuiButtonBase-root {
- margin-top: 5em;
-}
-
-.logo {
-    margin: 0;
-    height: 30px;
-    padding-top: 5px;
-    margin-left: 5vh;
-}
-
-.app-bar {
-  padding-top: 205px;
-  background-color: white;
-  position: fixed;
-  border-bottom: 5px solid #ff8200;
-  height: 7vh;
-}
-
-.rightContainer {
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  justify-items: center;
-}
-
-.button {
-  color: inherit;
-}
-
-.drawer-header {
-  display: flex;
-  align-items: center;
-  padding: 0 1;
-  justify-content: flex-end;
-}
-
-.drawer {
-  width: 30%;
-  flex-shrink: 0;
-  position: absolute;
-}
-
-.drawer-paper {
-  width: 100%;
-  height: 56%,
-}
+// .drawer {
+//   width: 30%;
+//   flex-shrink: 0;
+//   position: absolute;
+// }
 
 a:link {
   text-decoration: none;
+  color: #004B87;
 }
 
-a:visited {
-  text-decoration: none;
-}
+// a:visited {
+//   text-decoration: none;
+// }
 
-a:hover {
-  text-decoration: none;
-}
+// a:hover {
+//   text-decoration: none;
+// }
 
-a:active {
-  text-decoration: none;
-}
-.Collapsible {
-  background-color: white;
-}
+// a:active {
+//   text-decoration: none;
+// }
+
+// .Collapsible {
+//   background-color: white;
+// }
+
 .Collapsible:hover{
-  opacity:0.8;
+  opacity: 0.8;
 }
 
-.Collapsible__contentInner {
-  padding: 10px;
-  border: 1px solid #ebebeb;
-  border-top: 0; }
-  .Collapsible__contentInner p {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 20px; }
-    .Collapsible__contentInner p:last-child {
-      margin-bottom: 0; }
+// .Collapsible__trigger:hover {
+//   overflow: visible;
+// }
 
 .Collapsible__trigger {
   display: block;
@@ -121,39 +83,21 @@ a:active {
   color: #333333;
   position: relative;
   border: 1px solid white;
-  padding: 10px;
+  padding: 0.8vh;
   background: #004B87;
   color: white;
- }
-  // .Collapsible__trigger:after {
-  //   font-family: 'Roboto';
-  //   // content: '\f107';
-  //   position: absolute;
-  //   right: 10px;
-  //   top: 10px;
-  //   display: block;
-  //   transition: transform 300ms; }
-  // .Collapsible__trigger.is-open:after {
-  //   transform: rotateZ(180deg); }
-  // .Collapsible__trigger.is-disabled {
-  //   opacity: 0.5;
-  //   background-color: grey; }
-
-
-.CustomTriggerCSS {
-  background-color: lightcoral;
-  transition: background-color 200ms ease; }
-
-// .CustomTriggerCSS--open {
-//   background-color: darkslateblue; }
-
-.Collapsible__custom-sibling {
-  padding: 5px;
-  font-size: 12px;
-  background-color: #FFF;
-  color: black;
 }
 
-.value-input {
-  margin-top: 10px;
-}
+// .easy-access-icons {
+
+// }
+
+
+// .header-container {
+//   background-color: red;
+//   position: fixed;
+//   border-bottom: 5px solid #ff8200;
+//   height: 7vh;
+// }
+
+

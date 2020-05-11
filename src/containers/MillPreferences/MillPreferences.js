@@ -17,12 +17,9 @@ import './MillPreferences.scss';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: theme.spacing(1),
-    paddingLeft: theme.spacing(3),
-    paddingRight: theme.spacing(1),
-    width: 1380,
-    height: 1080,
-    marginTop: theme.spacing(3),
+    paddingTop: theme.spacing(10),
+    paddingLeft: theme.spacing(8),
+    paddingRight: theme.spacing(2),
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
