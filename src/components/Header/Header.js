@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+<<<<<<< HEAD
 import './Header.scss';
 import {
     Switch,
@@ -25,19 +26,32 @@ import MillPreferences from '../../containers/MillPreferences';
 import Reports from '../../containers/Reports';
 import SomTester from '../../containers/SomTester';
 
+=======
+import { BrowserRouter as Router } from "react-router-dom";
+
+import EasyAccessIcons from '../EasyAccessIcons';
+import AppBarContainer from '../../containers/AppBarContainer';
+import Main from '../../containers/Main';
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
 
 import Location from '../Location';
 import UserName from '../UserName';
 import EasyAccessIcons from '../EasyAccessIcons/EasyAccessIcons';
 import DrawerItems from '../DrawerItems/DrawerItems';
 
+<<<<<<< HEAD
 
 // const useStyles = makeStyles();
 const Header = () => {
     // const classes = useStyles();
 
+=======
+const Header = () => {
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
     return (
+      <div>
         <Router>
+<<<<<<< HEAD
             {/* <div className="appheader"> */}
                 <AppBar
                  className="appBar"
@@ -113,6 +127,17 @@ const Header = () => {
                 </div>
             {/* </div> */}
         </Router>
+=======
+          <div className="header-appbar">
+            <AppBarContainer />
+          </div>
+          <div className="main-content-container"> 
+            <EasyAccessIcons className="easy-access-icons" />
+            <Main className="main-content" />
+          </div>
+        </Router>
+      </div>
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
     )
 }
 

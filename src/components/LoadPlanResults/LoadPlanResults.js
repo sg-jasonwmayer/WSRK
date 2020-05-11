@@ -198,7 +198,9 @@ EnhancedTableToolbar.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
+    paddingTop: theme.spacing(10),
+    paddingLeft: theme.spacing(8),
+    paddingRight: theme.spacing(2)
   },
   paper: {
     width: '100%',
@@ -359,3 +361,5 @@ export default function LoadPlanResults() {
     </div>
   );
 }
+
+

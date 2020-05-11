@@ -8,6 +8,9 @@ import {
   Menu
 } from '@material-ui/core';
 
+import './FilterSearchBy.scss';
+
+
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(3),

@@ -28,7 +28,11 @@ const FilterByMode = () => {
   };
 
   return(
+<<<<<<< HEAD
     <div className='classes.root'>
+=======
+    <div className='filter-by-mode'>
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
       <FormControl className={classes.formControl}>
         <InputLabel>Filter By Mode</InputLabel>
         <NativeSelect

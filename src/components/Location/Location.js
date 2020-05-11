@@ -14,6 +14,7 @@ import MillName from '../MillName/MillName';
 import axios from 'axios';
 
 import { fetchMillsList } from '../../api.js'
+<<<<<<< HEAD
 
 import './Location.scss';
 
@@ -100,8 +101,56 @@ const Location = (props) => {
   let [millTitleState, setMillTitleState] = useState({
     millNames: [{"Id":1,"MillName":"All Mills"}]
   });
+=======
+
+import './Location.scss';
+
+const Location = (props) => {
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const opens = Boolean(anchorEl);
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget); 
+    }  
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+<<<<<<< HEAD
+=======
+  let [millListState, setMillListState] = useState([{fetchMillsList}]);
+    // useEffect() hook fires any time that the component is rendered.
+    // An empty array is passed as the second argument so that the effect only fires once.
+    useEffect(() => {
+      axios
+        .get('http://ms00015080d:7050/api/userpreferences/mill/fhenao')
+        .then(response => setMillListState(response.data));
+    }, []);
+
+  const millListDropDown = () => {
+    return (
+      <div className="location-list">
+        <code>{JSON.stringify(millListState)}</code>
+      </div>
+    );
+  }
+
+  const [ millState, setMillState ] = useState({
+    millNames: [  {"millId": 0, "MillName": "Charleston Mill DEV"}, {"millId": 1, "MillName": "Dublin Mill"}, {"millId": 2, "MillName": "Fernandina Beach Mill"},{"millId": 3, "MillName": "Florence Mill"},{"millId": 4, "MillName": "Hodge Mill"},{"millId": 5, "MillName": "Hopewell Mill"},{"millId": 6, "MillName": "La Tuque Mill" }, {"millId": 7, "MillName": "Panama City Mill"},{"millId": 8, "MillName": "Roanoke Rapids DEV"}, {"millId": 9, "MillName": "Seminole Mill"},{"millId": 10, "MillName": "Solvay Mill"},{"millId": 11, "MillName": "Stevenson Mill" },{"millId": 12, "MillName": "Tacoma Mill" },{"millId": 13,"MillName": "West Point Mill"}
+  ],
+    showMillName: true
+
+  });
+
+  let [millTitleState, setMillTitleState] = useState({
+    millNames: [{"Id":1,"MillName":"All Mills"}]
+  });
 
 
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
   const showMillNameHandler = (event) => {
     setMillTitleState({
       millNames: [{"Id":1,"MillName":"All Mills"}]
@@ -128,9 +177,13 @@ const Location = (props) => {
         <ArrowDropDownIcon 
           color={'primary'}
         />
+<<<<<<< HEAD
         <h4 
           className="center-container"
                 >
+=======
+        <h4 className="center-container">
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
           <MillName
             className="mill-name-header"
             millName="All Mills"
@@ -140,7 +193,10 @@ const Location = (props) => {
       </ Grid>
 
       <Menu
+<<<<<<< HEAD
         id="fade-menu"
+=======
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
         anchorEl={anchorEl}
         keepMounted
         open={opens}
@@ -148,7 +204,10 @@ const Location = (props) => {
         TransitionComponent={Fade}
       >
 
+<<<<<<< HEAD
           {millListDropDown}
+=======
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
         <MillName 
           click={showMillNameHandler}
           millName={millState.millNames[0].MillName}
@@ -205,6 +264,7 @@ const Location = (props) => {
           click={showMillNameHandler}
           millName={millState.millNames[13].MillName}
         /> 
+<<<<<<< HEAD
         <MillName 
           click={showMillNameHandler}
           millName={millState.millNames[14].MillName}
@@ -321,9 +381,16 @@ const Location = (props) => {
           click={showMillNameHandler}            
           millName={millState.millNames[42].MillName}
         /> 
+=======
+       
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
       </ Menu>
     </ div>
   )
 }
 
 export default Location;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
