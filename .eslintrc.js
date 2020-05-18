@@ -3,21 +3,7 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    "extends": [
+   "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
     ],
