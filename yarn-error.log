@@ -10,7 +10,6 @@ Node version:
   10.4.0
 Platform: 
   darwin x64
-
 Trace: 
   Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
       at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:50:26)
