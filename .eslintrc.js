@@ -11,6 +11,7 @@ module.exports = {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
