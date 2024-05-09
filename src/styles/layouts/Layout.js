@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+const drawerWidth = 180;
+=======
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React,{useReducer,useEffect} from 'react';
@@ -23,6 +28,7 @@ import { WebAPIGetCall } from '../actions/webapicalls';
 import ActivityIndicator from '../components/ActivityIndicator/';
 
 const drawerWidth = 240;
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
 
 
 

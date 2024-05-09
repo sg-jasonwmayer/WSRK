@@ -141,7 +141,11 @@ const DrawerItems = () => {
                     </Drawer>
                 </div>
             </ClickAwayListener>
+<<<<<<< HEAD
+
+=======
 <div className="logo-container">
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
             <Link to="/">
                 <img
                 src={logo}
@@ -149,7 +153,10 @@ const DrawerItems = () => {
                 className="logo"
             />
             </Link>
+<<<<<<< HEAD
+=======
             </div>
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
         </Grid>
     </div>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 import {ShowBusy,HideBusy} from '../actions/activityindicator';
 
 //export const SERVER_URL = "https://localhost:44327/";
@@ -20,7 +21,7 @@ export const WebAPIGetCall = (apicall,dispatch)=>{
             dispatch(HideBusy())
             return jsonResponse;
         }catch(e){
-            return '';
+            return '404';
         }finally{
         }
     }

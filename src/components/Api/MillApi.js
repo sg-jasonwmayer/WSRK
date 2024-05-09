@@ -1,14 +1,3 @@
-<<<<<<< HEAD:src/components/Api/Api.js
-/* eslint-disable react/react-in-jsx-scope */
-import MillApi from './MillApi.js';
-
-const Api = () =>  {
-    <MillApi />
- 
-};
-
-export default Api;
-=======
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -40,4 +29,3 @@ const MillApi = () =>  {
 }
 
 export default MillApi;
->>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722:src/services/Api/MillApi.js

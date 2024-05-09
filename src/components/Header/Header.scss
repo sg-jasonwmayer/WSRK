@@ -1,3 +1,49 @@
+<<<<<<< HEAD
+.button {
+  color: inherit;
+}
+
+.MuiButtonBase-root {
+ margin-top: 5em;
+}
+
+.appBar {
+  background-color: white;
+  position: fixed;
+  border-bottom: 5px solid #ff8200;
+  height: 7vh;
+}
+
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rightContainer {
+  margin-left: 10vh;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  color: inherit;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  padding: 0 1;
+  justify-content: flex-end;
+}
+
+.drawer {
+  width: 30%;
+  flex-shrink: 0;
+  position: absolute;
+}
+=======
  // .header-appbar {
 //   flex-direction: row;
 // }
@@ -46,6 +92,7 @@
 //   flex-shrink: 0;
 //   position: absolute;
 // }
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
 
 a:link {
   text-decoration: none;
@@ -71,10 +118,16 @@ a:link {
 .Collapsible:hover{
   opacity: 0.8;
 }
+<<<<<<< HEAD
+.Collapsible__trigger:hover {
+  overflow: visible;
+}
+=======
 
 // .Collapsible__trigger:hover {
 //   overflow: visible;
 // }
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
 
 .Collapsible__trigger {
   display: block;
@@ -88,6 +141,8 @@ a:link {
   color: white;
 }
 
+<<<<<<< HEAD
+=======
 // .easy-access-icons {
 
 // }
@@ -101,3 +156,4 @@ a:link {
 // }
 
 
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722

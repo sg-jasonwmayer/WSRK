@@ -16,6 +16,8 @@ import ActivityIndicatorReducer from '../reducers/ActivityIndicatorReducer';
 
 const drawerWidth = 240;
 
+<<<<<<< HEAD
+=======
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -93,6 +95,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }));
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
 
 
 function Layout(props) {
@@ -101,7 +104,6 @@ function Layout(props) {
     const [loadplans,loadplanDispatch] = useReducer(LoadPlanReducer,[]);
 
     const {children} = props;
-    const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
     const [selectedIndex, setSelectedIndex] = React.useState(false);
@@ -133,23 +135,35 @@ function Layout(props) {
   
     return (
 
+<<<<<<< HEAD
+      <MillContext.Provider value={{mills, millDispatch, loadplans, loadplanDispatch, busy, progressDispatch}}>
+        <div className="app-layout">
+        <CssBaseline />
+         <AppBar
+=======
       <MillContext.Provider value={{mills,millDispatch,loadplans,loadplanDispatch,busy,progressDispatch}}>
         <div className={classes.root}>
           <CssBaseline />
           <AppBar
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
             position="fixed"
-            className={clsx(classes.appBar, {
-              [classes.appBarShift]: open,
-            })}
+            className="appBarShift"
+
           >
           {
   
          
           }
           </AppBar>
+<<<<<<< HEAD
+
+          <main className="content">
+            <div className="toolbar" />
+=======
         
           <main className={classes.content}>
             <div className={classes.toolbar} />
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
             <ActivityIndicator/>
             {children}
           </main>

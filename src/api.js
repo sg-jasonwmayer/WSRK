@@ -1,7 +1,11 @@
 import 'whatwg-fetch';
 
 const HOST =  'http://ms00015080d';
+<<<<<<< HEAD
+const BASE = `http://${HOST}:3000/api`;
+=======
 const BASE = `http://${HOST}:8080/api`;
+>>>>>>> 0bcb8f251a4a8c3edada1795b35c13c4b3f47722
 
 const request = (method, url) => {
 
