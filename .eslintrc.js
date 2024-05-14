@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": [
+   "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
     ],
@@ -11,6 +11,7 @@ module.exports = {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -18,9 +19,8 @@ module.exports = {
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
+
     "rules": {
+
     }
 };

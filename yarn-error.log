@@ -1,6 +1,5 @@
 Arguments: 
   /usr/local/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js install
-
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
@@ -9,10 +8,8 @@ Yarn version:
 
 Node version: 
   10.4.0
-
 Platform: 
   darwin x64
-
 Trace: 
   Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
       at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:50:26)
