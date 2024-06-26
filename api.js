@@ -32,7 +32,7 @@ const request = (method, url) => {
   };
 
   const createResponseError = error => {
-    const errText = error.statusText || '';
+    const errText = error.statusText;
     const errorObj = new Error(errText);
     errorObj.response = error;
     return errorObj;
