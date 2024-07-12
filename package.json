@@ -11,7 +11,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "ag-grid-community": "^22.1.1",
+    "ag-grid-community": "^32.0.1",
     "ag-grid-react": "^22.1.1",
     "axios": "^1.6.0",
     "classnames": "^2.2.6",
